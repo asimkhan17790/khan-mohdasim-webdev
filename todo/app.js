@@ -11,7 +11,7 @@ module.exports = function(app){
 
 
     app.get('/practise/todo',function (req,res) {
-
+    console.log("in service");
 
         var todos=[{'title':'Title 1 server', 'note':'Note 1'},
             {'title':'Title 2 server', 'note':'Note 2'},
