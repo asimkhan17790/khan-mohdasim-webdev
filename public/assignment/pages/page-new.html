@@ -1,10 +1,135 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" ng-app="PageListApp">
 <head>
     <meta charset="UTF-8">
+    <!--<link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet"/>-->
+    <link href="../../bootstrap/css/bootstrap.css" rel="stylesheet"/>
+    <link href="../css/style.css" rel="stylesheet"/>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.7/angular.min.js"></script>
+    <script src="./js/pagelist-app.js"></script>
     <title>Create New Page</title>
 </head>
 <body>
-Login
+
+<nav class="navbar navbar-default navbar-fixed-top">
+
+    <div class="row container-fluid">
+
+
+        <div class="col-sm-4 hidden-xs">
+            <div class="navbar-text pull-left">
+                <a href="#" class="navbar-link">
+                    <span class="glyphicon glyphicon-chevron-left"></span>
+                </a>
+            </div>
+
+            <div class="navbar-text pull-right">
+                <a href="#" class="navbar-link">
+                    <span class="glyphicon glyphicon-plus"></span>
+                </a>
+            </div>
+
+            <div class="navbar-header">
+                <a class="navbar-brand">Pages</a>
+            </div>
+
+
+
+
+        </div>
+        <div class="col-sm-8">
+
+            <div class="row">
+                <div class="col-xs-6">
+                    <div class="navbar-header">
+                        <a class="navbar-brand no-left-padding">New Page</a>
+                    </div>
+                </div>
+                <div class="col-xs-6">
+                    <div class="navbar-text pull-right">
+                        <a href="#" class="navbar-link">
+                            <span class="glyphicon glyphicon-ok"></span>
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+
+
+
+        </div>
+    </div>
+</nav>
+
+
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-sm-4 hidden-xs">
+            <div class="container-fluid"  ng-controller="PageListController">
+
+                <div ng-repeat="page in pageList">
+                    <div class="row container-fluid" style="padding-top: 8px;padding-bottom: 8px">
+                        <div class="col-xs-12">
+                            <a class="" href="#">
+                                {{page.name}}
+                            </a>
+
+                            <a class="pull-right" style="margin-top:2px" href="#">
+                  <span class="glyphicon glyphicon-cog">
+                  </span>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-sm-8">
+
+            <label for="websiteName">Name</label>
+            <input id ="websiteName" type="text" class="form-control" placeholder="Name"/>
+            <label for="pageTitle">Title</label>
+            <input id ="pageTitle" type="text" class="form-control" placeholder="Page Title"/>
+
+
+
+
+        </div>
+    </div>
+</div>
+
+
+<nav class="navbar navbar-default navbar-fixed-bottom">
+
+    <div class="row container-fluid">
+        <!--<div class="col-xs-3">
+            <div class="navbar-text">
+                <a href="#" class="navbar-link">
+                    <span class="glyphicon glyphicon-plus"></span>
+                </a>
+            </div>
+        </div>
+        <div class="col-xs-3">
+            <div class="navbar-text">
+                <a href="#" class="navbar-link">
+                    <span class="glyphicon glyphicon-plus"></span>
+                </a>
+            </div>
+        </div>
+        <div class="col-xs-3">
+            <div class="navbar-text">
+                <a href="#" class="navbar-link">
+                    <span class="glyphicon glyphicon-plus"></span>
+                </a>
+            </div>
+        </div>-->
+        <div class="col-xs-12">
+            <div class="navbar-text pull-right">
+                <a href="#" class="navbar-link">
+                    <span class="glyphicon glyphicon-user"></span>
+                </a>
+            </div>
+        </div>
+    </div>
+</nav>
 </body>
 </html>
