@@ -14,8 +14,6 @@
 <nav class="navbar navbar-default navbar-fixed-top">
 
     <div class="row container-fluid">
-
-
         <div class="col-sm-4 hidden-xs">
             <div class="navbar-text pull-left">
                 <a href="#" class="navbar-link">
@@ -33,16 +31,13 @@
                 <a class="navbar-brand">Pages</a>
             </div>
 
-
-
-
         </div>
         <div class="col-sm-8">
-
             <div class="row">
                 <div class="col-xs-6">
                     <div class="navbar-header">
-                        <a class="navbar-brand no-left-padding">Edit Page</a>
+                        <a class="navbar-brand no-left-padding">
+                            Edit Page</a>
                     </div>
                 </div>
                 <div class="col-xs-6">
@@ -53,10 +48,6 @@
                     </div>
                 </div>
             </div>
-
-
-
-
         </div>
     </div>
 </nav>
@@ -66,17 +57,14 @@
     <div class="row">
         <div class="col-sm-4 hidden-xs">
             <div class="container-fluid"  ng-controller="PageListController">
-
                 <div ng-repeat="page in pageList">
                     <div class="row container-fluid" style="padding-top: 8px;padding-bottom: 8px">
                         <div class="col-xs-12">
                             <a class="" href="#">
                                 {{page.name}}
                             </a>
-
                             <a class="pull-right" style="margin-top:2px" href="#">
-                  <span class="glyphicon glyphicon-cog">
-                  </span>
+                                <span class="glyphicon glyphicon-cog"> </span>
                             </a>
                         </div>
                     </div>
@@ -84,7 +72,6 @@
             </div>
         </div>
         <div class="col-sm-8">
-
             <label for="pageName">Name</label>
             <input id ="pageName" type="text" class="form-control" placeholder="Name"/>
             <label for="pageTitle">Title</label>
@@ -93,37 +80,11 @@
                href="#">
                 Delete</a>
 
-
-
         </div>
     </div>
 </div>
-
-
 <nav class="navbar navbar-default navbar-fixed-bottom">
-
     <div class="row container-fluid">
-        <!--<div class="col-xs-3">
-            <div class="navbar-text">
-                <a href="#" class="navbar-link">
-                    <span class="glyphicon glyphicon-plus"></span>
-                </a>
-            </div>
-        </div>
-        <div class="col-xs-3">
-            <div class="navbar-text">
-                <a href="#" class="navbar-link">
-                    <span class="glyphicon glyphicon-plus"></span>
-                </a>
-            </div>
-        </div>
-        <div class="col-xs-3">
-            <div class="navbar-text">
-                <a href="#" class="navbar-link">
-                    <span class="glyphicon glyphicon-plus"></span>
-                </a>
-            </div>
-        </div>-->
         <div class="col-xs-12">
             <div class="navbar-text pull-right">
                 <a href="#" class="navbar-link">
