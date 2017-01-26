@@ -36,34 +36,32 @@
 </nav>
 
 
-<div class="container-fluid" style="margin: 36px" ng-controller="WebsiteListController">
+<div class="container-fluid"  ng-controller="WebsiteListController">
 
     <div ng-repeat="website in websiteList">
-        <div class="row container-fluid">
+        <div class="row container-fluid" style="padding-top: 8px;padding-bottom: 8px">
             <div class="col-xs-12">
                 <a class="" href="#">
                     {{website.name}}
                 </a>
 
-                    <a class="pull-right" href="#">
+                    <a class="pull-right" style="margin-top:2px" href="#">
                   <span class="glyphicon glyphicon-cog">
                   </span>
                     </a>
             </div>
         </div>
-
-
-
     </div>
 </div>
 
 
 <nav class="navbar navbar-default navbar-fixed-bottom">
-    <div class="container-fluid">
-        <div class="row navbar-text  pull-right">
-           <div class="col-xs-3 text-center pull-right">
-                <a href="#">
-                    <span class="glyphicon glyphicon-user"></span>
+    <div class="row container-fluid">
+        <div class="col-xs-12">
+            <div class="navbar-text pull-right">
+                <a href="#" class="navbar-link">
+                  <span class="glyphicon glyphicon-user">
+                  </span>
                 </a>
             </div>
         </div>

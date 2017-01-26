@@ -13,11 +13,21 @@ btn {
 }
 .navbar-default .navbar-link {
     color: white;
+
 }
 .navbar-text a {
     color: white;
 }
 body {
-    padding-top: 36px;
+    padding-top: 60px;
     padding-bottom: 60px;
+}
+.no-left-padding {
+    padding-left: 0px;
+}
+.no-left-margin{
+    margin-left: 0px;
+}
+#webDescription {
+    margin-bottom: 5px;
 }

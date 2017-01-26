@@ -1,10 +1,137 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" ng-app="WebsiteListApp">
 <head>
     <meta charset="UTF-8">
-    <title>Create new website</title>
+    <!--<link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet"/>-->
+    <link href="../../bootstrap/css/bootstrap.css" rel="stylesheet"/>
+    <link href="../css/style.css" rel="stylesheet"/>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.7/angular.min.js"></script>
+    <script src="./js/weblist-app.js"></script>
+    <title>Edit Website</title>
 </head>
 <body>
-Login
+
+<nav class="navbar navbar-default navbar-fixed-top">
+
+    <div class="row container-fluid">
+
+
+        <div class="col-sm-4 hidden-xs">
+            <div class="navbar-text pull-left">
+                <a href="#" class="navbar-link">
+                    <span class="glyphicon glyphicon-chevron-left"></span>
+                </a>
+            </div>
+
+            <div class="navbar-text pull-right">
+                <a href="#" class="navbar-link">
+                    <span class="glyphicon glyphicon-plus"></span>
+                </a>
+            </div>
+
+            <div class="navbar-header">
+                <a class="navbar-brand">Websites</a>
+            </div>
+
+
+
+
+        </div>
+        <div class="col-sm-8">
+
+            <div class="row">
+                <div class="col-xs-6">
+                    <div class="navbar-header">
+                        <a class="navbar-brand no-left-padding">Edit Website</a>
+                    </div>
+                </div>
+                <div class="col-xs-6">
+                    <div class="navbar-text pull-right">
+                        <a href="#" class="navbar-link">
+                            <span class="glyphicon glyphicon-ok"></span>
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+
+
+
+        </div>
+    </div>
+</nav>
+
+
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-sm-4 hidden-xs">
+            <div class="container-fluid"  ng-controller="WebsiteListController">
+
+                <div ng-repeat="website in websiteList">
+                    <div class="row container-fluid" style="padding-top: 8px;padding-bottom: 8px">
+                        <div class="col-xs-12">
+                            <a class="" href="#">
+                                {{website.name}}
+                            </a>
+
+                            <a class="pull-right" style="margin-top:2px" href="#">
+                  <span class="glyphicon glyphicon-cog">
+                  </span>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-sm-8">
+
+            <label for="websiteName">Website Name</label>
+            <input id ="websiteName" type="text" class="form-control" placeholder="Name"/>
+            <label for="webDescription">Website Description</label>
+            <textarea id="webDescription" rows="5" class="form-control" placeholder="Description"></textarea>
+            <a class="btn btn-danger btn-block"
+                       href="#">
+                Delete</a>
+
+
+
+        </div>
+    </div>
+</div>
+
+
+<nav class="navbar navbar-default navbar-fixed-bottom">
+
+    <div class="row container-fluid">
+        <!--<div class="col-xs-3">
+            <div class="navbar-text">
+                <a href="#" class="navbar-link">
+                    <span class="glyphicon glyphicon-plus"></span>
+                </a>
+            </div>
+        </div>
+        <div class="col-xs-3">
+            <div class="navbar-text">
+                <a href="#" class="navbar-link">
+                    <span class="glyphicon glyphicon-plus"></span>
+                </a>
+            </div>
+        </div>
+        <div class="col-xs-3">
+            <div class="navbar-text">
+                <a href="#" class="navbar-link">
+                    <span class="glyphicon glyphicon-plus"></span>
+                </a>
+            </div>
+        </div>-->
+        <div class="col-xs-12">
+            <div class="navbar-text pull-right">
+                <a href="#" class="navbar-link">
+                    <span class="glyphicon glyphicon-user"></span>
+                </a>
+            </div>
+        </div>
+    </div>
+</nav>
 </body>
 </html>
