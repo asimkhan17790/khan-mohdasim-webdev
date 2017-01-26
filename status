@@ -1,0 +1,114 @@
+[33mcommit 30524904778d4d9e68c7c0b6f71dd843b85b01d6[m
+Author: asimkhan17790 <asimkhan17790@gmail.com>
+Date:   Thu Jan 26 07:47:51 2017 -0500
+
+    website edit pages first draft
+
+[33mcommit a9d928f5ce838d7680a3741c4c42a4df0f4c7928[m
+Author: asimkhan17790 <asimkhan17790@gmail.com>
+Date:   Wed Jan 25 04:11:11 2017 -0500
+
+    websites page incomplete yet
+
+[33mcommit 21378bf71ee2526210e2c6c664c135064e296301[m
+Author: asimkhan17790 <asimkhan17790@gmail.com>
+Date:   Wed Jan 25 04:03:42 2017 -0500
+
+    website list incomplete
+
+[33mcommit 3e0966e38a3ce3b81fe0259f98f09317a18245e0[m
+Author: asimkhan17790 <asimkhan17790@gmail.com>
+Date:   Wed Jan 25 03:07:07 2017 -0500
+
+    profile pages
+
+[33mcommit f2b9c805bd3b0114f5992ee9b2f382b4c4b7c476[m
+Author: asimkhan17790 <asimkhan17790@gmail.com>
+Date:   Wed Jan 25 02:50:06 2017 -0500
+
+    login and profile pages
+
+[33mcommit 738cf11e98ed18481291617a1fde10a9ff4fe661[m
+Author: asimkhan17790 <asimkhan17790@gmail.com>
+Date:   Wed Jan 25 02:19:38 2017 -0500
+
+    login page
+
+[33mcommit fe7e15b8e317c2ef7cd15bc9b2a3b7b8c4bd6a4d[m
+Author: asimkhan17790 <asimkhan17790@gmail.com>
+Date:   Mon Jan 16 21:39:34 2017 -0500
+
+    chaged github link
+
+[33mcommit 8af06060ec139c266e86490cf61a860abb81518a[m
+Author: asimkhan17790 <asimkhan17790@gmail.com>
+Date:   Fri Jan 13 08:22:09 2017 -0500
+
+    updated package.json
+
+[33mcommit 1ea775c104271955b7aadb6d56c3be4a9af35e22[m
+Author: asimkhan17790 <asimkhan17790@gmail.com>
+Date:   Fri Jan 13 07:32:43 2017 -0500
+
+    check
+
+[33mcommit 8ef1a97afed370ec2ce152e39640a7eb00837a81[m
+Author: asimkhan17790 <asimkhan17790@gmail.com>
+Date:   Fri Jan 13 05:14:40 2017 -0500
+
+    changed package
+
+[33mcommit aeacb53e53a2c6a02a15710b05dc2a9632414041[m
+Author: asimkhan17790 <asimkhan17790@gmail.com>
+Date:   Thu Jan 12 22:45:50 2017 -0500
+
+    changed readme file
+
+[33mcommit c57042e89c75357f4b87bcf52d7dd21fe8241574[m
+Author: asimkhan17790 <asimkhan17790@gmail.com>
+Date:   Thu Jan 12 22:35:08 2017 -0500
+
+    check commit in asim repo
+
+[33mcommit 12b15b20c9e7b16b21c84105a96d1a93378f29f5[m
+Author: Jose Annunziato <jannunzi@gmail.com>
+Date:   Tue Jan 10 00:01:39 2017 -0500
+
+    pointing to my github repo
+
+[33mcommit 306a5b809cc51f4b8dcaff063bef615adcdfa986[m
+Merge: dfe22a7 89bce9a
+Author: Jose Annunziato <jannunzi@gmail.com>
+Date:   Mon Jan 9 23:57:50 2017 -0500
+
+    Merge branch 'master' of https://github.com/jannunzi/web-dev-template
+
+[33mcommit dfe22a7e18b20e37e03f342074327e6dc8b71c57[m
+Author: Jose Annunziato <jannunzi@gmail.com>
+Date:   Mon Jan 9 23:57:24 2017 -0500
+
+    migrating to heroku and mlab
+
+[33mcommit 89bce9a82eb2017277af777729027edab3b1c70d[m
+Author: Jose Annunziato <jannunzi@gmail.com>
+Date:   Tue May 17 20:32:59 2016 -0400
+
+    Added login, register, profile pages
+
+[33mcommit 06b3f12a8a65f9af65260ee43d8091611e33cbc6[m
+Author: jannunzi <jannunzi@gmail.com>
+Date:   Tue May 17 07:21:44 2016 -0400
+
+    Changed web-Dev to web-dev
+
+[33mcommit 83f767974fa439f4274a6652f3ee4246b0288448[m
+Author: jannunzi <jannunzi@gmail.com>
+Date:   Tue May 17 07:20:44 2016 -0400
+
+    Added README
+
+[33mcommit 008b28c3ce2bdce8f6fb8e7b2e8c26f18f75e6d7[m
+Author: Jose Annunziato <jannunzi@gmail.com>
+Date:   Sun May 8 23:20:10 2016 -0400
+
+    first commit
