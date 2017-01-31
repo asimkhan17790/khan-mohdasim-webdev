@@ -1,6 +1,6 @@
 angular
     .module("WebsiteListApp", [])
-    .controller("WebsiteListController", WebsiteListController)
+    .controller("WebsiteListController", WebsiteListController);
 
 function WebsiteListController($scope, $http) {
     $scope.websiteList = [

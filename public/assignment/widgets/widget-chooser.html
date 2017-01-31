@@ -1,56 +1,43 @@
 <!DOCTYPE html>
-<html lang="en" ng-app="WebsiteListApp">
+<html lang="en" ng-app="WidgetApp">
 <head>
 
     <!--<link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet"/>-->
     <link href="../../bootstrap/css/bootstrap.css" rel="stylesheet"/>
     <link href="../css/style.css" rel="stylesheet"/>
     <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.7/angular.min.js"></script>
-    <script src="./js/weblist-app.js"></script>
+    <script src="./js/widget-app.js"></script>
     <meta charset="UTF-8">
-    <title>Widget List</title>
+    <title>Choose Widget</title>
 </head>
 <body>
 <nav class="navbar navbar-default navbar-fixed-top">
     <div class="container-fluid">
         <div class="navbar-text pull-left">
-            <a href="../pages/page-list.html" class="navbar-link">
+            <a href="../widgets/widget-list.html" class="navbar-link">
                   <span class="glyphicon glyphicon-chevron-left">
                   </span>
             </a>
         </div>
-
-        <div class="navbar-text pull-right">
-            <a href="widget-choose.html" class="navbar-link">
-                  <span class="glyphicon glyphicon-plus">
-                  </span>
-            </a>
-        </div>
-
         <div class="">
             <div class="navbar-header">
                 <a class="navbar-brand" href="#">
-                    Widgets
+                    Choose Widget
                 </a>
             </div>
         </div>
     </div>
 </nav>
 
-
-<div class="container-fluid" ng-controller="WebsiteListController">
+<div class="container-fluid" ng-controller="WidgetChooserController">
     <ul class="list-group">
-        <li ng-repeat="website in websiteList" class="list-group-item">
+        <li ng-repeat="widget in widgetList" class="list-group-item">
 
             <div class="">
-                <a class="" href="../pages/page-list.html">
-                    {{website.name}}
+                <a class="" ng-href="{{widget.route}}">
+                    {{widget.name}}
                 </a>
 
-                <a class="pull-right" href="website-edit.html">
-                  <span class="glyphicon glyphicon-cog">
-                  </span>
-                </a>
             </div>
         </li>
     </ul>
@@ -60,7 +47,7 @@
     <div class="row container-fluid">
         <div class="col-xs-12">
             <div class="navbar-text pull-right">
-                <a href="../users/profile.html" class="navbar-link">
+                <a href="../users/profile.html" class="navbar-link" data-toggle="tooltip" data-placement="left" title="Profile">
                   <span class="glyphicon glyphicon-user">
                   </span>
                 </a>
