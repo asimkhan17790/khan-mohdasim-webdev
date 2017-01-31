@@ -12,17 +12,16 @@
 <body>
 
 <nav class="navbar navbar-default navbar-fixed-top">
-
     <div class="row container-fluid">
         <div class="col-sm-4 hidden-xs">
             <div class="navbar-text pull-left">
-                <a href="#" class="navbar-link">
+                <a href="page-list.html" class="navbar-link">
                     <span class="glyphicon glyphicon-chevron-left"></span>
                 </a>
             </div>
 
             <div class="navbar-text pull-right">
-                <a href="#" class="navbar-link">
+                <a href="page-new.html" class="navbar-link">
                     <span class="glyphicon glyphicon-plus"></span>
                 </a>
             </div>
@@ -30,19 +29,17 @@
             <div class="navbar-header">
                 <a class="navbar-brand">Pages</a>
             </div>
-
         </div>
         <div class="col-sm-8">
             <div class="row">
                 <div class="col-xs-6">
                     <div class="navbar-header">
-                        <a class="navbar-brand no-left-padding">
-                            Edit Page</a>
+                        <a class="navbar-brand no-left-padding">Edit Page</a>
                     </div>
                 </div>
                 <div class="col-xs-6">
                     <div class="navbar-text pull-right">
-                        <a href="#" class="navbar-link">
+                        <a href="page-list.html" class="navbar-link">
                             <span class="glyphicon glyphicon-ok"></span>
                         </a>
                     </div>
@@ -53,42 +50,52 @@
 </nav>
 
 
-<div class="container-fluid">
-    <div class="row">
-        <div class="col-sm-4 hidden-xs">
-            <div class="container-fluid"  ng-controller="PageListController">
-                <div ng-repeat="page in pageList">
-                    <div class="row container-fluid" style="padding-top: 8px;padding-bottom: 8px">
-                        <div class="col-xs-12">
-                            <a class="" href="#">
-                                {{page.name}}
-                            </a>
-                            <a class="pull-right" style="margin-top:2px" href="#">
-                                <span class="glyphicon glyphicon-cog"> </span>
-                            </a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div class="col-sm-8">
-            <label for="pageName">Name</label>
-            <input id ="pageName" type="text" class="form-control" placeholder="Name"/>
-            <label for="pageTitle">Title</label>
-            <input id ="pageTitle" type="text" class="form-control" placeholder="Page Title"/>
-            <a class="btn btn-danger btn-block"
-               href="#">
-                Delete</a>
+<div class="row container-fluid">
+    <div class="col-sm-4 hidden-xs wbdv-left-pane"
+         ng-controller="PageListController">
+        <ul class="list-group">
+            <li ng-repeat="page in pageList"
+                class="list-group-item">
 
-        </div>
+                <div class="">
+                    <a class="" href="../widgets/widget-list.html">
+                        {{page.name}}
+                    </a>
+
+                    <a class="pull-right"
+                       href="page-edit.html">
+                                  <span class="glyphicon glyphicon-cog">
+                                  </span>
+                    </a>
+                </div>
+            </li>
+        </ul>
+    </div>
+    <div class="col-sm-8 col-xs-12 wbdv-right-pane">
+        <form>
+            <label for="pageName">Name</label>
+            <input id ="pageName"
+                   type="text"
+                   class="form-control"
+                   placeholder="Page Name"/>
+            <label for="pageTitle">Title</label>
+            <input id ="pageTitle"
+                   type="text"
+                   class="form-control"
+                   placeholder="Page Title"/>
+            <a class="btn btn-danger btn-block"
+               href="page-list.html">
+                Delete</a>
+        </form>
     </div>
 </div>
 <nav class="navbar navbar-default navbar-fixed-bottom">
     <div class="row container-fluid">
         <div class="col-xs-12">
             <div class="navbar-text pull-right">
-                <a href="#" class="navbar-link">
-                    <span class="glyphicon glyphicon-user"></span>
+                <a href="../users/profile.html" class="navbar-link">
+                    <span class="glyphicon glyphicon-user">
+                    </span>
                 </a>
             </div>
         </div>

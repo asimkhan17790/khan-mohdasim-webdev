@@ -10,6 +10,8 @@ btn {
 }
 .navbar-default .navbar-brand {
     color: white;
+    margin-left: 0px !important;
+    padding-left: 0px !important;
 }
 .navbar-default .navbar-link {
     color: white;
@@ -18,9 +20,11 @@ btn {
 .navbar-text a {
     color: white;
 }
+a { text-decoration: none !important}
 body {
     padding-top: 60px;
     padding-bottom: 60px;
+    background-color: #e7f0ff;
 }
 .no-left-padding {
     padding-left: 0px;
@@ -30,4 +34,35 @@ body {
 }
 #webDescription {
     margin-bottom: 5px;
+}
+.wbdv-left-pane {
+    position: absolute;
+    top: 0px;
+    bottom: 0px;
+    margin-top: 60px;
+    margin-bottom: 60px;
+    padding-top: 15px;
+    overflow: auto;
+
+}
+.wbdv-right-pane {
+    position: absolute;
+    top: 0px;
+    right: 0px;
+    bottom: 0px;
+    margin-bottom: 60px;
+    margin-top: 51px;
+    padding-left: 15px;
+    padding-right: 15px;
+    overflow-y: auto;
+}
+.navbar-text.pull-left {
+    margin-left: 0px;
+}
+
+.navbar-default {
+    background-color: #337ab7;
+}
+.navbar-default .navbar-text {
+    margin-right:15px;
 }

@@ -8,34 +8,28 @@
     <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.7/angular.min.js"></script>
     <script src="./js/weblist-app.js"></script>
     <title>Edit Website</title>
+    <style>
+
+    </style>
 </head>
 <body>
 
 <nav class="navbar navbar-default navbar-fixed-top">
-
     <div class="row container-fluid">
-
-
         <div class="col-sm-4 hidden-xs">
             <div class="navbar-text pull-left">
-                <a href="#" class="navbar-link">
+                <a href="website-list.html" class="navbar-link">
                     <span class="glyphicon glyphicon-chevron-left"></span>
                 </a>
             </div>
-
             <div class="navbar-text pull-right">
-                <a href="#" class="navbar-link">
+                <a href="website-new.html" class="navbar-link">
                     <span class="glyphicon glyphicon-plus"></span>
                 </a>
             </div>
-
             <div class="navbar-header">
                 <a class="navbar-brand">Websites</a>
             </div>
-
-
-
-
         </div>
         <div class="col-sm-8">
 
@@ -47,16 +41,12 @@
                 </div>
                 <div class="col-xs-6">
                     <div class="navbar-text pull-right">
-                        <a href="#" class="navbar-link">
+                        <a href="website-list.html" class="navbar-link">
                             <span class="glyphicon glyphicon-ok"></span>
                         </a>
                     </div>
                 </div>
             </div>
-
-
-
-
         </div>
     </div>
 </nav>
@@ -64,37 +54,35 @@
 
 <div class="container-fluid">
     <div class="row">
-        <div class="col-sm-4 hidden-xs">
-            <div class="container-fluid"  ng-controller="WebsiteListController">
+        <div class="col-sm-4 hidden-xs wbdv-left-pane" ng-controller="WebsiteListController">
+            <div class="">
+                <ul class="list-group">
+                    <li ng-repeat="website in websiteList" class="list-group-item">
 
-                <div ng-repeat="website in websiteList">
-                    <div class="row container-fluid" style="padding-top: 8px;padding-bottom: 8px">
-                        <div class="col-xs-12">
-                            <a class="" href="#">
+                        <div class="">
+                            <a class="" href="../pages/page-list.html">
                                 {{website.name}}
                             </a>
 
-                            <a class="pull-right" style="margin-top:2px" href="#">
+                            <a class="pull-right" href="website-edit.html">
                   <span class="glyphicon glyphicon-cog">
                   </span>
                             </a>
                         </div>
-                    </div>
-                </div>
+                    </li>
+                </ul>
             </div>
         </div>
-        <div class="col-sm-8">
-
+        <div class="col-sm-8 wbdv-right-pane">
             <label for="websiteName">Website Name</label>
             <input id ="websiteName" type="text" class="form-control" placeholder="Name"/>
+
             <label for="webDescription">Website Description</label>
             <textarea id="webDescription" rows="5" class="form-control" placeholder="Description"></textarea>
+
             <a class="btn btn-danger btn-block"
-                       href="#">
+                       href="website-list.html">
                 Delete</a>
-
-
-
         </div>
     </div>
 </div>
@@ -103,30 +91,9 @@
 <nav class="navbar navbar-default navbar-fixed-bottom">
 
     <div class="row container-fluid">
-        <!--<div class="col-xs-3">
-            <div class="navbar-text">
-                <a href="#" class="navbar-link">
-                    <span class="glyphicon glyphicon-plus"></span>
-                </a>
-            </div>
-        </div>
-        <div class="col-xs-3">
-            <div class="navbar-text">
-                <a href="#" class="navbar-link">
-                    <span class="glyphicon glyphicon-plus"></span>
-                </a>
-            </div>
-        </div>
-        <div class="col-xs-3">
-            <div class="navbar-text">
-                <a href="#" class="navbar-link">
-                    <span class="glyphicon glyphicon-plus"></span>
-                </a>
-            </div>
-        </div>-->
         <div class="col-xs-12">
             <div class="navbar-text pull-right">
-                <a href="#" class="navbar-link">
+                <a href="../users/profile.html" class="navbar-link">
                     <span class="glyphicon glyphicon-user"></span>
                 </a>
             </div>
