@@ -1,5 +1,5 @@
-input.form-control {
-    margin-bottom: 5px;
+input.form-control, select.form-control, textarea.form-control {
+    margin-bottom: 8px;
 }
 btn {
     margin-bottom: 5px;
@@ -32,9 +32,7 @@ body {
 .no-left-margin{
     margin-left: 0px;
 }
-#webDescription {
-    margin-bottom: 5px;
-}
+
 .wbdv-left-pane {
     position: absolute;
     top: 0px;
@@ -66,3 +64,4 @@ body {
 .navbar-default .navbar-text {
     margin-right:15px;
 }
+
