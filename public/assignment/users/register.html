@@ -4,18 +4,22 @@
     <meta charset="UTF-8">
     <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet"/>
     <link href="../css/style.css" rel="stylesheet"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>User Registration</title>
 </head>
 <body>
     <div class="container">
         <h1>User Registration</h1>
         <form>
-        <input type="text"
+        <input id="uid" type="text"
                class="form-control"
                placeholder="username"/>
-        <input type="password"
+        <input id="password" type="password"
                class="form-control"
                placeholder="password"/>
+        <input id="cnfpassword" type="password"
+               class="form-control"
+               placeholder="verify password"/>
         </form>
         <a class="btn btn-primary btn-block"
            href="profile.html">Register</a>
