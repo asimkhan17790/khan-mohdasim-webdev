@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="WidgetApp">
+<head>
+    <meta charset="UTF-8">
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet"/>
+    <!--<link href="../../bootstrap/css/bootstrap.css" rel="stylesheet"/>-->
+    <link href="../css/style.css" rel="stylesheet"/>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.7/angular.min.js"></script>
+    <script src="../js/widget-app.js"></script>
+    <title>Widget Image</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+   </head>
+<body>
+
+<nav class="navbar navbar-default navbar-fixed-top">
+    <div class="row container-fluid">
+        <div class="col-sm-4 col-xs-2">
+            <div class="navbar-text pull-left">
+                <a href="widget-chooser.html" class="navbar-link">
+                    <span class="glyphicon glyphicon-chevron-left"></span>
+                </a>
+            </div>
+
+            <div class="navbar-header hidden-xs">
+                <a class="navbar-brand">Choose Widget</a>
+            </div>
+        </div>
+        <div class="col-sm-8 col-xs-10">
+
+            <div class="row">
+                <div class="col-xs-8">
+                    <div class="navbar-header">
+                        <a class="navbar-brand no-left-padding">Widget Edit</a>
+                    </div>
+                </div>
+                <div class="col-xs-4">
+                    <div class="navbar-text pull-right">
+                        <a href="widget-chooser.html" class="navbar-link">
+                            <span class="glyphicon glyphicon-ok"></span>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</nav>
+
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-sm-4 hidden-xs wbdv-left-pane" ng-controller="WidgetChooserController">
+
+                <ul class="list-group">
+                    <li ng-repeat="widget in widgetList" class="list-group-item">
+
+                        <div class="">
+                            <a class="" ng-href="{{widget.route}}">
+                                {{widget.name}}
+                            </a>
+
+                        </div>
+                    </li>
+                </ul>
+
+        </div>
+        <div id ="rightpane" class="col-sm-8 col-xs-12 wbdv-right-pane">
+            <form ng-controller="WidgetChooserController">
+                <label for="widgetName">Name</label>
+                <input id ="widgetName" type="text" class="form-control" placeholder="Name"/>
+
+                <label for="headingText">Text</label>
+                <input id ="headingText" type="text" class="form-control" placeholder="Text"/>
+
+                <label for="url">URL</label>
+                <input id ="url" type="text" class="form-control" placeholder="URL"/>
+
+                <label for="imageWidth">Width</label>
+                <select id ="imageWidth" class="form-control" >
+                    <option value="10">10%</option>
+                    <option value="22">20%</option>
+                    <option value="30">30%</option>
+                    <option value="40">40%</option>
+                    <option value="50">50%</option>
+                    <option value="60">60%</option>
+                    <option value="70">70%</option>
+                    <option value="80">80%</option>
+                    <option value="90">90%</option>
+                    <option value="100" selected="true">100%</option>
+                </select>
+
+                <label for="uploadFile">Upload</label>
+                <input type="file" id="uploadFile" class="form-control" style="background-color: #fcf8e3">
+            </form>
+
+            <a class="btn btn-primary btn-block"
+               href="#">
+                Upload Image</a>
+            <a class="btn btn-danger btn-block"
+               href="widget-chooser.html">
+                Delete</a>
+        </div>
+    </div>
+</div>
+
+
+<nav class="navbar navbar-default navbar-fixed-bottom">
+    <div class="row container-fluid">
+        <div class="col-xs-12">
+            <div class="navbar-text pull-right">
+                <a href="../views/users/profile.html" class="navbar-link">
+                    <span class="glyphicon glyphicon-user"></span>
+                </a>
+            </div>
+        </div>
+    </div>
+</nav>
+</body>
+</html>

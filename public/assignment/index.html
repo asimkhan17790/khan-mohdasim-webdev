@@ -1,10 +1,40 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" ng-app="WebAppMaker">
 <head>
     <meta charset="UTF-8">
-    <title>Assignment Home Page</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+    <title>Assignment Index Page</title> <!-- Need to check how t dynamically add title-->
+    <link href="../bootstrap/css/bootstrap.css" rel="stylesheet">
+    <link href="css/style.css" rel="stylesheet"/>
+    <script src="../bootstrap/js/angular.js"></script>
+    <script src="../bootstrap/js/angular-route.js"></script>
+    <!--<script src="app.js"></script>-->
+    <script src="config.js"></script>
+    <!-- User Controllers-->
+    <script src="views/users/controllers/login.controller.client.js"></script>
+    <script src="views/users/controllers/register.controller.client.js"></script>
+    <script src="views/users/controllers/profile.controller.client.js"></script>
+    <!-- Website  Controllers-->
+    <script src="views/websites/controllers/websiteedit.controller.client.js"></script>
+    <script src="views/websites/controllers/websitenew.controller.client.js"></script>
+    <script src="views/websites/controllers/websitelist.controller.client.js"></script>
+
+    <!-- Page Controllers -->
+    <script src="views/pages/controllers/pageedit.controller.client.js"></script>
+    <script src="views/pages/controllers/pagenew.controller.client.js"></script>
+    <script src="views/pages/controllers/pagelist.controller.client.js"></script>
+
+    <!-- Widget Controllers TODO -->
+
+    <!-- Services -->
+    <script src="services/page.service.client.js"></script>
+    <script src="services/user.service.client.js"></script>
+    <script src="services/website.service.client.js"></script>
+    <script src="services/widget.service.client.js"></script>
 </head>
 <body>
-    <h1>Assignment Home Page</h1>
+    <div ng-view>
+
+    </div>
 </body>
 </html>

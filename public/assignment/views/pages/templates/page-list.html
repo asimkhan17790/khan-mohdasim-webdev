@@ -1,54 +1,68 @@
 <!DOCTYPE html>
-<html lang="en" ng-app="WidgetApp">
+<html lang="en" ng-app="PageListApp">
 <head>
 
     <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet"/>
     <!--<link href="../../bootstrap/css/bootstrap.css" rel="stylesheet"/>-->
     <link href="../css/style.css" rel="stylesheet"/>
     <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.7/angular.min.js"></script>
-    <script src="./js/widget-app.js"></script>
+    <script src="../js/pagelist-app.js"></script>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
-    <title>Choose Widget</title>
+    <title>Pages List</title>
 </head>
 <body>
 <nav class="navbar navbar-default navbar-fixed-top">
     <div class="container-fluid">
         <div class="navbar-text pull-left">
-            <a href="../widgets/widget-list.html" class="navbar-link">
+            <a href="../../websites/templates/website-list.view.client.html" class="navbar-link">
                   <span class="glyphicon glyphicon-chevron-left">
                   </span>
             </a>
         </div>
+
+        <div class="navbar-text pull-right">
+            <a href="page-new.html" class="navbar-link">
+                  <span class="glyphicon glyphicon-plus">
+                  </span>
+            </a>
+        </div>
+
         <div class="">
             <div class="navbar-header">
                 <a class="navbar-brand" href="#">
-                    Choose Widget
+                    Pages
                 </a>
             </div>
         </div>
     </div>
 </nav>
 
-<div class="container-fluid" ng-controller="WidgetChooserController">
+
+<div class="container-fluid" ng-controller="PageListController">
     <ul class="list-group">
-        <li ng-repeat="widget in widgetList" class="list-group-item">
+        <li ng-repeat="page in pageList" class="list-group-item">
 
             <div class="">
-                <a class="" ng-href="{{widget.route}}">
-                    {{widget.name}}
+                <a class="" href="../../widgets/templates/widget-list.html">
+                    {{page.name}}
                 </a>
 
+                <a class="pull-right" href="page-edit.html">
+                  <span class="glyphicon glyphicon-cog">
+                  </span>
+                </a>
             </div>
         </li>
     </ul>
 </div>
 
+
 <nav class="navbar navbar-default navbar-fixed-bottom">
     <div class="row container-fluid">
         <div class="col-xs-12">
             <div class="navbar-text pull-right">
-                <a href="../users/profile.html" class="navbar-link" data-toggle="tooltip" data-placement="left" title="Profile">
+                <a href="../views/users/profile.html" class="navbar-link">
                   <span class="glyphicon glyphicon-user">
                   </span>
                 </a>

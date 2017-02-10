@@ -6,7 +6,7 @@
     <!--<link href="../../bootstrap/css/bootstrap.css" rel="stylesheet"/>-->
     <link href="../css/style.css" rel="stylesheet"/>
     <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.7/angular.min.js"></script>
-    <script src="./js/weblist-app.js"></script>
+    <script src="../js/weblist-app.js"></script>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
     <title>Website List</title>
@@ -15,14 +15,14 @@
 <nav class="navbar navbar-default navbar-fixed-top">
     <div class="container-fluid">
             <div class="navbar-text pull-left">
-                <a href="../users/profile.html" class="navbar-link">
+                <a href="../views/users/profile.html" class="navbar-link">
                   <span class="glyphicon glyphicon-chevron-left">
                   </span>
                 </a>
             </div>
 
             <div class="navbar-text pull-right">
-                <a href="website-new.html" class="navbar-link">
+                <a href="website-new.view.client.html" class="navbar-link">
                   <span class="glyphicon glyphicon-plus">
                   </span>
                 </a>
@@ -44,11 +44,11 @@
     <li ng-repeat="website in websiteList" class="list-group-item">
 
         <div class="">
-        <a class="" href="../pages/page-list.html">
+        <a class="" href="../../pages/templates/page-list.html">
             {{website.name}}
         </a>
 
-        <a class="pull-right" href="website-edit.html">
+        <a class="pull-right" href="website-edit.view.client.html">
                   <span class="glyphicon glyphicon-cog">
                   </span>
         </a>
@@ -61,7 +61,7 @@
     <div class="row container-fluid">
         <div class="col-xs-12">
             <div class="navbar-text pull-right">
-                <a href="../users/profile.html" class="navbar-link">
+                <a href="../views/users/profile.html" class="navbar-link">
                   <span class="glyphicon glyphicon-user">
                   </span>
                 </a>

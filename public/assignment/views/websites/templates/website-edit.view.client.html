@@ -1,17 +1,14 @@
 <!DOCTYPE html>
-<html lang="en" ng-app="WidgetApp">
+<html lang="en" ng-app="WebsiteListApp">
 <head>
     <meta charset="UTF-8">
     <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet"/>
     <!--<link href="../../bootstrap/css/bootstrap.css" rel="stylesheet"/>-->
     <link href="../css/style.css" rel="stylesheet"/>
     <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.7/angular.min.js"></script>
-    <script src="./js/widget-app.js"></script>
-    <title>Widget Header</title>
+    <script src="../js/weblist-app.js"></script>
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
-    <style>
-
-    </style>
+    <title>Edit Website</title>
 </head>
 <body>
 
@@ -19,17 +16,17 @@
     <div class="row container-fluid">
         <div class="col-sm-4 col-xs-2">
             <div class="navbar-text pull-left">
-                <a href="widget-chooser.html" class="navbar-link">
+                <a href="website-list.view.client.html" class="navbar-link">
                     <span class="glyphicon glyphicon-chevron-left"></span>
                 </a>
             </div>
-            <!--<div class="navbar-text pull-right">
-                <a href="website-new.html" class="navbar-link">
-                    <span class="glyphicon glyphicon-ok"></span>
+            <div class="navbar-text pull-right hidden-xs">
+                <a href="website-new.view.client.html" class="navbar-link">
+                    <span class="glyphicon glyphicon-plus"></span>
                 </a>
-            </div>-->
+            </div>
             <div class="navbar-header hidden-xs">
-                <a class="navbar-brand">Choose Widget</a>
+                <a class="navbar-brand">Websites</a>
             </div>
         </div>
         <div class="col-sm-8 col-xs-10">
@@ -37,12 +34,12 @@
             <div class="row">
                 <div class="col-xs-8">
                     <div class="navbar-header">
-                        <a class="navbar-brand no-left-padding">Widget Edit</a>
+                        <a class="navbar-brand no-left-padding">Edit Website</a>
                     </div>
                 </div>
                 <div class="col-xs-4">
                     <div class="navbar-text pull-right">
-                        <a href="widget-chooser.html" class="navbar-link">
+                        <a href="website-list.view.client.html" class="navbar-link">
                             <span class="glyphicon glyphicon-ok"></span>
                         </a>
                     </div>
@@ -52,42 +49,37 @@
     </div>
 </nav>
 
+
 <div class="container-fluid">
     <div class="row">
-        <div class="col-sm-4 hidden-xs wbdv-left-pane" ng-controller="WidgetChooserController">
-
+        <div class="col-sm-4 hidden-xs wbdv-left-pane" ng-controller="WebsiteListController">
+            <div class="">
                 <ul class="list-group">
-                    <li ng-repeat="widget in widgetList" class="list-group-item">
+                    <li ng-repeat="website in websiteList" class="list-group-item">
 
                         <div class="">
-                            <a class="" ng-href="{{widget.route}}">
-                                {{widget.name}}
+                            <a class="" href="../../pages/templates/page-list.html">
+                                {{website.name}}
                             </a>
 
+                            <a class="pull-right" href="website-edit.view.client.html">
+                  <span class="glyphicon glyphicon-cog">
+                  </span>
+                            </a>
                         </div>
                     </li>
                 </ul>
-
+            </div>
         </div>
         <div class="col-sm-8 col-xs-12 wbdv-right-pane">
-            <form>
-                <label for="widgetName">Name</label>
-                <input id ="widgetName" type="text" class="form-control" placeholder="Name"/>
+            <label for="websiteName">Website Name</label>
+            <input id ="websiteName" type="text" class="form-control" placeholder="Name" value="Football News!"/>
 
-                <label for="headingText">Text</label>
-                <input id ="headingText" type="text" class="form-control" placeholder="Text"/>
-                <label for="headingSize">Size</label>
-                <select id ="headingSize" class="form-control">
-                    <option value="1">1</option>
-                    <option value="2">2</option>
-                    <option value="3">3</option>
-                    <option value="4">4</option>
-                    <option value="5">5</option>
-                    <option value="6">6</option>
-                </select>
-            </form>
+            <label for="webDescription">Website Description</label>
+            <textarea id="webDescription" rows="5" class="form-control" placeholder="Description">A website where all the news of the football world is available.</textarea>
+
             <a class="btn btn-danger btn-block"
-               href="widget-chooser.html">
+                       href="website-list.view.client.html">
                 Delete</a>
         </div>
     </div>
@@ -95,10 +87,11 @@
 
 
 <nav class="navbar navbar-default navbar-fixed-bottom">
+
     <div class="row container-fluid">
         <div class="col-xs-12">
             <div class="navbar-text pull-right">
-                <a href="../users/profile.html" class="navbar-link">
+                <a href="../views/users/profile.html" class="navbar-link">
                     <span class="glyphicon glyphicon-user"></span>
                 </a>
             </div>
