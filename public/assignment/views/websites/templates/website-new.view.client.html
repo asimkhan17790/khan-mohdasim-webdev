@@ -1,28 +1,14 @@
-<!DOCTYPE html>
-<html lang="en" ng-app="WebsiteListApp">
-<head>
-    <meta charset="UTF-8">
-    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet"/>
-    <!--<link href="../../bootstrap/css/bootstrap.css" rel="stylesheet"/>-->
-    <link href="../css/style.css" rel="stylesheet"/>
-    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.7/angular.min.js"></script>
-    <script src="../js/weblist-app.js"></script>
-    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
-    <title>Create New Website</title>
-</head>
-<body>
-
 <nav class="navbar navbar-default navbar-fixed-top">
         <div class="row container-fluid">
             <div class="col-sm-4 col-xs-2">
                 <div class="navbar-text pull-left">
-                    <a href="website-list.view.client.html" class="navbar-link">
+                    <a href="#/user/{{model.userId}}/website" class="navbar-link">
                         <span class="glyphicon glyphicon-chevron-left"></span>
                     </a>
                 </div>
 
                 <div class="navbar-text pull-right hidden-xs">
-                    <a href="website-new.view.client.html" class="navbar-link">
+                    <a href="#/user/{{model.userId}}/website/new" class="navbar-link">
                         <span class="glyphicon glyphicon-plus"></span>
                     </a>
                 </div>
@@ -33,19 +19,14 @@
             </div>
             <div class="col-sm-8 col-xs-10">
                 <div class="row">
-                    <!--<div class="navbar-text pull-left visible-xs col-xs-1">
-                        <a href="website-list.view.client.html" class="navbar-link">
-                            <span class="glyphicon glyphicon-chevron-left"></span>
-                        </a>
-                    </div>-->
-                    <div class="col-xs-8">
+                   <div class="col-xs-8">
                         <div class="navbar-header">
                             <a class="navbar-brand no-left-padding">New Website</a>
                         </div>
                     </div>
                     <div class="col-xs-4">
                         <div class="navbar-text pull-right">
-                            <a href="website-list.view.client.html" class="navbar-link">
+                            <a ng-click="model.createWebsite(website)" class="navbar-link">
                                 <span class="glyphicon glyphicon-ok"></span>
                             </a>
                         </div>
@@ -56,21 +37,19 @@
         </div>
 </nav>
 
-
 <div class="row container-fluid">
-        <div class="col-sm-4 hidden-xs wbdv-left-pane"
-             ng-controller="WebsiteListController">
+        <div class="col-sm-4 hidden-xs wbdv-left-pane">
                 <ul class="list-group">
-                    <li ng-repeat="website in websiteList"
+                    <li ng-repeat="website in model.websites"
                         class="list-group-item">
 
                         <div class="">
-                            <a class="" href="../../pages/templates/page-list.html">
+                            <a class="" href="#/user/{{model.userId}}/website/{{website._id}}/page">
                                 {{website.name}}
                             </a>
 
                             <a class="pull-right"
-                               href="website-edit.view.client.html">
+                               href="#/user/{{model.userId}}/website/{{website._id}}">
                                   <span class="glyphicon glyphicon-cog">
                                   </span>
                             </a>
@@ -80,23 +59,23 @@
         </div>
         <div class="col-sm-8 col-xs-12 wbdv-right-pane">
             <form>
-
+                <div ng-show="model.error" class="alert alert-danger webdev-component-shift-down" role="alert">
+                    {{model.error}}
+                </div>
                 <label for="websiteName">Name</label>
                 <input id ="websiteName"
                        type="text"
                        class="form-control"
-                       placeholder="Name"/>
+                       placeholder="Name"
+                       ng-model="website.name"/>
                 <label for="webDescription">Description</label>
                 <textarea id="webDescription"
                           rows="5"
                           class="form-control"
-                          placeholder="Description">
-
+                          placeholder="Description"
+                          ng-model="website.description">
                 </textarea>
-
             </form>
-
-
         </div>
 
 </div>
@@ -104,7 +83,7 @@
     <div class="row container-fluid">
       <div class="col-xs-12">
             <div class="navbar-text pull-right">
-                <a href="../views/users/profile.html" class="navbar-link">
+                <a href="#/user/{{model.userId}}" class="navbar-link">
                     <span class="glyphicon glyphicon-user">
                     </span>
                 </a>
@@ -112,5 +91,3 @@
         </div>
     </div>
 </nav>
-</body>
-</html>

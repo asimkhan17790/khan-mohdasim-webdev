@@ -1,26 +1,26 @@
 <nav class="navbar navbar-default navbar-fixed-top">
     <div class="container-fluid">
-            <div class="navbar-text pull-left">
-                <a href="#/user/{{model.userId}}" class="navbar-link">
+        <div class="navbar-text pull-left">
+            <a href="#/user/{{model.userId}}/website" class="navbar-link">
                   <span class="glyphicon glyphicon-chevron-left">
                   </span>
-                </a>
-            </div>
+            </a>
+        </div>
 
-            <div class="navbar-text pull-right">
-                <a href="#/user/{{model.userId}}/website/new" class="navbar-link">
+        <div class="navbar-text pull-right">
+            <a href="#/user/{{model.userId}}/website/{{model.websiteId}}/page/new" class="navbar-link">
                   <span class="glyphicon glyphicon-plus">
                   </span>
+            </a>
+        </div>
+
+        <div class="">
+            <div class="navbar-header">
+                <a class="navbar-brand" href="$route.reload()">
+                    Pages
                 </a>
             </div>
-
-            <div class="">
-                <div class="navbar-header">
-                    <a class="navbar-brand" href="#"><!-- todo -->
-                        Websites
-                    </a>
-                </div>
-            </div>
+        </div>
     </div>
 </nav>
 
@@ -30,21 +30,22 @@
         {{model.error}}
     </div>
     <ul class="list-group">
-    <li ng-repeat="website in model.websites" class="list-group-item">
+        <li ng-repeat="page in model.pages" class="list-group-item">
 
-        <div class="">
-        <a class="" href="#/user/{{model.userId}}/website/{{website._id}}/page">
-            {{website.name}}
-        </a>
+            <div class="">
+                <a class="" href="../../widgets/templates/widget-list.html"><!--todo -->
+                    {{page.name}}
+                </a>
 
-        <a class="pull-right" href="#/user/{{model.userId}}/website/{{website._id}}">
+                <a class="pull-right" href="#/user/{{model.userId}}/website/{{model.websiteId}}/page/{{page._id}}">
                   <span class="glyphicon glyphicon-cog">
                   </span>
-        </a>
-        </div>
-    </li>
+                </a>
+            </div>
+        </li>
     </ul>
 </div>
+
 
 <nav class="navbar navbar-default navbar-fixed-bottom">
     <div class="row container-fluid">

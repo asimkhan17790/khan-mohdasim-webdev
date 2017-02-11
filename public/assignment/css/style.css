@@ -4,7 +4,6 @@ input.form-control, select.form-control, textarea.form-control {
 btn {
     margin-bottom: 5px;
 }
-
 .navbar-default {
     background-color: #337ab7;
 }
@@ -31,6 +30,10 @@ body {
 }
 .no-left-margin{
     margin-left: 0px;
+}
+
+.webdev-component-shift-down {
+    margin-top: 10px;
 }
 
 .wbdv-left-pane {

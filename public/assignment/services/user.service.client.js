@@ -32,7 +32,7 @@
             // checking for existing user name
 
                 var userExists = users.find(function (element) {
-                    if (element._id === uniqueId) {
+                    if (element.username === user.username) {
                         //return element;
                         return angular.copy(element);
                     }});
@@ -74,7 +74,7 @@
                     return angular.copy(element);
                 }});
 
-            return userFound;
+            return angular.copy(userFound);
         }
         function findUserByUserName(username) {
             var userFound = users.find(function (element) {
@@ -83,7 +83,7 @@
                     return angular.copy(element);
                 }});
 
-            return userFound;
+            return angular.copy(userFound);
         }
         function findUserByCredentials(username,password) {
            var userFound = users.find(function (element) {
@@ -94,16 +94,17 @@
                }
            });
 
-            return userFound;
+            return angular.copy(userFound);
 
         }
-        function updateUser(userId, user) {
+        function updateUser(userId, newUser) {
             for(var u in users) {
                 var user = users[u];
                 if( user._id === userId ) {
                     users[u].firstName = newUser.firstName;
                     users[u].lastName = newUser.lastName;
-                    return user;
+                    users[u].email = newUser.email;
+                    return angular.copy(user);
                 }
             }
             return null;

@@ -1,28 +1,14 @@
-<!DOCTYPE html>
-<html lang="en" ng-app="PageListApp">
-<head>
-    <meta charset="UTF-8">
-    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet"/>
-    <!--<link href="../../bootstrap/css/bootstrap.css" rel="stylesheet"/>-->
-    <link href="../css/style.css" rel="stylesheet"/>
-    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.7/angular.min.js"></script>
-    <script src="../js/pagelist-app.js"></script>
-    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
-    <title>Create New Page</title>
-</head>
-<body>
-
 <nav class="navbar navbar-default navbar-fixed-top">
     <div class="row container-fluid">
         <div class="col-xs-2 col-sm-4">
             <div class="navbar-text pull-left">
-                <a href="page-list.html" class="navbar-link">
+                <a href="page-list.view.client.html" class="navbar-link">
                     <span class="glyphicon glyphicon-chevron-left"></span>
                 </a>
             </div>
 
             <div class="navbar-text pull-right hidden-xs">
-                <a href="page-new.html" class="navbar-link">
+                <a href="#/user/{{model.userId}}/website/{{model.websiteId}}/page/new" class="navbar-link">
                     <span class="glyphicon glyphicon-plus"></span>
                 </a>
             </div>
@@ -40,7 +26,7 @@
                 </div>
                 <div class="col-xs-4">
                     <div class="navbar-text pull-right">
-                        <a href="page-list.html" class="navbar-link">
+                        <a href="page-list.view.client.html" class="navbar-link">
                             <span class="glyphicon glyphicon-ok"></span>
                         </a>
                     </div>
@@ -64,7 +50,7 @@
                     </a>
 
                     <a class="pull-right"
-                       href="page-edit.html">
+                       href="page-edit.view.client.html">
                                   <span class="glyphicon glyphicon-cog">
                                   </span>
                     </a>
@@ -99,5 +85,3 @@
         </div>
     </div>
 </nav>
-</body>
-</html>

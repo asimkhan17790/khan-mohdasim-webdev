@@ -1,7 +1,7 @@
 (function() {
 
     angular
-        .module("WebAppMaker",["ngRoute"])
+        .module("WebAppMaker")
         .config(configuration);
     function configuration($routeProvider, $locationProvider) {
         $routeProvider
@@ -25,49 +25,55 @@
                 controller:"RegisterController",
                 controllerAs:"model"
             })
+            //website
             .when("/user/:uid/website", {
                 templateUrl:"views/websites/templates/website-list.view.client.html",
                 controller:"WebsiteListController",
                 controllerAs:"model"
             })
+            //new website
             .when("/user/:uid/website/new", {
                 templateUrl:"views/websites/templates/website-new.view.client.html",
-                controller:"WebsiteListController",
+                controller:"WebsiteNewController",
                 controllerAs:"model"
             })
-            //todo
+
             .when("/user/:uid/website/:wid", {
                 templateUrl:"views/websites/templates/website-edit.view.client.html",
-                controller:"WebsiteListController",
+                controller:"WebsiteEditController",
                 controllerAs:"model"
             })
+            // Pages
             .when("/user/:uid/website/:wid/page", {
-                templateUrl:"views/websites/templates/page-list.view.client.html",
-                controller:"WebsiteListController",
+                templateUrl:"views/pages/templates/page-list.view.client.html",
+                controller:"PageListController",
                 controllerAs:"model"
             })
+            // new Page
             .when("/user/:uid/website/:wid/page/new", {
-                templateUrl:"views/websites/templates/page-new.view.client.html",
-                controller:"WebsiteListController",
+                templateUrl:"views/pages/templates/page-new.view.client.html",
+                controller:"PageNewController",
                 controllerAs:"model"
             })
+            // Edit Page
             .when("/user/:uid/website/:wid/:pid", {
-                templateUrl:"views/websites/templates/page-edit.view.client.html",
-                controller:"WebsiteListController",
+                templateUrl:"views/pages/templates/page-edit.view.client.html",
+                controller:"PageEditController",
                 controllerAs:"model"
             })
+            // Widgets
             .when("/user/:uid/website/:wid/page/:pid/widget", {
-                templateUrl:"views/websites/templates/widget-list.view.client.html",
+                templateUrl:"views/widgets/templates/widget-list.view.client.html",
                 controller:"WebsiteListController",
                 controllerAs:"model"
             })
             .when("/user/:uid/website/:wid/page/:pid/widget/new", {
-                templateUrl:"views/websites/templates/widget-chooser.view.client.html",
+                templateUrl:"views/widgets/templates/widget-chooser.view.client.html",
                 controller:"WebsiteListController",
                 controllerAs:"model"
             })
             .when("/user/:uid/website/:wid/page/:pid/widget/:wgid", {
-                templateUrl:"views/websites/templates/widget-edit.view.client.html",
+                templateUrl:"views/widgets/templates/widget-edit.view.client.html",
                 controller:"WebsiteListController",
                 controllerAs:"model"
             })
