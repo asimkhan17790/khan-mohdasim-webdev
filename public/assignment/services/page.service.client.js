@@ -30,7 +30,7 @@
         function createPage (websiteId,page) {
 
             var response ={};
-            // checking for existing website name
+            // checking for existing page name
 
             var pageExists = pages.find(function (element) {
                 if (element.name === page.name) {
@@ -44,22 +44,8 @@
             }
 
             //generating unique id
-            var uniqueId = new Date().getMilliseconds() +""+ Math.floor(Math.random()*100);
-            while(true) {
-                var pageFound = websites.find(function (element) {
-                    if (element._id === uniqueId) {
-                        //return element;
-                        return angular.copy(element);
-                    }});
-                if (pageFound) {
-                    uniqueId = new Date().getMilliseconds() +""+ Math.floor(Math.random()*100);
-                    continue;
-                }
-                else {
-                    break;
-                }
-            }
-            page._id = uniqueId;
+            var uniqueId = (new Date()).getTime();
+            page._id = uniqueId.toString();
             page.websiteId = websiteId;
             pages.push(page);
             response.status = "OK";
@@ -79,11 +65,10 @@
         }
         function findPageById (pageId) {
             var pageFound = pages.find(function (element) {
-                if (element._id === websiteId) {
-                    //return element;
+                if (element._id === pageId) {
                     return angular.copy(element);
                 }});
-            return angular.copy(websiteFound);
+            return pageFound;
         }
         function updatePage(pageId, newPage){
             for(var w in pages) {
@@ -100,7 +85,7 @@
             for(var p in pages) {
                 var page = pages[p];
                 if(page._id === pageId) {
-                    pages.splice(w,1);
+                    pages.splice(p,1);
                     return "OK";
                 }
             }

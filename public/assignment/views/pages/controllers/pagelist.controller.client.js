@@ -16,7 +16,7 @@
                 vm.error = "Unable to load Pages";
             }
             else if (vm.pages.length == 0) {
-                vm.error = "No websites to show";
+                vm.error = "No Page to show";
             }
 
         }

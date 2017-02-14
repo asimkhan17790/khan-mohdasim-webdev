@@ -1,0 +1,217 @@
+warning: LF will be replaced by CRLF in public/js/angular.js.
+The file will have its original line endings in your working directory.
+[1mdiff --git a/package.json b/package.json[m
+[1mindex ac6f7c7..25442bf 100644[m
+[1m--- a/package.json[m
+[1m+++ b/package.json[m
+[36m@@ -4,6 +4,7 @@[m
+   "description": "Web Dev at Northeastern University",[m
+   "main": "server.js",[m
+   "dependencies": {[m
+[32m+[m[32m    "angucomplete-alt": "^3.0.0",[m
+     "angular-route": "^1.5.0",[m
+     "body-parser": "^1.15.1",[m
+     "express": "^4.13.4",[m
+[1mdiff --git a/public/assignment/index.html b/public/assignment/index.html[m
+[1mindex 12c7059..7fd52c1 100644[m
+[1m--- a/public/assignment/index.html[m
+[1m+++ b/public/assignment/index.html[m
+[36m@@ -4,10 +4,10 @@[m
+     <meta charset="UTF-8">[m
+     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">[m
+     <title>Assignment Index Page</title> <!-- Need to check how t dynamically add title-->[m
+[31m-    <link href="../bootstrap/css/bootstrap.css" rel="stylesheet">[m
+[32m+[m[32m    <link href="../libraries/css/bootstrap.css" rel="stylesheet">[m
+     <link href="css/style.css" rel="stylesheet"/>[m
+[31m-    <script src="../bootstrap/js/angular.js"></script>[m
+[31m-    <script src="../bootstrap/js/angular-route.js"></script>[m
+[32m+[m[32m    <script src="../libraries/js/angular.js"></script>[m
+[32m+[m[32m    <script src="../libraries/js/angular-route.js"></script>[m
+     <script src="app.js"></script>[m
+     <script src="config.js"></script>[m
+     <!-- User Controllers-->[m
+[1mdiff --git a/public/assignment/views/websites/controllers/websiteedit.controller.client.js b/public/assignment/views/websites/controllers/websiteedit.controller.client.js[m
+[1mindex acce487..cd8e2e8 100644[m
+[1m--- a/public/assignment/views/websites/controllers/websiteedit.controller.client.js[m
+[1m+++ b/public/assignment/views/websites/controllers/websiteedit.controller.client.js[m
+[36m@@ -49,9 +49,6 @@[m
+             else  {[m
+                 vm.error = "Please specify a name to the website";[m
+             }[m
+[31m-[m
+[31m-[m
+[31m-[m
+         }[m
+ [m
+     }[m
+[1mdiff --git a/public/assignment/views/widgets/templates/widget-chooser.html b/public/assignment/views/widgets/templates/widget-chooser.html[m
+[1mindex 0b5fd79..2351b27 100644[m
+[1m--- a/public/assignment/views/widgets/templates/widget-chooser.html[m
+[1m+++ b/public/assignment/views/widgets/templates/widget-chooser.html[m
+[36m@@ -3,7 +3,7 @@[m
+ <head>[m
+ [m
+     <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet"/>[m
+[31m-    <!--<link href="../../bootstrap/css/bootstrap.css" rel="stylesheet"/>-->[m
+[32m+[m[32m    <!--<link href="../../libraries/css/libraries.css" rel="stylesheet"/>-->[m
+     <link href="../css/style.css" rel="stylesheet"/>[m
+     <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.7/angular.min.js"></script>[m
+     <script src="../js/widget-app.js"></script>[m
+[1mdiff --git a/public/assignment/views/widgets/templates/widget-heading.html b/public/assignment/views/widgets/templates/widget-heading.html[m
+[1mindex 55b375a..9959e4d 100644[m
+[1m--- a/public/assignment/views/widgets/templates/widget-heading.html[m
+[1m+++ b/public/assignment/views/widgets/templates/widget-heading.html[m
+[36m@@ -3,7 +3,7 @@[m
+ <head>[m
+     <meta charset="UTF-8">[m
+     <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet"/>[m
+[31m-    <!--<link href="../../bootstrap/css/bootstrap.css" rel="stylesheet"/>-->[m
+[32m+[m[32m    <!--<link href="../../libraries/css/libraries.css" rel="stylesheet"/>-->[m
+     <link href="../css/style.css" rel="stylesheet"/>[m
+     <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.7/angular.min.js"></script>[m
+     <script src="../js/widget-app.js"></script>[m
+[1mdiff --git a/public/assignment/views/widgets/templates/widget-image.html b/public/assignment/views/widgets/templates/widget-image.html[m
+[1mindex c4c9f02..c5fa938 100644[m
+[1m--- a/public/assignment/views/widgets/templates/widget-image.html[m
+[1m+++ b/public/assignment/views/widgets/templates/widget-image.html[m
+[36m@@ -3,7 +3,7 @@[m
+ <head>[m
+     <meta charset="UTF-8">[m
+     <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet"/>[m
+[31m-    <!--<link href="../../bootstrap/css/bootstrap.css" rel="stylesheet"/>-->[m
+[32m+[m[32m    <!--<link href="../../libraries/css/libraries.css" rel="stylesheet"/>-->[m
+     <link href="../css/style.css" rel="stylesheet"/>[m
+     <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.7/angular.min.js"></script>[m
+     <script src="../js/widget-app.js"></script>[m
+[1mdiff --git a/public/assignment/views/widgets/templates/widget-list.html b/public/assignment/views/widgets/templates/widget-list.html[m
+[1mindex fc1eab4..293ebb9 100644[m
+[1m--- a/public/assignment/views/widgets/templates/widget-list.html[m
+[1m+++ b/public/assignment/views/widgets/templates/widget-list.html[m
+[36m@@ -3,7 +3,7 @@[m
+ <head>[m
+ [m
+     <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet"/>[m
+[31m-    <!--<link href="../../bootstrap/css/bootstrap.css" rel="stylesheet"/>-->[m
+[32m+[m[32m    <!--<link href="../../libraries/css/libraries.css" rel="stylesheet"/>-->[m
+     <link href="../css/style.css" rel="stylesheet"/>[m
+     <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.7/angular.min.js"></script>[m
+     <script src="./js/weblist-app.js"></script>[m
+[1mdiff --git a/public/assignment/views/widgets/templates/widget-youtube.html b/public/assignment/views/widgets/templates/widget-youtube.html[m
+[1mindex b237ee0..bb94f2f 100644[m
+[1m--- a/public/assignment/views/widgets/templates/widget-youtube.html[m
+[1m+++ b/public/assignment/views/widgets/templates/widget-youtube.html[m
+[36m@@ -4,7 +4,7 @@[m
+     <meta charset="UTF-8">[m
+     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">[m
+     <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet"/>[m
+[31m-    <!--<link href="../../bootstrap/css/bootstrap.css" rel="stylesheet"/>-->[m
+[32m+[m[32m    <!--<link href="../../libraries/css/libraries.css" rel="stylesheet"/>-->[m
+     <link href="../css/style.css" rel="stylesheet"/>[m
+     <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.7/angular.min.js"></script>[m
+     <script src="../js/widget-app.js"></script>[m
+[1mdiff --git a/public/js/angular.js b/public/js/angular.js[m
+[1mindex 0f3f385..d2a9b7b 100644[m
+[1m--- a/public/js/angular.js[m
+[1m+++ b/public/js/angular.js[m
+[36m@@ -146,7 +146,7 @@[m [mfunction minErr(module, ErrorConstructor) {[m
+   encodeUriSegment,[m
+   encodeUriQuery,[m
+   angularInit,[m
+[31m-  bootstrap,[m
+[32m+[m[32m  libraries,[m
+   getTestability,[m
+   snake_case,[m
+   bindJQuery,[m
+[36m@@ -1736,7 +1736,7 @@[m [mfunction angularInit(element, bootstrap) {[m
+   });[m
+   if (appElement) {[m
+     if (!isAutoBootstrapAllowed) {[m
+[31m-      window.console.error('Angular: disabling automatic bootstrap. <script> protocol indicates ' +[m
+[32m+[m[32m      window.console.error('Angular: disabling automatic libraries. <script> protocol indicates ' +[m
+           'an extension, document.location.href does not match.');[m
+       return;[m
+     }[m
+[36m@@ -1760,12 +1760,12 @@[m [mfunction angularInit(element, bootstrap) {[m
+  * multiple instances of Angular try to work on the DOM.[m
+  *[m
+  * <div class="alert alert-warning">[m
+[31m- * **Note:** Protractor based end-to-end tests cannot use this function to bootstrap manually.[m
+[32m+[m[32m * **Note:** Protractor based end-to-end tests cannot use this function to libraries manually.[m
+  * They must use {@link ng.directive:ngApp ngApp}.[m
+  * </div>[m
+  *[m
+  * <div class="alert alert-warning">[m
+[31m- * **Note:** Do not bootstrap the app on an element with a directive that uses {@link ng.$compile#transclusion transclusion},[m
+[32m+[m[32m * **Note:** Do not libraries the app on an element with a directive that uses {@link ng.$compile#transclusion transclusion},[m
+  * such as {@link ng.ngIf `ngIf`}, {@link ng.ngInclude `ngInclude`} and {@link ngRoute.ngView `ngView`}.[m
+  * Doing this misplaces the app {@link ng.$rootElement `$rootElement`} and the app's {@link auto.$injector injector},[m
+  * causing animations to stop working and making the injector inaccessible from outside the app.[m
+[36m@@ -1785,7 +1785,7 @@[m [mfunction angularInit(element, bootstrap) {[m
+  *   .controller('WelcomeController', function($scope) {[m
+  *       $scope.greeting = 'Welcome!';[m
+  *   });[m
+[31m- *   angular.bootstrap(document, ['demo']);[m
+[32m+[m[32m *   angular.libraries(document, ['demo']);[m
+  * </script>[m
+  * </body>[m
+  * </html>[m
+[36m@@ -2109,7 +2109,7 @@[m [mfunction setupModuleLoader(window) {[m
+ [m
+   var angular = ensure(window, 'angular', Object);[m
+ [m
+[31m-  // We need to expose `angular.$$minErr` to modules such as `ngResource` that reference it during bootstrap[m
+[32m+[m[32m  // We need to expose `angular.$$minErr` to modules such as `ngResource` that reference it during libraries[m
+   angular.$$minErr = angular.$$minErr || minErr;[m
+ [m
+   return ensure(angular, 'module', function() {[m
+[36m@@ -5382,7 +5382,7 @@[m [mvar $AnimateProvider = ['$provide', /** @this */ function($provide) {[m
+    *[m
+    * @description[m
+    * Sets and/or returns the CSS class regular expression that is checked when performing[m
+[31m-   * an animation. Upon bootstrap the classNameFilter value is not set at all and will[m
+[32m+[m[32m   * an animation. Upon libraries the classNameFilter value is not set at all and will[m
+    * therefore enable $animate to attempt to perform an animation on any element that is triggered.[m
+    * When setting the `classNameFilter` value, animations will only be performed on elements[m
+    * that successfully match the filter expression. This in turn can boost performance[m
+[36m@@ -11184,7 +11184,7 @@[m [mfunction $HttpProvider() {[m
+    * Configure $http service to combine processing of multiple http responses received at around[m
+    * the same time via {@link ng.$rootScope.Scope#$applyAsync $rootScope.$applyAsync}. This can result in[m
+    * significant performance improvement for bigger applications that make many HTTP requests[m
+[31m-   * concurrently (common during application bootstrap).[m
+[32m+[m[32m   * concurrently (common during application libraries).[m
+    *[m
+    * Defaults to false. If no value is specified, returns the current configured value.[m
+    *[m
+[36m@@ -18398,7 +18398,7 @@[m [mfunction $RootScopeProvider() {[m
+  */[m
+ [m
+ [m
+[31m-// the implementation is in angular.bootstrap[m
+[32m+[m[32m// the implementation is in angular.libraries[m
+ [m
+ /**[m
+  * @this[m
+[36m@@ -26677,7 +26677,7 @@[m [mvar ngControllerDirective = [function() {[m
+   */[m
+ [m
+ // `ngCsp` is not implemented as a proper directive any more, because we need it be processed while[m
+[31m-// we bootstrap the app (before `$parse` is instantiated). For this reason, we just have the `csp()`[m
+[32m+[m[32m// we libraries the app (before `$parse` is instantiated). For this reason, we just have the `csp()`[m
+ // fn that looks for the `ng-csp` attribute anywhere in the current doc.[m
+ [m
+ /**[m
+[36m@@ -32825,7 +32825,7 @@[m [mif (window.angular.bootstrap) {[m
+ }[m
+ [m
+ // try to bind to jquery now so that one can write jqLite(fn)[m
+[31m-// but we will rebind on bootstrap again.[m
+[32m+[m[32m// but we will rebind on libraries again.[m
+ bindJQuery();[m
+ [m
+ publishExternalAPI(angular);[m
+[1mdiff --git a/public/libraries/css/bootstrap-theme.css b/public/libraries/css/bootstrap-theme.css[m
+[1mindex 31d8882..4716a68 100644[m
+[1m--- a/public/libraries/css/bootstrap-theme.css[m
+[1m+++ b/public/libraries/css/bootstrap-theme.css[m
+[36m@@ -584,4 +584,4 @@[m [mfieldset[disabled] .btn-danger.active {[m
+   -webkit-box-shadow: inset 0 1px 3px rgba(0, 0, 0, .05), 0 

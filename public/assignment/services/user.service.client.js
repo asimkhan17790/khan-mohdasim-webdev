@@ -43,22 +43,8 @@
                 }
 
             //generating unique id
-            var uniqueId = new Date().getMilliseconds() +""+ Math.floor(Math.random()*100);
-            while(true) {
-                var userFound = users.find(function (element) {
-                    if (element._id === uniqueId) {
-                        //return element;
-                        return angular.copy(element);
-                    }});
-                if (userFound) {
-                    uniqueId = new Date().getMilliseconds() +""+ Math.floor(Math.random()*100);
-                    continue;
-                }
-                else {
-                    break;
-                }
-            }
-            user._id=uniqueId;
+            var uniqueId = (new Date()).getTime();
+            user._id=uniqueId.toString();
             users.push(user);
             response.status="OK";
             response.description="User successfully created";

@@ -49,9 +49,6 @@
             else  {
                 vm.error = "Please specify a name to the website";
             }
-
-
-
         }
 
     }

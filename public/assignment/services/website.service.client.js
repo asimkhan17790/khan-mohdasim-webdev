@@ -44,22 +44,8 @@
             }
 
             //generating unique id
-            var uniqueId = new Date().getMilliseconds() +""+ Math.floor(Math.random()*100);
-            while(true) {
-                var websiteFound = websites.find(function (element) {
-                    if (element._id === uniqueId) {
-                        //return element;
-                        return angular.copy(element);
-                    }});
-                if (websiteFound) {
-                    uniqueId = new Date().getMilliseconds() +""+ Math.floor(Math.random()*100);
-                    continue;
-                }
-                else {
-                    break;
-                }
-            }
-            website._id = uniqueId;
+            var uniqueId = (new Date()).getTime();
+            website._id = uniqueId.toString();
             website.developerId = userId;
             websites.push(website);
             response.status="OK";

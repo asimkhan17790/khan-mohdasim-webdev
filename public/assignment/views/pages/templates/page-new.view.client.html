@@ -2,7 +2,7 @@
     <div class="row container-fluid">
         <div class="col-xs-2 col-sm-4">
             <div class="navbar-text pull-left">
-                <a href="page-list.view.client.html" class="navbar-link">
+                <a href="#/user/{{model.userId}}/website/{{model.websiteId}}/page" class="navbar-link">
                     <span class="glyphicon glyphicon-chevron-left"></span>
                 </a>
             </div>
@@ -26,7 +26,7 @@
                 </div>
                 <div class="col-xs-4">
                     <div class="navbar-text pull-right">
-                        <a href="page-list.view.client.html" class="navbar-link">
+                        <a ng-click="model.createPage(page)" class="navbar-link">
                             <span class="glyphicon glyphicon-ok"></span>
                         </a>
                     </div>
@@ -38,10 +38,9 @@
 
 
 <div class="row container-fluid">
-    <div class="col-sm-4 hidden-xs wbdv-left-pane"
-         ng-controller="PageListController">
+    <div class="col-sm-4 hidden-xs wbdv-left-pane">
         <ul class="list-group">
-            <li ng-repeat="page in pageList"
+            <li ng-repeat="page in model.pages"
                 class="list-group-item">
 
                 <div class="">
@@ -60,16 +59,23 @@
     </div>
     <div class="col-sm-8 col-xs-12 wbdv-right-pane">
         <form>
+            <div ng-show="model.error"
+                 class="alert alert-danger webdev-component-shift-down"
+                 role="alert">
+                {{model.error}}
+            </div>
             <label for="pageName">Name</label>
             <input id ="pageName"
                    type="text"
                    class="form-control"
-                   placeholder="Page Name"/>
+                   placeholder="Page Name"
+                    ng-model="page.name"/>
             <label for="pageTitle">Title</label>
             <input id ="pageTitle"
                    type="text"
                    class="form-control"
-                   placeholder="Page Title"/>
+                   placeholder="Page Title"
+                   ng-model="page.description"/>
         </form>
     </div>
 </div>
@@ -77,7 +83,7 @@
     <div class="row container-fluid">
         <div class="col-xs-12">
             <div class="navbar-text pull-right">
-                <a href="../views/users/profile.html" class="navbar-link">
+                <a href="#/user/{{model.userId}}" class="navbar-link">
                     <span class="glyphicon glyphicon-user">
                     </span>
                 </a>
