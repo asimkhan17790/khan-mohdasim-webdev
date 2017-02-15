@@ -17,6 +17,9 @@
 
         function init () {
         vm.widgets = WidgetService.findWidgetsByPageId(vm.pageId);
+        if (vm.widgets.length == 0) {
+            vm.error = "No Widgets to display";
+            }
         }
         init();
         function getYouTubeEmbedUrl(widgetUrl) {

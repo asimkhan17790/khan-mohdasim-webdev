@@ -34,7 +34,6 @@
 
             var pageExists = pages.find(function (element) {
                 if (element.name === page.name) {
-                    //return element;
                     return angular.copy(element);
                 }});
             if (pageExists) {

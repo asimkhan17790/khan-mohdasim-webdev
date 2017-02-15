@@ -4,7 +4,7 @@
         .service("WidgetService", WidgetService);
 
     function WidgetService() {
-
+        //Added some dummy Data for all users
         var widgets = [
             { "_id": "123", "widgetType": "HEADER", "pageId": "321", "size": 2, "text": "GIZMODO"},
             { "_id": "124", "widgetType": "HEADER", "pageId": "321", "size": 4, "text": "Lorem ipsum"},
@@ -66,7 +66,6 @@
             { "_id": "163", "widgetType": "YOUTUBE", "pageId": "543", "width": "100%",
                 "url": "https://youtu.be/AM2Ivdi9c4E" },
             { "_id": "164", "widgetType": "HTML", "pageId": "543", "text": "<p>Lorem ipsum</p>"},
-
             { "_id": "165", "widgetType": "HEADER", "pageId": "432", "size": 2, "text": "GIZMODO"},
             { "_id": "166", "widgetType": "HEADER", "pageId": "432", "size": 4, "text": "Lorem ipsum"},
             { "_id": "167", "widgetType": "IMAGE", "pageId": "432", "width": "100%",
@@ -78,19 +77,16 @@
             { "_id": "171", "widgetType": "HTML", "pageId": "432", "text": "<p>Lorem ipsum</p>"}
         ];
 
-        //this.findAllWidgets = findAllWidgets;
         this.createWidget = createWidget;
         this.findWidgetsByPageId = findWidgetsByPageId;
         this.findWidgetById = findWidgetById;
         this.updateWidget = updateWidget;
         this.deleteWidget = deleteWidget;
 
-
         function createWidget(pageId,widget) {
 
             var response ={};
             var uniqueId = (new Date()).getTime().toString();
-
             widget._id = uniqueId.toString();
             widget.pageId = pageId;
             widgets.push(widget);
@@ -100,7 +96,6 @@
             return response;
 
         }
-
 
         function findWidgetsByPageId(pageId) {
 
@@ -113,7 +108,6 @@
             return angular.copy(foundWidgets);
 
         }
-
         function findWidgetById(widgetId) {
             for(var w in widgets) {
                 if(widgets[w]._id === widgetId) {
@@ -133,7 +127,6 @@
             return null;
 
         }
-
         function deleteWidget (widgetId) {
             for(var w in widgets) {
                 var widget = widgets[w];
