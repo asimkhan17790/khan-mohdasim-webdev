@@ -1,0 +1,40 @@
+<form>
+    <label for="widgetName">Name</label>
+    <input id ="widgetName"
+           type="text"
+           class="form-control"
+           placeholder="Name"
+           ng-model="model.widget.name"/>
+
+    <label for="headingText">Text</label>
+    <input id ="headingText"
+           type="text"
+           class="form-control"
+           placeholder="Text"
+           ng-model="model.widget.text"/>
+
+    <label for="url">URL</label>
+    <input id ="url"
+           type="text"
+           class="form-control"
+           placeholder="URL"
+           ng-model="model.widget.url"/>
+
+    <label for="vidWidth">Width</label>
+    <select id ="vidWidth"
+            class="form-control"
+            ng-model="model.widget.width"
+            ng-options="x for x in model.youtubeWidthOptions">
+
+    </select>
+
+    <a class="btn btn-danger btn-block"
+       ng-click="model.deleteWidget()"
+       ng-show="model.widget._id">
+        Delete</a>
+    <a class="btn btn-success btn-block"
+       ng-click="model.createNewWidget()"
+       ng-show="!model.widget._id">
+        Create Widget</a>
+</form>
+

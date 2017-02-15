@@ -1,0 +1,40 @@
+<div class="row">
+    <div class="col-xs-12">
+        <form>
+            <label for="widgetName">Name</label>
+            <input id ="widgetName"
+                   type="text"
+                   class="form-control"
+                   placeholder="Name"
+            ng-model="model.widget.name"/>
+
+            <label for="headingText">Text</label>
+            <input id ="headingText"
+                   type="text"
+                   class="form-control"
+                   placeholder="Text"
+                   ng-model="model.widget.text"/>
+            <label for="headingSize">Size</label>
+            <select id ="headingSize"
+                    class="form-control"
+                    ng-model="model.widget.size"
+                    ng-options="x for x in model.headerSizeOptions">
+
+            </select>
+
+            <a class="btn btn-danger btn-block"
+               ng-click="model.deleteWidget()"
+               ng-show="model.widget._id">
+                Delete</a>
+
+            <a class="btn btn-success btn-block"
+               ng-click="model.createNewWidget()"
+               ng-show="!model.widget._id">
+                Create Widget</a>
+
+        </form>
+
+    </div>
+</div>
+
+

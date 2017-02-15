@@ -44,7 +44,8 @@
 
                     $timeout(function () {
                         vm.success = null;
-                    }, 2000);
+                        $location.url("/user/" + vm.userId +"/website/"+ vm.websiteId+"/page");
+                    }, 1000);
                 }
             }
             else  {

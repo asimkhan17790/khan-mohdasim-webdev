@@ -8,15 +8,16 @@
         var vm = this;
 
         vm.update = update;
-        var uid = $routeParams['uid'];
+        vm.deleteUser = deleteUser;
+        vm.userId = $routeParams['uid'];
         function init() {
 
-        vm.user = UserService.findUserById(uid);
+        vm.user = UserService.findUserById(vm.userId);
         }
         init();
 
         function update (newUser) {
-            var user = UserService.updateUser(uid, newUser);
+            var user = UserService.updateUser(vm.userId, newUser);
             if (user==null) {
                 vm.error="unable to update user";
             }else {
@@ -26,6 +27,17 @@
                 }, 2000);
             }
         }
+
+        function deleteUser () {
+        var response = UserService.deleteUser(vm.userId);
+        if ("OK"===response) {
+            $location.url("/login");
+        }
+        else {
+            vm.error="unable to delete Account Account";
+        }
+        }
+
 
     }
 })();
