@@ -47,7 +47,7 @@
                 }else {
                     vm.websites = WebsiteService.findWebsiteByUser(vm.userId);
                     vm.success="Website successfully updated";
-
+                    vm.error= null;
                     $timeout(function () {
                         vm.success = null;
                         $location.url("/user/" + vm.userId +"/website");

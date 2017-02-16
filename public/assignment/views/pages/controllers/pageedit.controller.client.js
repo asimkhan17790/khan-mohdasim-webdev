@@ -41,7 +41,7 @@
                 }else {
                     vm.pages = PageService.findPageByWebsiteId(vm.websiteId);
                     vm.success="Page successfully updated";
-
+                    vm.error=null;
                     $timeout(function () {
                         vm.success = null;
                         $location.url("/user/" + vm.userId +"/website/"+ vm.websiteId+"/page");

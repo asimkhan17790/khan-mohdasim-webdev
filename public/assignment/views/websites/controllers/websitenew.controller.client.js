@@ -29,6 +29,7 @@
                     if (response) {
                         if (response.status === "OK") {
                             vm.success = "Website successfully created";
+                            vm.error= null;
                             $location.url("/user/" + vm.userId +"/website");
                         }
                         else {
