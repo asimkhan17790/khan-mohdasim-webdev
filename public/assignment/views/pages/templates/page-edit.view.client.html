@@ -58,7 +58,7 @@
         </ul>
     </div>
     <div class="col-sm-8 col-xs-12 wbdv-right-pane">
-        <form name="pageEditForm">
+        <form>
             <div ng-show="model.error" class="alert alert-danger webdev-component-shift-down" role="alert">
                 {{model.error}}
             </div>
@@ -71,8 +71,7 @@
                    type="text"
                    class="form-control"
                    placeholder="Page Name"
-                   ng-model="model.pageDisplayed.name"
-                   name="pageName" required/>
+                    ng-model="model.pageDisplayed.name"/>
             <label for="pageTitle">Title</label>
             <input id ="pageTitle"
                    type="text"

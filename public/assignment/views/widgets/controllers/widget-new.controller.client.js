@@ -59,9 +59,6 @@
             else {
                 vm.error = "Please fill highlighted fields correctly";
             }
-
-
-
         }
     }
 })();
