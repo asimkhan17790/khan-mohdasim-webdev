@@ -13,6 +13,12 @@
         function init () {
 
             vm.pages = PageService.findPageByWebsiteId(vm.websiteId)
+            if (vm.pages.length == 0) {
+                vm.noPage = "No Page to show";
+            }
+            else {
+                vm.noPage = null;
+            }
         }
         init();
 

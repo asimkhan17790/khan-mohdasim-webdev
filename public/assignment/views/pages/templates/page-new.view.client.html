@@ -39,6 +39,9 @@
 
 <div class="row container-fluid">
     <div class="col-sm-4 hidden-xs wbdv-left-pane">
+        <div ng-show="model.noPage" class="alert alert-danger" role="alert">
+            {{model.noPage}}
+        </div>
         <ul class="list-group">
             <li ng-repeat="page in model.pages"
                 class="list-group-item">
@@ -47,7 +50,6 @@
                     <a class="" href="#/user/{{model.userId}}/website/{{model.websiteId}}/page/{{page._id}}/widget">
                         {{page.name}}
                     </a>
-
                     <a class="pull-right"
                        href="page-edit.view.client.html">
                                   <span class="glyphicon glyphicon-cog">
@@ -58,7 +60,7 @@
         </ul>
     </div>
     <div class="col-sm-8 col-xs-12 wbdv-right-pane">
-        <form>
+        <form name="pageForm">
             <div ng-show="model.error"
                  class="alert alert-danger webdev-component-shift-down"
                  role="alert">
@@ -69,7 +71,8 @@
                    type="text"
                    class="form-control"
                    placeholder="Page Name"
-                    ng-model="page.name"/>
+                   ng-model="page.name"
+                   name="pageName" required />
             <label for="pageTitle">Title</label>
             <input id ="pageTitle"
                    type="text"

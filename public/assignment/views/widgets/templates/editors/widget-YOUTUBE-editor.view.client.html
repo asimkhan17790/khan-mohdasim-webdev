@@ -1,4 +1,4 @@
-<form>
+<form name= "youtubeForm" id="editorForm">
     <!-- todo Validate youTube URL using YouTube API-->
     <label for="widgetName">Name</label>
     <input id ="widgetName"
@@ -16,10 +16,11 @@
 
     <label for="url">URL</label>
     <input id ="url"
-           type="text"
+           type="url"
+           name="url"
            class="form-control"
            placeholder="URL"
-           ng-model="model.widget.url"/>
+           ng-model="model.widget.url" required/>
 
     <label for="vidWidth">Width</label>
     <select id ="vidWidth"
@@ -28,14 +29,13 @@
             ng-options="x for x in model.youtubeWidthOptions">
 
     </select>
-
     <a class="btn btn-danger btn-block"
        ng-click="model.deleteWidget()"
        ng-show="model.widget._id">
         Delete</a>
-    <a class="btn btn-success btn-block"
-       ng-click="model.createNewWidget()"
+    <button type="submit" class="btn btn-success btn-block"
+       ng-click="youtubeForm.url.$valid && model.createNewWidget()"
        ng-show="!model.widget._id">
-        Create Widget</a>
+        Create Widget</button>
 </form>
 

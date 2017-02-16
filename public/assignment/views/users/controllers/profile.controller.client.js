@@ -17,15 +17,23 @@
         init();
 
         function update (newUser) {
-            var user = UserService.updateUser(vm.userId, newUser);
-            if (user==null) {
-                vm.error="unable to update user";
-            }else {
-                vm.success="User successfully updated";
-                $timeout(function () {
-                    vm.success = null;
-                }, 2000);
+            var emailField = $('#email');
+            if (emailField[0].checkValidity()) {
+                var user = UserService.updateUser(vm.userId, newUser);
+                if (user==null) {
+                    vm.error="Unable to update user";
+                }else {
+                    vm.error=null;
+                    vm.success="User successfully updated";
+                    $timeout(function () {
+                        vm.success = null;
+                    }, 2000);
+                }
             }
+            else {
+                vm.error = "Invalid Email";
+            }
+
         }
 
         function deleteUser () {

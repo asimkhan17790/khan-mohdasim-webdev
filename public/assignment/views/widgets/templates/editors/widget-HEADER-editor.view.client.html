@@ -1,6 +1,6 @@
 <div class="row">
     <div class="col-xs-12">
-        <form>
+        <form name="headerForm" id="editorForm">
             <label for="widgetName">Name</label>
             <input id ="widgetName"
                    type="text"
@@ -13,7 +13,8 @@
                    type="text"
                    class="form-control"
                    placeholder="Text"
-                   ng-model="model.widget.text"/>
+                   name="text"
+                   ng-model="model.widget.text" required/>
             <label for="headingSize">Size</label>
             <select id ="headingSize"
                     class="form-control"
@@ -27,10 +28,10 @@
                ng-show="model.widget._id">
                 Delete</a>
 
-            <a class="btn btn-success btn-block"
-               ng-click="model.createNewWidget()"
+            <button type="submit" class="btn btn-success btn-block"
+               ng-click="headerForm.text.$valid && model.createNewWidget()"
                ng-show="!model.widget._id">
-                Create Widget</a>
+                Create Widget</button>
         </form>
 
     </div>

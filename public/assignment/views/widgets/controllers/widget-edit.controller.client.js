@@ -41,26 +41,29 @@
             return 'views/widgets/templates/editors/widget-'+type+'-editor.view.client.html';
         }
         function updateWidget() {
-            var response = WidgetService.updateWidget(vm.widgetId, vm.widget);
-            if (response) {
-                vm.success="Widget successfully updated";
-
-                $timeout(function () {
-                    vm.success = null;
-                    $location.url("/user/"
-                        +vm.userId
-                        +"/website/"
-                        +vm.websiteId
-                        +"/page/"
-                        +vm.pageId
-                        +"/widget");
-                }, 1000);
-
-
-
+            var form = $('#editorForm');
+            if (form[0].checkValidity()) {
+                var response = WidgetService.updateWidget(vm.widgetId, vm.widget);
+                if (response) {
+                    vm.success="Widget successfully updated";
+                    vm.error = null;
+                    $timeout(function () {
+                        vm.success = null;
+                        $location.url("/user/"
+                            +vm.userId
+                            +"/website/"
+                            +vm.websiteId
+                            +"/page/"
+                            +vm.pageId
+                            +"/widget");
+                    }, 1000);
+                }
+                else {
+                    vm.error = "Unable to update selected widget";
+                }
             }
             else {
-                vm.error = "Unable to update selected widget";
+                vm.error = "Please fill highlighted fields correctly";
             }
         }
     }

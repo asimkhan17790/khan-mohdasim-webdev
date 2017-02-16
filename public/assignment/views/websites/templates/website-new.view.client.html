@@ -39,6 +39,9 @@
 
 <div class="row container-fluid">
         <div class="col-sm-4 hidden-xs wbdv-left-pane">
+            <div ng-show="model.noWebsite" class="alert alert-danger" role="alert">
+                {{model.noWebsite}}
+            </div>
                 <ul class="list-group">
                     <li ng-repeat="website in model.websites"
                         class="list-group-item">
@@ -58,16 +61,17 @@
                 </ul>
         </div>
         <div class="col-sm-8 col-xs-12 wbdv-right-pane">
-            <form>
+            <form name="websiteNewForm">
                 <div ng-show="model.error" class="alert alert-danger webdev-component-shift-down" role="alert">
                     {{model.error}}
                 </div>
-                <label for="websiteName">Name</label>
+                <label for="websiteName">Website Name</label>
                 <input id ="websiteName"
                        type="text"
                        class="form-control"
                        placeholder="Name"
-                       ng-model="website.name"/>
+                       name="websiteName"
+                       ng-model="website.name" required/>
                 <label for="webDescription">Description</label>
                 <textarea id="webDescription"
                           rows="5"

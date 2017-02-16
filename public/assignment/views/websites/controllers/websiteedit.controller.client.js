@@ -14,6 +14,13 @@
             vm.userId = $routeParams['uid'];
             vm.websiteId = $routeParams['wid'];
             vm.websites = WebsiteService.findWebsiteByUser(vm.userId);
+
+            if (vm.websites.length == 0) {
+                vm.noWebsite = "No websites to show";
+            }
+            else {
+                vm.noWebsite = null;
+            }
             vm.websiteDisplayed = WebsiteService.findWebsiteById(vm.websiteId);
 
         }

@@ -10,7 +10,14 @@
         vm.createWebsite = createWebsite;
         function init () {
             vm.userId = $routeParams['uid'];
-            vm.websites = WebsiteService.findWebsiteByUser(vm.userId)
+            vm.websites = WebsiteService.findWebsiteByUser(vm.userId);
+
+            if (vm.websites.length == 0) {
+                vm.noWebsite = "No websites to show";
+            }
+            else {
+                vm.noWebsite = null;
+            }
         }
         init();
 

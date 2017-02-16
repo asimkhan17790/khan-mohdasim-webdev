@@ -1,4 +1,4 @@
-<form>
+<form name="imageForm" id="editorForm">
     <label for="widgetName">Name</label>
     <input id ="widgetName"
            type="text"
@@ -15,19 +15,18 @@
 
     <label for="url">URL</label>
     <input id ="url"
-           type="text"
+           type="url"
+           name="url"
            class="form-control"
            placeholder="URL"
-           ng-model="model.widget.url"/>
+           ng-model="model.widget.url" required/>
 
     <label for="imageWidth">Width</label>
     <select id ="imageWidth"
             class="form-control"
             ng-model="model.widget.width"
             ng-options="x for x in model.imageWidthOptions">
-
     </select>
-
     <label for="uploadFile">Upload</label>
     <input type="file" id="uploadFile" class="form-control">
     <a class="btn btn-primary btn-block">
@@ -36,10 +35,10 @@
        ng-click="model.deleteWidget()"
        ng-show="model.widget._id">
         Delete</a>
-    <a class="btn btn-success btn-block"
-       ng-click="model.createNewWidget()"
+    <button type="submit" class="btn btn-success btn-block"
+       ng-click="imageForm.url.$valid && model.createNewWidget()"
        ng-show="!model.widget._id">
-        Create Widget</a>
+        Create Widget</button>
 </form>
 
 
