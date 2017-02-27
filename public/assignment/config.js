@@ -8,12 +8,14 @@
             .when("/", {
                 templateUrl:"views/users/templates/login.view.client.html",
                 controller:"LoginController",
-                controllerAs:"model"
+                controllerAs:"model",
+                title:"Login Page"
             })
             .when("/login", {
                 templateUrl:"views/users/templates/login.view.client.html",
                 controller:"LoginController",
-                controllerAs:"model"
+                controllerAs:"model",
+                title:"Login Page"
             })
             .when("/user/:uid", {
                 templateUrl:"views/users/templates/profile.view.client.html",
