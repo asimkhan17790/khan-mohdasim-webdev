@@ -1,0 +1,1184 @@
+0 info it worked if it ends with ok
+1 verbose cli [ 'C:\\Program Files\\nodejs\\node.exe',
+1 verbose cli   'C:\\Program Files\\nodejs\\node_modules\\npm\\bin\\npm-cli.js',
+1 verbose cli   'install',
+1 verbose cli   'express-session' ]
+2 info using npm@4.0.5
+3 info using node@v7.4.0
+4 silly loadCurrentTree Starting
+5 silly install loadCurrentTree
+6 silly install readLocalPackageData
+7 silly fetchPackageMetaData express-session
+8 silly fetchNamedPackageData express-session
+9 silly mapToRegistry name express-session
+10 silly mapToRegistry using default registry
+11 silly mapToRegistry registry https://registry.npmjs.org/
+12 silly mapToRegistry data Result {
+12 silly mapToRegistry   raw: 'express-session',
+12 silly mapToRegistry   scope: null,
+12 silly mapToRegistry   escapedName: 'express-session',
+12 silly mapToRegistry   name: 'express-session',
+12 silly mapToRegistry   rawSpec: '',
+12 silly mapToRegistry   spec: 'latest',
+12 silly mapToRegistry   type: 'tag' }
+13 silly mapToRegistry uri https://registry.npmjs.org/express-session
+14 verbose request uri https://registry.npmjs.org/express-session
+15 verbose request no auth needed
+16 info attempt registry request try #1 at 7:24:21 AM
+17 verbose request id 7918bfc043bf999c
+18 verbose etag W/"58aed9dc-1e0b2"
+19 verbose lastModified Thu, 23 Feb 2017 12:47:24 GMT
+20 http request GET https://registry.npmjs.org/express-session
+21 http 304 https://registry.npmjs.org/express-session
+22 verbose headers { date: 'Mon, 27 Feb 2017 12:24:21 GMT',
+22 verbose headers   via: '1.1 varnish',
+22 verbose headers   'cache-control': 'max-age=300',
+22 verbose headers   etag: 'W/"58aed9dc-1e0b2"',
+22 verbose headers   age: '0',
+22 verbose headers   connection: 'keep-alive',
+22 verbose headers   'x-served-by': 'cache-jfk8133-JFK',
+22 verbose headers   'x-cache': 'HIT',
+22 verbose headers   'x-cache-hits': '1',
+22 verbose headers   'x-timer': 'S1488198261.372530,VS0,VE65',
+22 verbose headers   vary: 'Accept-Encoding' }
+23 silly get cb [ 304,
+23 silly get   { date: 'Mon, 27 Feb 2017 12:24:21 GMT',
+23 silly get     via: '1.1 varnish',
+23 silly get     'cache-control': 'max-age=300',
+23 silly get     etag: 'W/"58aed9dc-1e0b2"',
+23 silly get     age: '0',
+23 silly get     connection: 'keep-alive',
+23 silly get     'x-served-by': 'cache-jfk8133-JFK',
+23 silly get     'x-cache': 'HIT',
+23 silly get     'x-cache-hits': '1',
+23 silly get     'x-timer': 'S1488198261.372530,VS0,VE65',
+23 silly get     vary: 'Accept-Encoding' } ]
+24 verbose etag https://registry.npmjs.org/express-session from cache
+25 verbose get saving express-session to C:\Users\Asim\AppData\Roaming\npm-cache\registry.npmjs.org\express-session\.cache.json
+26 verbose correctMkdir C:\Users\Asim\AppData\Roaming\npm-cache correctMkdir not in flight; initializing
+27 silly install normalizeTree
+28 silly loadCurrentTree Finishing
+29 silly loadIdealTree Starting
+30 silly install loadIdealTree
+31 silly cloneCurrentTree Starting
+32 silly install cloneCurrentTreeToIdealTree
+33 silly cloneCurrentTree Finishing
+34 silly loadShrinkwrap Starting
+35 silly install loadShrinkwrap
+36 silly loadShrinkwrap Finishing
+37 silly loadAllDepsIntoIdealTree Starting
+38 silly install loadAllDepsIntoIdealTree
+39 silly resolveWithNewModule express-session@1.15.1 checking installable status
+40 silly cache add args [ 'express-session', null ]
+41 verbose cache add spec express-session
+42 silly cache add parsed spec Result {
+42 silly cache add   raw: 'express-session',
+42 silly cache add   scope: null,
+42 silly cache add   escapedName: 'express-session',
+42 silly cache add   name: 'express-session',
+42 silly cache add   rawSpec: '',
+42 silly cache add   spec: 'latest',
+42 silly cache add   type: 'tag' }
+43 silly addNamed express-session@latest
+44 verbose addNamed "latest" is being treated as a dist-tag for express-session
+45 info addNameTag [ 'express-session', 'latest' ]
+46 silly mapToRegistry name express-session
+47 silly mapToRegistry using default registry
+48 silly mapToRegistry registry https://registry.npmjs.org/
+49 silly mapToRegistry data Result {
+49 silly mapToRegistry   raw: 'express-session',
+49 silly mapToRegistry   scope: null,
+49 silly mapToRegistry   escapedName: 'express-session',
+49 silly mapToRegistry   name: 'express-session',
+49 silly mapToRegistry   rawSpec: '',
+49 silly mapToRegistry   spec: 'latest',
+49 silly mapToRegistry   type: 'tag' }
+50 silly mapToRegistry uri https://registry.npmjs.org/express-session
+51 verbose addNameTag registry:https://registry.npmjs.org/express-session not in flight; fetching
+52 verbose get https://registry.npmjs.org/express-session not expired, no request
+53 silly addNameTag next cb for express-session with tag latest
+54 silly addNamed express-session@1.15.1
+55 verbose addNamed "1.15.1" is a plain semver version for express-session
+56 silly cache afterAdd express-session@1.15.1
+57 verbose afterAdd C:\Users\Asim\AppData\Roaming\npm-cache\express-session\1.15.1\package\package.json not in flight; writing
+58 verbose correctMkdir C:\Users\Asim\AppData\Roaming\npm-cache correctMkdir not in flight; initializing
+59 verbose afterAdd C:\Users\Asim\AppData\Roaming\npm-cache\express-session\1.15.1\package\package.json written
+60 silly fetchNamedPackageData crc
+61 silly mapToRegistry name crc
+62 silly mapToRegistry using default registry
+63 silly mapToRegistry registry https://registry.npmjs.org/
+64 silly mapToRegistry data Result {
+64 silly mapToRegistry   raw: 'crc',
+64 silly mapToRegistry   scope: null,
+64 silly mapToRegistry   escapedName: 'crc',
+64 silly mapToRegistry   name: 'crc',
+64 silly mapToRegistry   rawSpec: '',
+64 silly mapToRegistry   spec: 'latest',
+64 silly mapToRegistry   type: 'tag' }
+65 silly mapToRegistry uri https://registry.npmjs.org/crc
+66 silly fetchNamedPackageData debug
+67 silly mapToRegistry name debug
+68 silly mapToRegistry using default registry
+69 silly mapToRegistry registry https://registry.npmjs.org/
+70 silly mapToRegistry data Result {
+70 silly mapToRegistry   raw: 'debug',
+70 silly mapToRegistry   scope: null,
+70 silly mapToRegistry   escapedName: 'debug',
+70 silly mapToRegistry   name: 'debug',
+70 silly mapToRegistry   rawSpec: '',
+70 silly mapToRegistry   spec: 'latest',
+70 silly mapToRegistry   type: 'tag' }
+71 silly mapToRegistry uri https://registry.npmjs.org/debug
+72 silly fetchNamedPackageData on-headers
+73 silly mapToRegistry name on-headers
+74 silly mapToRegistry using default registry
+75 silly mapToRegistry registry https://registry.npmjs.org/
+76 silly mapToRegistry data Result {
+76 silly mapToRegistry   raw: 'on-headers',
+76 silly mapToRegistry   scope: null,
+76 silly mapToRegistry   escapedName: 'on-headers',
+76 silly mapToRegistry   name: 'on-headers',
+76 silly mapToRegistry   rawSpec: '',
+76 silly mapToRegistry   spec: 'latest',
+76 silly mapToRegistry   type: 'tag' }
+77 silly mapToRegistry uri https://registry.npmjs.org/on-headers
+78 silly fetchNamedPackageData uid-safe
+79 silly mapToRegistry name uid-safe
+80 silly mapToRegistry using default registry
+81 silly mapToRegistry registry https://registry.npmjs.org/
+82 silly mapToRegistry data Result {
+82 silly mapToRegistry   raw: 'uid-safe',
+82 silly mapToRegistry   scope: null,
+82 silly mapToRegistry   escapedName: 'uid-safe',
+82 silly mapToRegistry   name: 'uid-safe',
+82 silly mapToRegistry   rawSpec: '',
+82 silly mapToRegistry   spec: 'latest',
+82 silly mapToRegistry   type: 'tag' }
+83 silly mapToRegistry uri https://registry.npmjs.org/uid-safe
+84 verbose request uri https://registry.npmjs.org/on-headers
+85 verbose request no auth needed
+86 info attempt registry request try #1 at 7:24:21 AM
+87 verbose etag W/"5818d7d4-1a0d"
+88 verbose lastModified Tue, 01 Nov 2016 17:58:44 GMT
+89 http request GET https://registry.npmjs.org/on-headers
+90 verbose request uri https://registry.npmjs.org/uid-safe
+91 verbose request no auth needed
+92 info attempt registry request try #1 at 7:24:21 AM
+93 verbose etag W/"5897692c-4cd8"
+94 verbose lastModified Sun, 05 Feb 2017 18:04:28 GMT
+95 http request GET https://registry.npmjs.org/uid-safe
+96 verbose request uri https://registry.npmjs.org/debug
+97 verbose request no auth needed
+98 info attempt registry request try #1 at 7:24:21 AM
+99 verbose etag W/"58b2409a-104c4"
+100 verbose lastModified Sun, 26 Feb 2017 02:42:34 GMT
+101 http request GET https://registry.npmjs.org/debug
+102 verbose request uri https://registry.npmjs.org/crc
+103 verbose request no auth needed
+104 info attempt registry request try #1 at 7:24:21 AM
+105 verbose etag W/"584ef9bd-65a8"
+106 verbose lastModified Mon, 12 Dec 2016 19:25:49 GMT
+107 http request GET https://registry.npmjs.org/crc
+108 http 304 https://registry.npmjs.org/on-headers
+109 verbose headers { date: 'Mon, 27 Feb 2017 12:24:21 GMT',
+109 verbose headers   via: '1.1 varnish',
+109 verbose headers   'cache-control': 'max-age=300',
+109 verbose headers   etag: 'W/"5818d7d4-1a0d"',
+109 verbose headers   age: '30',
+109 verbose headers   connection: 'keep-alive',
+109 verbose headers   'x-served-by': 'cache-jfk8133-JFK',
+109 verbose headers   'x-cache': 'HIT',
+109 verbose headers   'x-cache-hits': '1',
+109 verbose headers   'x-timer': 'S1488198261.568390,VS0,VE0',
+109 verbose headers   vary: 'Accept-Encoding' }
+110 silly get cb [ 304,
+110 silly get   { date: 'Mon, 27 Feb 2017 12:24:21 GMT',
+110 silly get     via: '1.1 varnish',
+110 silly get     'cache-control': 'max-age=300',
+110 silly get     etag: 'W/"5818d7d4-1a0d"',
+110 silly get     age: '30',
+110 silly get     connection: 'keep-alive',
+110 silly get     'x-served-by': 'cache-jfk8133-JFK',
+110 silly get     'x-cache': 'HIT',
+110 silly get     'x-cache-hits': '1',
+110 silly get     'x-timer': 'S1488198261.568390,VS0,VE0',
+110 silly get     vary: 'Accept-Encoding' } ]
+111 verbose etag https://registry.npmjs.org/on-headers from cache
+112 verbose get saving on-headers to C:\Users\Asim\AppData\Roaming\npm-cache\registry.npmjs.org\on-headers\.cache.json
+113 verbose correctMkdir C:\Users\Asim\AppData\Roaming\npm-cache correctMkdir not in flight; initializing
+114 silly resolveWithNewModule on-headers@1.0.1 checking installable status
+115 silly cache add args [ 'on-headers@~1.0.1', null ]
+116 verbose cache add spec on-headers@~1.0.1
+117 silly cache add parsed spec Result {
+117 silly cache add   raw: 'on-headers@~1.0.1',
+117 silly cache add   scope: null,
+117 silly cache add   escapedName: 'on-headers',
+117 silly cache add   name: 'on-headers',
+117 silly cache add   rawSpec: '~1.0.1',
+117 silly cache add   spec: '>=1.0.1 <1.1.0',
+117 silly cache add   type: 'range' }
+118 silly addNamed on-headers@>=1.0.1 <1.1.0
+119 verbose addNamed ">=1.0.1 <1.1.0" is a valid semver range for on-headers
+120 silly addNameRange { name: 'on-headers', range: '>=1.0.1 <1.1.0', hasData: false }
+121 silly mapToRegistry name on-headers
+122 silly mapToRegistry using default registry
+123 silly mapToRegistry registry https://registry.npmjs.org/
+124 silly mapToRegistry data Result {
+124 silly mapToRegistry   raw: 'on-headers',
+124 silly mapToRegistry   scope: null,
+124 silly mapToRegistry   escapedName: 'on-headers',
+124 silly mapToRegistry   name: 'on-headers',
+124 silly mapToRegistry   rawSpec: '',
+124 silly mapToRegistry   spec: 'latest',
+124 silly mapToRegistry   type: 'tag' }
+125 silly mapToRegistry uri https://registry.npmjs.org/on-headers
+126 verbose addNameRange registry:https://registry.npmjs.org/on-headers not in flight; fetching
+127 verbose get https://registry.npmjs.org/on-headers not expired, no request
+128 silly addNameRange number 2 { name: 'on-headers', range: '>=1.0.1 <1.1.0', hasData: true }
+129 silly addNameRange versions [ 'on-headers', [ '0.0.0', '1.0.0', '1.0.1' ] ]
+130 silly addNamed on-headers@1.0.1
+131 verbose addNamed "1.0.1" is a plain semver version for on-headers
+132 silly cache afterAdd on-headers@1.0.1
+133 verbose afterAdd C:\Users\Asim\AppData\Roaming\npm-cache\on-headers\1.0.1\package\package.json not in flight; writing
+134 verbose correctMkdir C:\Users\Asim\AppData\Roaming\npm-cache correctMkdir not in flight; initializing
+135 verbose afterAdd C:\Users\Asim\AppData\Roaming\npm-cache\on-headers\1.0.1\package\package.json written
+136 http 304 https://registry.npmjs.org/debug
+137 verbose headers { date: 'Mon, 27 Feb 2017 12:24:21 GMT',
+137 verbose headers   via: '1.1 varnish',
+137 verbose headers   'cache-control': 'max-age=300',
+137 verbose headers   etag: 'W/"58b2409a-104c4"',
+137 verbose headers   age: '20',
+137 verbose headers   connection: 'keep-alive',
+137 verbose headers   'x-served-by': 'cache-jfk8130-JFK',
+137 verbose headers   'x-cache': 'HIT',
+137 verbose headers   'x-cache-hits': '1',
+137 verbose headers   'x-timer': 'S1488198261.624490,VS0,VE0',
+137 verbose headers   vary: 'Accept-Encoding' }
+138 silly get cb [ 304,
+138 silly get   { date: 'Mon, 27 Feb 2017 12:24:21 GMT',
+138 silly get     via: '1.1 varnish',
+138 silly get     'cache-control': 'max-age=300',
+138 silly get     etag: 'W/"58b2409a-104c4"',
+138 silly get     age: '20',
+138 silly get     connection: 'keep-alive',
+138 silly get     'x-served-by': 'cache-jfk8130-JFK',
+138 silly get     'x-cache': 'HIT',
+138 silly get     'x-cache-hits': '1',
+138 silly get     'x-timer': 'S1488198261.624490,VS0,VE0',
+138 silly get     vary: 'Accept-Encoding' } ]
+139 verbose etag https://registry.npmjs.org/debug from cache
+140 verbose get saving debug to C:\Users\Asim\AppData\Roaming\npm-cache\registry.npmjs.org\debug\.cache.json
+141 verbose correctMkdir C:\Users\Asim\AppData\Roaming\npm-cache correctMkdir not in flight; initializing
+142 http 304 https://registry.npmjs.org/crc
+143 verbose headers { date: 'Mon, 27 Feb 2017 12:24:21 GMT',
+143 verbose headers   via: '1.1 varnish',
+143 verbose headers   'cache-control': 'max-age=300',
+143 verbose headers   etag: 'W/"584ef9bd-65a8"',
+143 verbose headers   age: '26',
+143 verbose headers   connection: 'keep-alive',
+143 verbose headers   'x-served-by': 'cache-jfk8125-JFK',
+143 verbose headers   'x-cache': 'HIT',
+143 verbose headers   'x-cache-hits': '1',
+143 verbose headers   'x-timer': 'S1488198261.628586,VS0,VE0',
+143 verbose headers   vary: 'Accept-Encoding' }
+144 silly get cb [ 304,
+144 silly get   { date: 'Mon, 27 Feb 2017 12:24:21 GMT',
+144 silly get     via: '1.1 varnish',
+144 silly get     'cache-control': 'max-age=300',
+144 silly get     etag: 'W/"584ef9bd-65a8"',
+144 silly get     age: '26',
+144 silly get     connection: 'keep-alive',
+144 silly get     'x-served-by': 'cache-jfk8125-JFK',
+144 silly get     'x-cache': 'HIT',
+144 silly get     'x-cache-hits': '1',
+144 silly get     'x-timer': 'S1488198261.628586,VS0,VE0',
+144 silly get     vary: 'Accept-Encoding' } ]
+145 verbose etag https://registry.npmjs.org/crc from cache
+146 verbose get saving crc to C:\Users\Asim\AppData\Roaming\npm-cache\registry.npmjs.org\crc\.cache.json
+147 verbose correctMkdir C:\Users\Asim\AppData\Roaming\npm-cache correctMkdir not in flight; initializing
+148 silly resolveWithNewModule debug@2.6.1 checking installable status
+149 silly cache add args [ 'debug@2.6.1', null ]
+150 verbose cache add spec debug@2.6.1
+151 silly cache add parsed spec Result {
+151 silly cache add   raw: 'debug@2.6.1',
+151 silly cache add   scope: null,
+151 silly cache add   escapedName: 'debug',
+151 silly cache add   name: 'debug',
+151 silly cache add   rawSpec: '2.6.1',
+151 silly cache add   spec: '2.6.1',
+151 silly cache add   type: 'version' }
+152 silly addNamed debug@2.6.1
+153 verbose addNamed "2.6.1" is a plain semver version for debug
+154 silly mapToRegistry name debug
+155 silly mapToRegistry using default registry
+156 silly mapToRegistry registry https://registry.npmjs.org/
+157 silly mapToRegistry data Result {
+157 silly mapToRegistry   raw: 'debug',
+157 silly mapToRegistry   scope: null,
+157 silly mapToRegistry   escapedName: 'debug',
+157 silly mapToRegistry   name: 'debug',
+157 silly mapToRegistry   rawSpec: '',
+157 silly mapToRegistry   spec: 'latest',
+157 silly mapToRegistry   type: 'tag' }
+158 silly mapToRegistry uri https://registry.npmjs.org/debug
+159 verbose addNameVersion registry:https://registry.npmjs.org/debug not in flight; fetching
+160 http 304 https://registry.npmjs.org/uid-safe
+161 verbose headers { date: 'Mon, 27 Feb 2017 12:24:21 GMT',
+161 verbose headers   via: '1.1 varnish',
+161 verbose headers   'cache-control': 'max-age=300',
+161 verbose headers   etag: 'W/"5897692c-4cd8"',
+161 verbose headers   age: '206',
+161 verbose headers   connection: 'keep-alive',
+161 verbose headers   'x-served-by': 'cache-jfk8122-JFK',
+161 verbose headers   'x-cache': 'HIT',
+161 verbose headers   'x-cache-hits': '1',
+161 verbose headers   'x-timer': 'S1488198261.629091,VS0,VE0',
+161 verbose headers   vary: 'Accept-Encoding' }
+162 silly get cb [ 304,
+162 silly get   { date: 'Mon, 27 Feb 2017 12:24:21 GMT',
+162 silly get     via: '1.1 varnish',
+162 silly get     'cache-control': 'max-age=300',
+162 silly get     etag: 'W/"5897692c-4cd8"',
+162 silly get     age: '206',
+162 silly get     connection: 'keep-alive',
+162 silly get     'x-served-by': 'cache-jfk8122-JFK',
+162 silly get     'x-cache': 'HIT',
+162 silly get     'x-cache-hits': '1',
+162 silly get     'x-timer': 'S1488198261.629091,VS0,VE0',
+162 silly get     vary: 'Accept-Encoding' } ]
+163 verbose etag https://registry.npmjs.org/uid-safe from cache
+164 verbose get saving uid-safe to C:\Users\Asim\AppData\Roaming\npm-cache\registry.npmjs.org\uid-safe\.cache.json
+165 verbose correctMkdir C:\Users\Asim\AppData\Roaming\npm-cache correctMkdir not in flight; initializing
+166 verbose get https://registry.npmjs.org/debug not expired, no request
+167 silly cache afterAdd debug@2.6.1
+168 verbose afterAdd C:\Users\Asim\AppData\Roaming\npm-cache\debug\2.6.1\package\package.json not in flight; writing
+169 verbose correctMkdir C:\Users\Asim\AppData\Roaming\npm-cache correctMkdir not in flight; initializing
+170 silly resolveWithNewModule crc@3.4.4 checking installable status
+171 silly cache add args [ 'crc@3.4.4', null ]
+172 verbose cache add spec crc@3.4.4
+173 silly cache add parsed spec Result {
+173 silly cache add   raw: 'crc@3.4.4',
+173 silly cache add   scope: null,
+173 silly cache add   escapedName: 'crc',
+173 silly cache add   name: 'crc',
+173 silly cache add   rawSpec: '3.4.4',
+173 silly cache add   spec: '3.4.4',
+173 silly cache add   type: 'version' }
+174 silly addNamed crc@3.4.4
+175 verbose addNamed "3.4.4" is a plain semver version for crc
+176 silly mapToRegistry name crc
+177 silly mapToRegistry using default registry
+178 silly mapToRegistry registry https://registry.npmjs.org/
+179 silly mapToRegistry data Result {
+179 silly mapToRegistry   raw: 'crc',
+179 silly mapToRegistry   scope: null,
+179 silly mapToRegistry   escapedName: 'crc',
+179 silly mapToRegistry   name: 'crc',
+179 silly mapToRegistry   rawSpec: '',
+179 silly mapToRegistry   spec: 'latest',
+179 silly mapToRegistry   type: 'tag' }
+180 silly mapToRegistry uri https://registry.npmjs.org/crc
+181 verbose addNameVersion registry:https://registry.npmjs.org/crc not in flight; fetching
+182 silly resolveWithNewModule uid-safe@2.1.3 checking installable status
+183 silly cache add args [ 'uid-safe@~2.1.3', null ]
+184 verbose cache add spec uid-safe@~2.1.3
+185 silly cache add parsed spec Result {
+185 silly cache add   raw: 'uid-safe@~2.1.3',
+185 silly cache add   scope: null,
+185 silly cache add   escapedName: 'uid-safe',
+185 silly cache add   name: 'uid-safe',
+185 silly cache add   rawSpec: '~2.1.3',
+185 silly cache add   spec: '>=2.1.3 <2.2.0',
+185 silly cache add   type: 'range' }
+186 silly addNamed uid-safe@>=2.1.3 <2.2.0
+187 verbose addNamed ">=2.1.3 <2.2.0" is a valid semver range for uid-safe
+188 silly addNameRange { name: 'uid-safe', range: '>=2.1.3 <2.2.0', hasData: false }
+189 silly mapToRegistry name uid-safe
+190 silly mapToRegistry using default registry
+191 silly mapToRegistry registry https://registry.npmjs.org/
+192 silly mapToRegistry data Result {
+192 silly mapToRegistry   raw: 'uid-safe',
+192 silly mapToRegistry   scope: null,
+192 silly mapToRegistry   escapedName: 'uid-safe',
+192 silly mapToRegistry   name: 'uid-safe',
+192 silly mapToRegistry   rawSpec: '',
+192 silly mapToRegistry   spec: 'latest',
+192 silly mapToRegistry   type: 'tag' }
+193 silly mapToRegistry uri https://registry.npmjs.org/uid-safe
+194 verbose addNameRange registry:https://registry.npmjs.org/uid-safe not in flight; fetching
+195 verbose get https://registry.npmjs.org/crc not expired, no request
+196 verbose get https://registry.npmjs.org/uid-safe not expired, no request
+197 silly addNameRange number 2 { name: 'uid-safe', range: '>=2.1.3 <2.2.0', hasData: true }
+198 silly addNameRange versions [ 'uid-safe',
+198 silly addNameRange   [ '1.0.0',
+198 silly addNameRange     '1.0.1',
+198 silly addNameRange     '1.0.2',
+198 silly addNameRange     '1.0.3',
+198 silly addNameRange     '1.1.0',
+198 silly addNameRange     '2.0.0',
+198 silly addNameRange     '2.1.0',
+198 silly addNameRange     '2.1.1',
+198 silly addNameRange     '2.1.2',
+198 silly addNameRange     '2.1.3' ] ]
+199 silly addNamed uid-safe@2.1.3
+200 verbose addNamed "2.1.3" is a plain semver version for uid-safe
+201 verbose afterAdd C:\Users\Asim\AppData\Roaming\npm-cache\debug\2.6.1\package\package.json written
+202 silly cache afterAdd crc@3.4.4
+203 verbose afterAdd C:\Users\Asim\AppData\Roaming\npm-cache\crc\3.4.4\package\package.json not in flight; writing
+204 verbose correctMkdir C:\Users\Asim\AppData\Roaming\npm-cache correctMkdir not in flight; initializing
+205 silly cache afterAdd uid-safe@2.1.3
+206 verbose afterAdd C:\Users\Asim\AppData\Roaming\npm-cache\uid-safe\2.1.3\package\package.json not in flight; writing
+207 verbose correctMkdir C:\Users\Asim\AppData\Roaming\npm-cache correctMkdir not in flight; initializing
+208 verbose afterAdd C:\Users\Asim\AppData\Roaming\npm-cache\crc\3.4.4\package\package.json written
+209 verbose afterAdd C:\Users\Asim\AppData\Roaming\npm-cache\uid-safe\2.1.3\package\package.json written
+210 silly fetchNamedPackageData ms
+211 silly mapToRegistry name ms
+212 silly mapToRegistry using default registry
+213 silly mapToRegistry registry https://registry.npmjs.org/
+214 silly mapToRegistry data Result {
+214 silly mapToRegistry   raw: 'ms',
+214 silly mapToRegistry   scope: null,
+214 silly mapToRegistry   escapedName: 'ms',
+214 silly mapToRegistry   name: 'ms',
+214 silly mapToRegistry   rawSpec: '',
+214 silly mapToRegistry   spec: 'latest',
+214 silly mapToRegistry   type: 'tag' }
+215 silly mapToRegistry uri https://registry.npmjs.org/ms
+216 verbose request uri https://registry.npmjs.org/ms
+217 verbose request no auth needed
+218 info attempt registry request try #1 at 7:24:21 AM
+219 verbose etag W/"58b24c26-2c61"
+220 verbose lastModified Sun, 26 Feb 2017 03:31:50 GMT
+221 http request GET https://registry.npmjs.org/ms
+222 http 304 https://registry.npmjs.org/ms
+223 verbose headers { date: 'Mon, 27 Feb 2017 12:24:21 GMT',
+223 verbose headers   via: '1.1 varnish',
+223 verbose headers   'cache-control': 'max-age=300',
+223 verbose headers   etag: 'W/"58b24c26-2c61"',
+223 verbose headers   age: '65',
+223 verbose headers   connection: 'keep-alive',
+223 verbose headers   'x-served-by': 'cache-jfk8133-JFK',
+223 verbose headers   'x-cache': 'HIT',
+223 verbose headers   'x-cache-hits': '2',
+223 verbose headers   'x-timer': 'S1488198261.678390,VS0,VE0',
+223 verbose headers   vary: 'Accept-Encoding' }
+224 silly get cb [ 304,
+224 silly get   { date: 'Mon, 27 Feb 2017 12:24:21 GMT',
+224 silly get     via: '1.1 varnish',
+224 silly get     'cache-control': 'max-age=300',
+224 silly get     etag: 'W/"58b24c26-2c61"',
+224 silly get     age: '65',
+224 silly get     connection: 'keep-alive',
+224 silly get     'x-served-by': 'cache-jfk8133-JFK',
+224 silly get     'x-cache': 'HIT',
+224 silly get     'x-cache-hits': '2',
+224 silly get     'x-timer': 'S1488198261.678390,VS0,VE0',
+224 silly get     vary: 'Accept-Encoding' } ]
+225 verbose etag https://registry.npmjs.org/ms from cache
+226 verbose get saving ms to C:\Users\Asim\AppData\Roaming\npm-cache\registry.npmjs.org\ms\.cache.json
+227 verbose correctMkdir C:\Users\Asim\AppData\Roaming\npm-cache correctMkdir not in flight; initializing
+228 silly resolveWithNewModule ms@0.7.2 checking installable status
+229 silly cache add args [ 'ms@0.7.2', null ]
+230 verbose cache add spec ms@0.7.2
+231 silly cache add parsed spec Result {
+231 silly cache add   raw: 'ms@0.7.2',
+231 silly cache add   scope: null,
+231 silly cache add   escapedName: 'ms',
+231 silly cache add   name: 'ms',
+231 silly cache add   rawSpec: '0.7.2',
+231 silly cache add   spec: '0.7.2',
+231 silly cache add   type: 'version' }
+232 silly addNamed ms@0.7.2
+233 verbose addNamed "0.7.2" is a plain semver version for ms
+234 silly mapToRegistry name ms
+235 silly mapToRegistry using default registry
+236 silly mapToRegistry registry https://registry.npmjs.org/
+237 silly mapToRegistry data Result {
+237 silly mapToRegistry   raw: 'ms',
+237 silly mapToRegistry   scope: null,
+237 silly mapToRegistry   escapedName: 'ms',
+237 silly mapToRegistry   name: 'ms',
+237 silly mapToRegistry   rawSpec: '',
+237 silly mapToRegistry   spec: 'latest',
+237 silly mapToRegistry   type: 'tag' }
+238 silly mapToRegistry uri https://registry.npmjs.org/ms
+239 verbose addNameVersion registry:https://registry.npmjs.org/ms not in flight; fetching
+240 verbose get https://registry.npmjs.org/ms not expired, no request
+241 silly cache afterAdd ms@0.7.2
+242 verbose afterAdd C:\Users\Asim\AppData\Roaming\npm-cache\ms\0.7.2\package\package.json not in flight; writing
+243 verbose correctMkdir C:\Users\Asim\AppData\Roaming\npm-cache correctMkdir not in flight; initializing
+244 verbose afterAdd C:\Users\Asim\AppData\Roaming\npm-cache\ms\0.7.2\package\package.json written
+245 silly fetchNamedPackageData base64-url
+246 silly mapToRegistry name base64-url
+247 silly mapToRegistry using default registry
+248 silly mapToRegistry registry https://registry.npmjs.org/
+249 silly mapToRegistry data Result {
+249 silly mapToRegistry   raw: 'base64-url',
+249 silly mapToRegistry   scope: null,
+249 silly mapToRegistry   escapedName: 'base64-url',
+249 silly mapToRegistry   name: 'base64-url',
+249 silly mapToRegistry   rawSpec: '',
+249 silly mapToRegistry   spec: 'latest',
+249 silly mapToRegistry   type: 'tag' }
+250 silly mapToRegistry uri https://registry.npmjs.org/base64-url
+251 silly fetchNamedPackageData random-bytes
+252 silly mapToRegistry name random-bytes
+253 silly mapToRegistry using default registry
+254 silly mapToRegistry registry https://registry.npmjs.org/
+255 silly mapToRegistry data Result {
+255 silly mapToRegistry   raw: 'random-bytes',
+255 silly mapToRegistry   scope: null,
+255 silly mapToRegistry   escapedName: 'random-bytes',
+255 silly mapToRegistry   name: 'random-bytes',
+255 silly mapToRegistry   rawSpec: '',
+255 silly mapToRegistry   spec: 'latest',
+255 silly mapToRegistry   type: 'tag' }
+256 silly mapToRegistry uri https://registry.npmjs.org/random-bytes
+257 verbose request uri https://registry.npmjs.org/base64-url
+258 verbose request no auth needed
+259 info attempt registry request try #1 at 7:24:21 AM
+260 verbose etag W/"58132265-3030"
+261 verbose lastModified Fri, 28 Oct 2016 10:03:17 GMT
+262 http request GET https://registry.npmjs.org/base64-url
+263 verbose request uri https://registry.npmjs.org/random-bytes
+264 verbose request no auth needed
+265 info attempt registry request try #1 at 7:24:21 AM
+266 verbose etag W/"5818d8d9-1161"
+267 verbose lastModified Tue, 01 Nov 2016 18:03:05 GMT
+268 http request GET https://registry.npmjs.org/random-bytes
+269 http 304 https://registry.npmjs.org/base64-url
+270 verbose headers { date: 'Mon, 27 Feb 2017 12:24:21 GMT',
+270 verbose headers   via: '1.1 varnish',
+270 verbose headers   'cache-control': 'max-age=300',
+270 verbose headers   etag: 'W/"58132265-3030"',
+270 verbose headers   age: '206',
+270 verbose headers   connection: 'keep-alive',
+270 verbose headers   'x-served-by': 'cache-jfk8130-JFK',
+270 verbose headers   'x-cache': 'HIT',
+270 verbose headers   'x-cache-hits': '1',
+270 verbose headers   'x-timer': 'S1488198261.712508,VS0,VE0',
+270 verbose headers   vary: 'Accept-Encoding' }
+271 silly get cb [ 304,
+271 silly get   { date: 'Mon, 27 Feb 2017 12:24:21 GMT',
+271 silly get     via: '1.1 varnish',
+271 silly get     'cache-control': 'max-age=300',
+271 silly get     etag: 'W/"58132265-3030"',
+271 silly get     age: '206',
+271 silly get     connection: 'keep-alive',
+271 silly get     'x-served-by': 'cache-jfk8130-JFK',
+271 silly get     'x-cache': 'HIT',
+271 silly get     'x-cache-hits': '1',
+271 silly get     'x-timer': 'S1488198261.712508,VS0,VE0',
+271 silly get     vary: 'Accept-Encoding' } ]
+272 verbose etag https://registry.npmjs.org/base64-url from cache
+273 verbose get saving base64-url to C:\Users\Asim\AppData\Roaming\npm-cache\registry.npmjs.org\base64-url\.cache.json
+274 verbose correctMkdir C:\Users\Asim\AppData\Roaming\npm-cache correctMkdir not in flight; initializing
+275 http 304 https://registry.npmjs.org/random-bytes
+276 verbose headers { date: 'Mon, 27 Feb 2017 12:24:21 GMT',
+276 verbose headers   via: '1.1 varnish',
+276 verbose headers   'cache-control': 'max-age=300',
+276 verbose headers   etag: 'W/"5818d8d9-1161"',
+276 verbose headers   age: '205',
+276 verbose headers   connection: 'keep-alive',
+276 verbose headers   'x-served-by': 'cache-jfk8125-JFK',
+276 verbose headers   'x-cache': 'HIT',
+276 verbose headers   'x-cache-hits': '2',
+276 verbose headers   'x-timer': 'S1488198261.716360,VS0,VE0',
+276 verbose headers   vary: 'Accept-Encoding' }
+277 silly get cb [ 304,
+277 silly get   { date: 'Mon, 27 Feb 2017 12:24:21 GMT',
+277 silly get     via: '1.1 varnish',
+277 silly get     'cache-control': 'max-age=300',
+277 silly get     etag: 'W/"5818d8d9-1161"',
+277 silly get     age: '205',
+277 silly get     connection: 'keep-alive',
+277 silly get     'x-served-by': 'cache-jfk8125-JFK',
+277 silly get     'x-cache': 'HIT',
+277 silly get     'x-cache-hits': '2',
+277 silly get     'x-timer': 'S1488198261.716360,VS0,VE0',
+277 silly get     vary: 'Accept-Encoding' } ]
+278 verbose etag https://registry.npmjs.org/random-bytes from cache
+279 verbose get saving random-bytes to C:\Users\Asim\AppData\Roaming\npm-cache\registry.npmjs.org\random-bytes\.cache.json
+280 verbose correctMkdir C:\Users\Asim\AppData\Roaming\npm-cache correctMkdir not in flight; initializing
+281 silly resolveWithNewModule base64-url@1.3.3 checking installable status
+282 silly cache add args [ 'base64-url@1.3.3', null ]
+283 verbose cache add spec base64-url@1.3.3
+284 silly cache add parsed spec Result {
+284 silly cache add   raw: 'base64-url@1.3.3',
+284 silly cache add   scope: null,
+284 silly cache add   escapedName: 'base64-url',
+284 silly cache add   name: 'base64-url',
+284 silly cache add   rawSpec: '1.3.3',
+284 silly cache add   spec: '1.3.3',
+284 silly cache add   type: 'version' }
+285 silly addNamed base64-url@1.3.3
+286 verbose addNamed "1.3.3" is a plain semver version for base64-url
+287 silly mapToRegistry name base64-url
+288 silly mapToRegistry using default registry
+289 silly mapToRegistry registry https://registry.npmjs.org/
+290 silly mapToRegistry data Result {
+290 silly mapToRegistry   raw: 'base64-url',
+290 silly mapToRegistry   scope: null,
+290 silly mapToRegistry   escapedName: 'base64-url',
+290 silly mapToRegistry   name: 'base64-url',
+290 silly mapToRegistry   rawSpec: '',
+290 silly mapToRegistry   spec: 'latest',
+290 silly mapToRegistry   type: 'tag' }
+291 silly mapToRegistry uri https://registry.npmjs.org/base64-url
+292 verbose addNameVersion registry:https://registry.npmjs.org/base64-url not in flight; fetching
+293 verbose get https://registry.npmjs.org/base64-url not expired, no request
+294 silly cache afterAdd base64-url@1.3.3
+295 verbose afterAdd C:\Users\Asim\AppData\Roaming\npm-cache\base64-url\1.3.3\package\package.json not in flight; writing
+296 verbose correctMkdir C:\Users\Asim\AppData\Roaming\npm-cache correctMkdir not in flight; initializing
+297 silly resolveWithNewModule random-bytes@1.0.0 checking installable status
+298 silly cache add args [ 'random-bytes@~1.0.0', null ]
+299 verbose cache add spec random-bytes@~1.0.0
+300 silly cache add parsed spec Result {
+300 silly cache add   raw: 'random-bytes@~1.0.0',
+300 silly cache add   scope: null,
+300 silly cache add   escapedName: 'random-bytes',
+300 silly cache add   name: 'random-bytes',
+300 silly cache add   rawSpec: '~1.0.0',
+300 silly cache add   spec: '>=1.0.0 <1.1.0',
+300 silly cache add   type: 'range' }
+301 silly addNamed random-bytes@>=1.0.0 <1.1.0
+302 verbose addNamed ">=1.0.0 <1.1.0" is a valid semver range for random-bytes
+303 silly addNameRange { name: 'random-bytes', range: '>=1.0.0 <1.1.0', hasData: false }
+304 silly mapToRegistry name random-bytes
+305 silly mapToRegistry using default registry
+306 silly mapToRegistry registry https://registry.npmjs.org/
+307 silly mapToRegistry data Result {
+307 silly mapToRegistry   raw: 'random-bytes',
+307 silly mapToRegistry   scope: null,
+307 silly mapToRegistry   escapedName: 'random-bytes',
+307 silly mapToRegistry   name: 'random-bytes',
+307 silly mapToRegistry   rawSpec: '',
+307 silly mapToRegistry   spec: 'latest',
+307 silly mapToRegistry   type: 'tag' }
+308 silly mapToRegistry uri https://registry.npmjs.org/random-bytes
+309 verbose addNameRange registry:https://registry.npmjs.org/random-bytes not in flight; fetching
+310 verbose get https://registry.npmjs.org/random-bytes not expired, no request
+311 silly addNameRange number 2 { name: 'random-bytes', range: '>=1.0.0 <1.1.0', hasData: true }
+312 silly addNameRange versions [ 'random-bytes', [ '1.0.0' ] ]
+313 silly addNamed random-bytes@1.0.0
+314 verbose addNamed "1.0.0" is a plain semver version for random-bytes
+315 silly cache afterAdd random-bytes@1.0.0
+316 verbose afterAdd C:\Users\Asim\AppData\Roaming\npm-cache\random-bytes\1.0.0\package\package.json not in flight; writing
+317 verbose correctMkdir C:\Users\Asim\AppData\Roaming\npm-cache correctMkdir not in flight; initializing
+318 verbose afterAdd C:\Users\Asim\AppData\Roaming\npm-cache\base64-url\1.3.3\package\package.json written
+319 verbose afterAdd C:\Users\Asim\AppData\Roaming\npm-cache\random-bytes\1.0.0\package\package.json written
+320 silly loadAllDepsIntoIdealTree Finishing
+321 silly loadIdealTree Finishing
+322 silly currentTree web-dev@1.0.0
+322 silly currentTree +-- accepts@1.3.3
+322 silly currentTree +-- angucomplete-alt@3.0.0
+322 silly currentTree +-- angular-route@1.5.0
+322 silly currentTree +-- append-field@0.1.0
+322 silly currentTree +-- array-flatten@1.1.1
+322 silly currentTree +-- async@2.1.4
+322 silly currentTree +-- bluebird@2.10.2
+322 silly currentTree +-- body-parser@1.16.1
+322 silly currentTree | +-- debug@2.6.1
+322 silly currentTree | +-- ms@0.7.2
+322 silly currentTree | `-- qs@6.2.1
+322 silly currentTree +-- bson@1.0.4
+322 silly currentTree +-- buffer-shims@1.0.0
+322 silly currentTree +-- busboy@0.2.14
+322 silly currentTree | +-- isarray@0.0.1
+322 silly currentTree | `-- readable-stream@1.1.14
+322 silly currentTree +-- bytes@2.4.0
+322 silly currentTree +-- concat-stream@1.6.0
+322 silly currentTree | `-- readable-stream@2.2.3
+322 silly currentTree +-- content-disposition@0.5.1
+322 silly currentTree +-- content-type@1.0.2
+322 silly currentTree +-- cookie-parser@1.4.3
+322 silly currentTree +-- cookie-signature@1.0.6
+322 silly currentTree +-- cookie@0.3.1
+322 silly currentTree +-- core-util-is@1.0.2
+322 silly currentTree +-- debug@2.2.0
+322 silly currentTree +-- depd@1.1.0
+322 silly currentTree +-- destroy@1.0.4
+322 silly currentTree +-- dicer@0.2.5
+322 silly currentTree | +-- isarray@0.0.1
+322 silly currentTree | `-- readable-stream@1.1.14
+322 silly currentTree +-- ee-first@1.1.1
+322 silly currentTree +-- encodeurl@1.0.1
+322 silly currentTree +-- es6-promise@3.2.1
+322 silly currentTree +-- escape-html@1.0.3
+322 silly currentTree +-- etag@1.7.0
+322 silly currentTree +-- express@4.14.0
+322 silly currentTree +-- finalhandler@0.5.0
+322 silly currentTree +-- forwarded@0.1.0
+322 silly currentTree +-- fresh@0.3.0
+322 silly currentTree +-- hooks-fixed@1.2.0
+322 silly currentTree +-- http-errors@1.5.1
+322 silly currentTree +-- iconv-lite@0.4.15
+322 silly currentTree +-- inherits@2.0.3
+322 silly currentTree +-- ipaddr.js@1.1.1
+322 silly currentTree +-- isarray@1.0.0
+322 silly currentTree +-- kareem@1.2.0
+322 silly currentTree +-- lodash@4.17.4
+322 silly currentTree +-- media-typer@0.3.0
+322 silly currentTree +-- merge-descriptors@1.0.1
+322 silly currentTree +-- methods@1.1.2
+322 silly currentTree +-- mime-db@1.25.0
+322 silly currentTree +-- mime-types@2.1.13
+322 silly currentTree +-- mime@1.3.4
+322 silly currentTree +-- minimist@0.0.8
+322 silly currentTree +-- mkdirp@0.5.1
+322 silly currentTree +-- mongodb-core@2.1.2
+322 silly currentTree +-- mongodb@2.2.16
+322 silly currentTree +-- mongoose@4.7.6
+322 silly currentTree | `-- ms@0.7.2
+322 silly currentTree +-- mpath@0.2.1
+322 silly currentTree +-- mpromise@0.5.5
+322 silly currentTree +-- mquery@2.0.0
+322 silly currentTree | `-- sliced@0.0.5
+322 silly currentTree +-- ms@0.7.1
+322 silly currentTree +-- multer@1.3.0
+322 silly currentTree +-- muri@1.1.1
+322 silly currentTree +-- negotiator@0.6.1
+322 silly currentTree +-- object-assign@3.0.0
+322 silly currentTree +-- on-finished@2.3.0
+322 silly currentTree +-- parseurl@1.3.1
+322 silly currentTree +-- passport-strategy@1.0.0
+322 silly currentTree +-- passport@0.3.2
+322 silly currentTree +-- path-to-regexp@0.1.7
+322 silly currentTree +-- pause@0.0.1
+322 silly currentTree +-- process-nextick-args@1.0.7
+322 silly currentTree +-- proxy-addr@1.1.2
+322 silly currentTree +-- qs@6.2.0
+322 silly currentTree +-- range-parser@1.2.0
+322 silly currentTree +-- raw-body@2.2.0
+322 silly currentTree +-- readable-stream@2.1.5
+322 silly currentTree +-- regexp-clone@0.0.1
+322 silly currentTree +-- require_optional@1.0.0
+322 silly currentTree +-- resolve-from@2.0.0
+322 silly currentTree +-- semver@5.3.0
+322 silly currentTree +-- send@0.14.1
+322 silly currentTree +-- serve-static@1.11.1
+322 silly currentTree +-- setprototypeof@1.0.2
+322 silly currentTree +-- sliced@1.0.1
+322 silly currentTree +-- statuses@1.3.1
+322 silly currentTree +-- streamsearch@0.1.2
+322 silly currentTree +-- string_decoder@0.10.31
+322 silly currentTree +-- type-is@1.6.14
+322 silly currentTree +-- typedarray@0.0.6
+322 silly currentTree +-- unpipe@1.0.0
+322 silly currentTree +-- util-deprecate@1.0.2
+322 silly currentTree +-- utils-merge@1.0.0
+322 silly currentTree +-- vary@1.1.0
+322 silly currentTree `-- xtend@4.0.1
+323 silly idealTree web-dev@1.0.0
+323 silly idealTree +-- accepts@1.3.3
+323 silly idealTree +-- angucomplete-alt@3.0.0
+323 silly idealTree +-- angular-route@1.5.0
+323 silly idealTree +-- append-field@0.1.0
+323 silly idealTree +-- array-flatten@1.1.1
+323 silly idealTree +-- async@2.1.4
+323 silly idealTree +-- base64-url@1.3.3
+323 silly idealTree +-- bluebird@2.10.2
+323 silly idealTree +-- body-parser@1.16.1
+323 silly idealTree | +-- debug@2.6.1
+323 silly idealTree | +-- ms@0.7.2
+323 silly idealTree | `-- qs@6.2.1
+323 silly idealTree +-- bson@1.0.4
+323 silly idealTree +-- buffer-shims@1.0.0
+323 silly idealTree +-- busboy@0.2.14
+323 silly idealTree | +-- isarray@0.0.1
+323 silly idealTree | `-- readable-stream@1.1.14
+323 silly idealTree +-- bytes@2.4.0
+323 silly idealTree +-- concat-stream@1.6.0
+323 silly idealTree | `-- readable-stream@2.2.3
+323 silly idealTree +-- content-disposition@0.5.1
+323 silly idealTree +-- content-type@1.0.2
+323 silly idealTree +-- cookie-parser@1.4.3
+323 silly idealTree +-- cookie-signature@1.0.6
+323 silly idealTree +-- cookie@0.3.1
+323 silly idealTree +-- core-util-is@1.0.2
+323 silly idealTree +-- crc@3.4.4
+323 silly idealTree +-- debug@2.2.0
+323 silly idealTree +-- depd@1.1.0
+323 silly idealTree +-- destroy@1.0.4
+323 silly idealTree +-- dicer@0.2.5
+323 silly idealTree | +-- isarray@0.0.1
+323 silly idealTree | `-- readable-stream@1.1.14
+323 silly idealTree +-- ee-first@1.1.1
+323 silly idealTree +-- encodeurl@1.0.1
+323 silly idealTree +-- es6-promise@3.2.1
+323 silly idealTree +-- escape-html@1.0.3
+323 silly idealTree +-- etag@1.7.0
+323 silly idealTree +-- express-session@1.15.1
+323 silly idealTree | +-- debug@2.6.1
+323 silly idealTree | `-- ms@0.7.2
+323 silly idealTree +-- express@4.14.0
+323 silly idealTree +-- finalhandler@0.5.0
+323 silly idealTree +-- forwarded@0.1.0
+323 silly idealTree +-- fresh@0.3.0
+323 silly idealTree +-- hooks-fixed@1.2.0
+323 silly idealTree +-- http-errors@1.5.1
+323 silly idealTree +-- iconv-lite@0.4.15
+323 silly idealTree +-- inherits@2.0.3
+323 silly idealTree +-- ipaddr.js@1.1.1
+323 silly idealTree +-- isarray@1.0.0
+323 silly idealTree +-- kareem@1.2.0
+323 silly idealTree +-- lodash@4.17.4
+323 silly idealTree +-- media-typer@0.3.0
+323 silly idealTree +-- merge-descriptors@1.0.1
+323 silly idealTree +-- methods@1.1.2
+323 silly idealTree +-- mime-db@1.25.0
+323 silly idealTree +-- mime-types@2.1.13
+323 silly idealTree +-- mime@1.3.4
+323 silly idealTree +-- minimist@0.0.8
+323 silly idealTree +-- mkdirp@0.5.1
+323 silly idealTree +-- mongodb-core@2.1.2
+323 silly idealTree +-- mongodb@2.2.16
+323 silly idealTree +-- mongoose@4.7.6
+323 silly idealTree | `-- ms@0.7.2
+323 silly idealTree +-- mpath@0.2.1
+323 silly idealTree +-- mpromise@0.5.5
+323 silly idealTree +-- mquery@2.0.0
+323 silly idealTree | `-- sliced@0.0.5
+323 silly idealTree +-- ms@0.7.1
+323 silly idealTree +-- multer@1.3.0
+323 silly idealTree +-- muri@1.1.1
+323 silly idealTree +-- negotiator@0.6.1
+323 silly idealTree +-- object-assign@3.0.0
+323 silly idealTree +-- on-finished@2.3.0
+323 silly idealTree +-- on-headers@1.0.1
+323 silly idealTree +-- parseurl@1.3.1
+323 silly idealTree +-- passport-strategy@1.0.0
+323 silly idealTree +-- passport@0.3.2
+323 silly idealTree +-- path-to-regexp@0.1.7
+323 silly idealTree +-- pause@0.0.1
+323 silly idealTree +-- process-nextick-args@1.0.7
+323 silly idealTree +-- proxy-addr@1.1.2
+323 silly idealTree +-- qs@6.2.0
+323 silly idealTree +-- random-bytes@1.0.0
+323 silly idealTree +-- range-parser@1.2.0
+323 silly idealTree +-- raw-body@2.2.0
+323 silly idealTree +-- readable-stream@2.1.5
+323 silly idealTree +-- regexp-clone@0.0.1
+323 silly idealTree +-- require_optional@1.0.0
+323 silly idealTree +-- resolve-from@2.0.0
+323 silly idealTree +-- semver@5.3.0
+323 silly idealTree +-- send@0.14.1
+323 silly idealTree +-- serve-static@1.11.1
+323 silly idealTree +-- setprototypeof@1.0.2
+323 silly idealTree +-- sliced@1.0.1
+323 silly idealTree +-- statuses@1.3.1
+323 silly idealTree +-- streamsearch@0.1.2
+323 silly idealTree +-- string_decoder@0.10.31
+323 silly idealTree +-- type-is@1.6.14
+323 silly idealTree +-- typedarray@0.0.6
+323 silly idealTree +-- uid-safe@2.1.3
+323 silly idealTree +-- unpipe@1.0.0
+323 silly idealTree +-- util-deprecate@1.0.2
+323 silly idealTree +-- utils-merge@1.0.0
+323 silly idealTree +-- vary@1.1.0
+323 silly idealTree `-- xtend@4.0.1
+324 silly generateActionsToTake Starting
+325 silly install generateActionsToTake
+326 silly generateActionsToTake Finishing
+327 silly diffTrees action count 8
+328 silly diffTrees add base64-url@1.3.3
+329 silly diffTrees add ms@0.7.2
+330 silly diffTrees add random-bytes@1.0.0
+331 silly diffTrees add crc@3.4.4
+332 silly diffTrees add debug@2.6.1
+333 silly diffTrees add on-headers@1.0.1
+334 silly diffTrees add uid-safe@2.1.3
+335 silly diffTrees add express-session@1.15.1
+336 silly decomposeActions action count 64
+337 silly decomposeActions fetch base64-url@1.3.3
+338 silly decomposeActions extract base64-url@1.3.3
+339 silly decomposeActions test base64-url@1.3.3
+340 silly decomposeActions preinstall base64-url@1.3.3
+341 silly decomposeActions build base64-url@1.3.3
+342 silly decomposeActions install base64-url@1.3.3
+343 silly decomposeActions postinstall base64-url@1.3.3
+344 silly decomposeActions finalize base64-url@1.3.3
+345 silly decomposeActions fetch ms@0.7.2
+346 silly decomposeActions extract ms@0.7.2
+347 silly decomposeActions test ms@0.7.2
+348 silly decomposeActions preinstall ms@0.7.2
+349 silly decomposeActions build ms@0.7.2
+350 silly decomposeActions install ms@0.7.2
+351 silly decomposeActions postinstall ms@0.7.2
+352 silly decomposeActions finalize ms@0.7.2
+353 silly decomposeActions fetch random-bytes@1.0.0
+354 silly decomposeActions extract random-bytes@1.0.0
+355 silly decomposeActions test random-bytes@1.0.0
+356 silly decomposeActions preinstall random-bytes@1.0.0
+357 silly decomposeActions build random-bytes@1.0.0
+358 silly decomposeActions install random-bytes@1.0.0
+359 silly decomposeActions postinstall random-bytes@1.0.0
+360 silly decomposeActions finalize random-bytes@1.0.0
+361 silly decomposeActions fetch crc@3.4.4
+362 silly decomposeActions extract crc@3.4.4
+363 silly decomposeActions test crc@3.4.4
+364 silly decomposeActions preinstall crc@3.4.4
+365 silly decomposeActions build crc@3.4.4
+366 silly decomposeActions install crc@3.4.4
+367 silly decomposeActions postinstall crc@3.4.4
+368 silly decomposeActions finalize crc@3.4.4
+369 silly decomposeActions fetch debug@2.6.1
+370 silly decomposeActions extract debug@2.6.1
+371 silly decomposeActions test debug@2.6.1
+372 silly decomposeActions preinstall debug@2.6.1
+373 silly decomposeActions build debug@2.6.1
+374 silly decomposeActions install debug@2.6.1
+375 silly decomposeActions postinstall debug@2.6.1
+376 silly decomposeActions finalize debug@2.6.1
+377 silly decomposeActions fetch on-headers@1.0.1
+378 silly decomposeActions extract on-headers@1.0.1
+379 silly decomposeActions test on-headers@1.0.1
+380 silly decomposeActions preinstall on-headers@1.0.1
+381 silly decomposeActions build on-headers@1.0.1
+382 silly decomposeActions install on-headers@1.0.1
+383 silly decomposeActions postinstall on-headers@1.0.1
+384 silly decomposeActions finalize on-headers@1.0.1
+385 silly decomposeActions fetch uid-safe@2.1.3
+386 silly decomposeActions extract uid-safe@2.1.3
+387 silly decomposeActions test uid-safe@2.1.3
+388 silly decomposeActions preinstall uid-safe@2.1.3
+389 silly decomposeActions build uid-safe@2.1.3
+390 silly decomposeActions install uid-safe@2.1.3
+391 silly decomposeActions postinstall uid-safe@2.1.3
+392 silly decomposeActions finalize uid-safe@2.1.3
+393 silly decomposeActions fetch express-session@1.15.1
+394 silly decomposeActions extract express-session@1.15.1
+395 silly decomposeActions test express-session@1.15.1
+396 silly decomposeActions preinstall express-session@1.15.1
+397 silly decomposeActions build express-session@1.15.1
+398 silly decomposeActions install express-session@1.15.1
+399 silly decomposeActions postinstall express-session@1.15.1
+400 silly decomposeActions finalize express-session@1.15.1
+401 silly runTopLevelLifecycles Starting
+402 silly executeActions Starting
+403 silly install executeActions
+404 silly doSerial global-install 0
+405 silly doParallel fetch 8
+406 verbose correctMkdir C:\Users\Asim\AppData\Roaming\npm-cache\_locks correctMkdir not in flight; initializing
+407 verbose lock using C:\Users\Asim\AppData\Roaming\npm-cache\_locks\staging-654419badf60d531.lock for C:\Users\Asim\Dropbox\Northeastern_University\Spring2017\WEB_DEVELOPMENT\workspace_neu\webdev\node_modules\.staging
+408 silly doParallel extract 8
+409 silly extract base64-url@1.3.3
+410 silly extract ms@0.7.2
+411 silly extract random-bytes@1.0.0
+412 silly extract crc@3.4.4
+413 silly extract debug@2.6.1
+414 silly extract on-headers@1.0.1
+415 silly extract uid-safe@2.1.3
+416 silly extract express-session@1.15.1
+417 verbose unbuild node_modules\.staging\base64-url-a89d00b2
+418 verbose unbuild node_modules\.staging\random-bytes-d35c24cb
+419 verbose unbuild node_modules\.staging\ms-7fc6d281
+420 verbose unbuild node_modules\.staging\crc-6c181afc
+421 verbose unbuild node_modules\.staging\uid-safe-3494d48d
+422 verbose unbuild node_modules\.staging\express-session-31287618
+423 silly gentlyRm C:\Users\Asim\Dropbox\Northeastern_University\Spring2017\WEB_DEVELOPMENT\workspace_neu\webdev\node_modules\.staging\base64-url-a89d00b2 is being purged from base C:\Users\Asim\Dropbox\Northeastern_University\Spring2017\WEB_DEVELOPMENT\workspace_neu\webdev
+424 verbose gentlyRm don't care about contents; nuking C:\Users\Asim\Dropbox\Northeastern_University\Spring2017\WEB_DEVELOPMENT\workspace_neu\webdev\node_modules\.staging\base64-url-a89d00b2
+425 silly gentlyRm C:\Users\Asim\Dropbox\Northeastern_University\Spring2017\WEB_DEVELOPMENT\workspace_neu\webdev\node_modules\.staging\random-bytes-d35c24cb is being purged from base C:\Users\Asim\Dropbox\Northeastern_University\Spring2017\WEB_DEVELOPMENT\workspace_neu\webdev
+426 verbose gentlyRm don't care about contents; nuking C:\Users\Asim\Dropbox\Northeastern_University\Spring2017\WEB_DEVELOPMENT\workspace_neu\webdev\node_modules\.staging\random-bytes-d35c24cb
+427 silly gentlyRm C:\Users\Asim\Dropbox\Northeastern_University\Spring2017\WEB_DEVELOPMENT\workspace_neu\webdev\node_modules\.staging\ms-7fc6d281 is being purged from base C:\Users\Asim\Dropbox\Northeastern_University\Spring2017\WEB_DEVELOPMENT\workspace_neu\webdev
+428 verbose gentlyRm don't care about contents; nuking C:\Users\Asim\Dropbox\Northeastern_University\Spring2017\WEB_DEVELOPMENT\workspace_neu\webdev\node_modules\.staging\ms-7fc6d281
+429 verbose unbuild node_modules\.staging\on-headers-d1063187
+430 verbose unbuild node_modules\.staging\debug-b01a6b84
+431 silly gentlyRm C:\Users\Asim\Dropbox\Northeastern_University\Spring2017\WEB_DEVELOPMENT\workspace_neu\webdev\node_modules\.staging\crc-6c181afc is being purged from base C:\Users\Asim\Dropbox\Northeastern_University\Spring2017\WEB_DEVELOPMENT\workspace_neu\webdev
+432 verbose gentlyRm don't care about contents; nuking C:\Users\Asim\Dropbox\Northeastern_University\Spring2017\WEB_DEVELOPMENT\workspace_neu\webdev\node_modules\.staging\crc-6c181afc
+433 silly gentlyRm C:\Users\Asim\Dropbox\Northeastern_University\Spring2017\WEB_DEVELOPMENT\workspace_neu\webdev\node_modules\.staging\uid-safe-3494d48d is being purged from base C:\Users\Asim\Dropbox\Northeastern_University\Spring2017\WEB_DEVELOPMENT\workspace_neu\webdev
+434 verbose gentlyRm don't care about contents; nuking C:\Users\Asim\Dropbox\Northeastern_University\Spring2017\WEB_DEVELOPMENT\workspace_neu\webdev\node_modules\.staging\uid-safe-3494d48d
+435 verbose tar unpack C:\Users\Asim\AppData\Roaming\npm-cache\base64-url\1.3.3\package.tgz
+436 verbose tar unpacking to C:\Users\Asim\Dropbox\Northeastern_University\Spring2017\WEB_DEVELOPMENT\workspace_neu\webdev\node_modules\.staging\base64-url-a89d00b2
+437 silly gentlyRm C:\Users\Asim\Dropbox\Northeastern_University\Spring2017\WEB_DEVELOPMENT\workspace_neu\webdev\node_modules\.staging\base64-url-a89d00b2 is being purged
+438 verbose gentlyRm don't care about contents; nuking C:\Users\Asim\Dropbox\Northeastern_University\Spring2017\WEB_DEVELOPMENT\workspace_neu\webdev\node_modules\.staging\base64-url-a89d00b2
+439 verbose tar unpack C:\Users\Asim\AppData\Roaming\npm-cache\random-bytes\1.0.0\package.tgz
+440 verbose tar unpacking to C:\Users\Asim\Dropbox\Northeastern_University\Spring2017\WEB_DEVELOPMENT\workspace_neu\webdev\node_modules\.staging\random-bytes-d35c24cb
+441 silly gentlyRm C:\Users\Asim\Dropbox\Northeastern_University\Spring2017\WEB_DEVELOPMENT\workspace_neu\webdev\node_modules\.staging\random-bytes-d35c24cb is being purged
+442 verbose gentlyRm don't care about contents; nuking C:\Users\Asim\Dropbox\Northeastern_University\Spring2017\WEB_DEVELOPMENT\workspace_neu\webdev\node_modules\.staging\random-bytes-d35c24cb
+443 verbose tar unpack C:\Users\Asim\AppData\Roaming\npm-cache\ms\0.7.2\package.tgz
+444 verbose tar unpacking to C:\Users\Asim\Dropbox\Northeastern_University\Spring2017\WEB_DEVELOPMENT\workspace_neu\webdev\node_modules\.staging\ms-7fc6d281
+445 silly gentlyRm C:\Users\Asim\Dropbox\Northeastern_University\Spring2017\WEB_DEVELOPMENT\workspace_neu\webdev\node_modules\.staging\ms-7fc6d281 is being purged
+446 verbose gentlyRm don't care about contents; nuking C:\Users\Asim\Dropbox\Northeastern_University\Spring2017\WEB_DEVELOPMENT\workspace_neu\webdev\node_modules\.staging\ms-7fc6d281
+447 verbose tar unpack C:\Users\Asim\AppData\Roaming\npm-cache\crc\3.4.4\package.tgz
+448 verbose tar unpacking to C:\Users\Asim\Dropbox\Northeastern_University\Spring2017\WEB_DEVELOPMENT\workspace_neu\webdev\node_modules\.staging\crc-6c181afc
+449 silly gentlyRm C:\Users\Asim\Dropbox\Northeastern_University\Spring2017\WEB_DEVELOPMENT\workspace_neu\webdev\node_modules\.staging\crc-6c181afc is being purged
+450 verbose gentlyRm don't care about contents; nuking C:\Users\Asim\Dropbox\Northeastern_University\Spring2017\WEB_DEVELOPMENT\workspace_neu\webdev\node_modules\.staging\crc-6c181afc
+451 verbose tar unpack C:\Users\Asim\AppData\Roaming\npm-cache\uid-safe\2.1.3\package.tgz
+452 verbose tar unpacking to C:\Users\Asim\Dropbox\Northeastern_University\Spring2017\WEB_DEVELOPMENT\workspace_neu\webdev\node_modules\.staging\uid-safe-3494d48d
+453 silly gentlyRm C:\Users\Asim\Dropbox\Northeastern_University\Spring2017\WEB_DEVELOPMENT\workspace_neu\webdev\node_modules\.staging\uid-safe-3494d48d is being purged
+454 verbose gentlyRm don't care about contents; nuking C:\Users\Asim\Dropbox\Northeastern_University\Spring2017\WEB_DEVELOPMENT\workspace_neu\webdev\node_modules\.staging\uid-safe-3494d48d
+455 silly gunzTarPerm modes [ '777', '666' ]
+456 silly gunzTarPerm modes [ '777', '666' ]
+457 silly gunzTarPerm modes [ '777', '666' ]
+458 silly gentlyRm C:\Users\Asim\Dropbox\Northeastern_University\Spring2017\WEB_DEVELOPMENT\workspace_neu\webdev\node_modules\.staging\express-session-31287618 is being purged from base C:\Users\Asim\Dropbox\Northeastern_University\Spring2017\WEB_DEVELOPMENT\workspace_neu\webdev
+459 verbose gentlyRm don't care about contents; nuking C:\Users\Asim\Dropbox\Northeastern_University\Spring2017\WEB_DEVELOPMENT\workspace_neu\webdev\node_modules\.staging\express-session-31287618
+460 silly gunzTarPerm modes [ '777', '666' ]
+461 silly gunzTarPerm modes [ '777', '666' ]
+462 silly gentlyRm C:\Users\Asim\Dropbox\Northeastern_University\Spring2017\WEB_DEVELOPMENT\workspace_neu\webdev\node_modules\.staging\debug-b01a6b84 is being purged from base C:\Users\Asim\Dropbox\Northeastern_University\Spring2017\WEB_DEVELOPMENT\workspace_neu\webdev
+463 verbose gentlyRm don't care about contents; nuking C:\Users\Asim\Dropbox\Northeastern_University\Spring2017\WEB_DEVELOPMENT\workspace_neu\webdev\node_modules\.staging\debug-b01a6b84
+464 silly gentlyRm C:\Users\Asim\Dropbox\Northeastern_University\Spring2017\WEB_DEVELOPMENT\workspace_neu\webdev\node_modules\.staging\on-headers-d1063187 is being purged from base C:\Users\Asim\Dropbox\Northeastern_University\Spring2017\WEB_DEVELOPMENT\workspace_neu\webdev
+465 verbose gentlyRm don't care about contents; nuking C:\Users\Asim\Dropbox\Northeastern_University\Spring2017\WEB_DEVELOPMENT\workspace_neu\webdev\node_modules\.staging\on-headers-d1063187
+466 verbose tar unpack C:\Users\Asim\AppData\Roaming\npm-cache\express-session\1.15.1\package.tgz
+467 verbose tar unpacking to C:\Users\Asim\Dropbox\Northeastern_University\Spring2017\WEB_DEVELOPMENT\workspace_neu\webdev\node_modules\.staging\express-session-31287618
+468 silly gentlyRm C:\Users\Asim\Dropbox\Northeastern_University\Spring2017\WEB_DEVELOPMENT\workspace_neu\webdev\node_modules\.staging\express-session-31287618 is being purged
+469 verbose gentlyRm don't care about contents; nuking C:\Users\Asim\Dropbox\Northeastern_University\Spring2017\WEB_DEVELOPMENT\workspace_neu\webdev\node_modules\.staging\express-session-31287618
+470 verbose tar unpack C:\Users\Asim\AppData\Roaming\npm-cache\debug\2.6.1\package.tgz
+471 verbose tar unpacking to C:\Users\Asim\Dropbox\Northeastern_University\Spring2017\WEB_DEVELOPMENT\workspace_neu\webdev\node_modules\.staging\debug-b01a6b84
+472 silly gentlyRm C:\Users\Asim\Dropbox\Northeastern_University\Spring2017\WEB_DEVELOPMENT\workspace_neu\webdev\node_modules\.staging\debug-b01a6b84 is being purged
+473 verbose gentlyRm don't care about contents; nuking C:\Users\Asim\Dropbox\Northeastern_University\Spring2017\WEB_DEVELOPMENT\workspace_neu\webdev\node_modules\.staging\debug-b01a6b84
+474 verbose tar unpack C:\Users\Asim\AppData\Roaming\npm-cache\on-headers\1.0.1\package.tgz
+475 verbose tar unpacking to C:\Users\Asim\Dropbox\Northeastern_University\Spring2017\WEB_DEVELOPMENT\workspace_neu\webdev\node_modules\.staging\on-headers-d1063187
+476 silly gentlyRm C:\Users\Asim\Dropbox\Northeastern_University\Spring2017\WEB_DEVELOPMENT\workspace_neu\webdev\node_modules\.staging\on-headers-d1063187 is being purged
+477 verbose gentlyRm don't care about contents; nuking C:\Users\Asim\Dropbox\Northeastern_University\Spring2017\WEB_DEVELOPMENT\workspace_neu\webdev\node_modules\.staging\on-headers-d1063187
+478 silly gunzTarPerm modes [ '777', '666' ]
+479 silly gunzTarPerm modes [ '777', '666' ]
+480 silly gunzTarPerm modes [ '777', '666' ]
+481 silly gunzTarPerm extractEntry package.json
+482 silly gunzTarPerm modified mode [ 'package.json', 420, 438 ]
+483 silly gunzTarPerm extractEntry package.json
+484 silly gunzTarPerm extractEntry package.json
+485 silly gunzTarPerm modified mode [ 'package.json', 420, 438 ]
+486 silly gunzTarPerm extractEntry package.json
+487 silly gunzTarPerm extractEntry package.json
+488 silly gunzTarPerm modified mode [ 'package.json', 420, 438 ]
+489 silly gunzTarPerm extractEntry package.json
+490 silly gunzTarPerm extractEntry package.json
+491 silly gunzTarPerm modified mode [ 'package.json', 420, 438 ]
+492 silly gunzTarPerm extractEntry package.json
+493 silly gunzTarPerm extractEntry README.md
+494 silly gunzTarPerm modified mode [ 'README.md', 420, 438 ]
+495 silly gunzTarPerm extractEntry LICENSE
+496 silly gunzTarPerm modified mode [ 'LICENSE', 420, 438 ]
+497 silly gunzTarPerm extractEntry README.md
+498 silly gunzTarPerm extractEntry LICENSE
+499 silly gunzTarPerm extractEntry README.md
+500 silly gunzTarPerm modified mode [ 'README.md', 420, 438 ]
+501 silly gunzTarPerm extractEntry index.js
+502 silly gunzTarPerm modified mode [ 'index.js', 420, 438 ]
+503 silly gunzTarPerm extractEntry README.md
+504 silly gunzTarPerm extractEntry LICENSE
+505 silly gunzTarPerm extractEntry README.md
+506 silly gunzTarPerm modified mode [ 'README.md', 420, 438 ]
+507 silly gunzTarPerm extractEntry LICENSE
+508 silly gunzTarPerm modified mode [ 'LICENSE', 420, 438 ]
+509 silly gunzTarPerm extractEntry README.md
+510 silly gunzTarPerm extractEntry LICENSE
+511 silly gunzTarPerm extractEntry index.js
+512 silly gunzTarPerm extractEntry HISTORY.md
+513 silly gunzTarPerm extractEntry session/cookie.js
+514 silly gunzTarPerm extractEntry session/memory.js
+515 silly gunzTarPerm extractEntry session/session.js
+516 silly gunzTarPerm extractEntry session/store.js
+517 silly gunzTarPerm extractEntry README.md
+518 silly gunzTarPerm extractEntry LICENSE
+519 silly gunzTarPerm extractEntry .npmignore
+520 silly gunzTarPerm modified mode [ '.npmignore', 420, 438 ]
+521 silly gunzTarPerm extractEntry README.md
+522 silly gunzTarPerm modified mode [ 'README.md', 420, 438 ]
+523 silly gunzTarPerm extractEntry index.js
+524 silly gunzTarPerm extractEntry HISTORY.md
+525 silly gunzTarPerm extractEntry index.js
+526 silly gunzTarPerm modified mode [ 'index.js', 420, 438 ]
+527 silly gunzTarPerm extractEntry lib/crc1.js
+528 silly gunzTarPerm modified mode [ 'lib/crc1.js', 420, 438 ]
+529 silly gunzTarPerm extractEntry lib/crc16_kermit.js
+530 silly gunzTarPerm modified mode [ 'lib/crc16_kermit.js', 420, 438 ]
+531 silly gunzTarPerm extractEntry index.js
+532 silly gunzTarPerm extractEntry HISTORY.md
+533 silly gunzTarPerm extractEntry LICENSE.md
+534 silly gunzTarPerm modified mode [ 'LICENSE.md', 420, 438 ]
+535 silly gunzTarPerm extractEntry LICENSE
+536 silly gunzTarPerm modified mode [ 'LICENSE', 420, 438 ]
+537 silly gunzTarPerm extractEntry karma.conf.js
+538 silly gunzTarPerm modified mode [ 'karma.conf.js', 420, 438 ]
+539 silly gunzTarPerm extractEntry index.js
+540 silly gunzTarPerm extractEntry HISTORY.md
+541 silly gunzTarPerm extractEntry lib/crc16_modbus.js
+542 silly gunzTarPerm modified mode [ 'lib/crc16_modbus.js', 420, 438 ]
+543 silly gunzTarPerm extractEntry lib/crc16_xmodem.js
+544 silly gunzTarPerm modified mode [ 'lib/crc16_xmodem.js', 420, 438 ]
+545 silly gunzTarPerm extractEntry lib/crc16_ccitt.js
+546 silly gunzTarPerm modified mode [ 'lib/crc16_ccitt.js', 420, 438 ]
+547 silly gunzTarPerm extractEntry lib/crc32.js
+548 silly gunzTarPerm modified mode [ 'lib/crc32.js', 420, 438 ]
+549 silly gunzTarPerm extractEntry lib/crc8.js
+550 silly gunzTarPerm modified mode [ 'lib/crc8.js', 420, 438 ]
+551 silly gunzTarPerm extractEntry lib/crc8_1wire.js
+552 silly gunzTarPerm modified mode [ 'lib/crc8_1wire.js', 420, 438 ]
+553 silly gunzTarPerm extractEntry lib/create_buffer.js
+554 silly gunzTarPerm modified mode [ 'lib/create_buffer.js', 420, 438 ]
+555 silly gunzTarPerm extractEntry lib/define_crc.js
+556 silly gunzTarPerm modified mode [ 'lib/define_crc.js', 420, 438 ]
+557 silly gunzTarPerm extractEntry lib/crc16.js
+558 silly gunzTarPerm modified mode [ 'lib/crc16.js', 420, 438 ]
+559 silly gunzTarPerm extractEntry lib/index.js
+560 silly gunzTarPerm modified mode [ 'lib/index.js', 420, 438 ]
+561 silly gunzTarPerm extractEntry lib/crc24.js
+562 silly gunzTarPerm modified mode [ 'lib/crc24.js', 420, 438 ]
+563 silly gunzTarPerm extractEntry node.js
+564 silly gunzTarPerm modified mode [ 'node.js', 420, 438 ]
+565 silly gunzTarPerm extractEntry component.json
+566 silly gunzTarPerm modified mode [ 'component.json', 420, 438 ]
+567 silly gunzTarPerm extractEntry Makefile
+568 silly gunzTarPerm modified mode [ 'Makefile', 420, 438 ]
+569 silly gunzTarPerm extractEntry .coveralls.yml
+570 silly gunzTarPerm modified mode [ '.coveralls.yml', 420, 438 ]
+571 silly gunzTarPerm extractEntry bower.json
+572 silly gunzTarPerm modified mode [ 'bower.json', 420, 438 ]
+573 silly gunzTarPerm extractEntry .eslintrc
+574 silly gunzTarPerm modified mode [ '.eslintrc', 420, 438 ]
+575 silly gunzTarPerm extractEntry .travis.yml
+576 silly gunzTarPerm modified mode [ '.travis.yml', 420, 438 ]
+577 silly gentlyRm C:\Users\Asim\Dropbox\Northeastern_University\Spring2017\WEB_DEVELOPMENT\workspace_neu\webdev\node_modules\.staging\ms-7fc6d281\node_modules is being purged
+578 verbose gentlyRm don't care about contents; nuking C:\Users\Asim\Dropbox\Northeastern_University\Spring2017\WEB_DEVELOPMENT\workspace_neu\webdev\node_modules\.staging\ms-7fc6d281\node_modules
+579 silly gunzTarPerm extractEntry CHANGELOG.md
+580 silly gunzTarPerm modified mode [ 'CHANGELOG.md', 420, 438 ]
+581 silly gunzTarPerm extractEntry src/browser.js
+582 silly gunzTarPerm modified mode [ 'src/browser.js', 420, 438 ]
+583 silly gentlyRm C:\Users\Asim\Dropbox\Northeastern_University\Spring2017\WEB_DEVELOPMENT\workspace_neu\webdev\node_modules\.staging\random-bytes-d35c24cb\node_modules is being purged
+584 verbose gentlyRm don't care about contents; nuking C:\Users\Asim\Dropbox\Northeastern_University\Spring2017\WEB_DEVELOPMENT\workspace_neu\webdev\node_modules\.staging\random-bytes-d35c24cb\node_modules
+585 silly gunzTarPerm extractEntry src/debug.js
+586 silly gunzTarPerm modified mode [ 'src/debug.js', 420, 438 ]
+587 silly gunzTarPerm extractEntry src/index.js
+588 silly gunzTarPerm modified mode [ 'src/index.js', 420, 438 ]
+589 silly gentlyRm C:\Users\Asim\Dropbox\Northeastern_University\Spring2017\WEB_DEVELOPMENT\workspace_neu\webdev\node_modules\.staging\uid-safe-3494d48d\node_modules is being purged
+590 verbose gentlyRm don't care about contents; nuking C:\Users\Asim\Dropbox\Northeastern_University\Spring2017\WEB_DEVELOPMENT\workspace_neu\webdev\node_modules\.staging\uid-safe-3494d48d\node_modules
+591 silly gentlyRm C:\Users\Asim\Dropbox\Northeastern_University\Spring2017\WEB_DEVELOPMENT\workspace_neu\webdev\node_modules\.staging\on-headers-d1063187\node_modules is being purged
+592 verbose gentlyRm don't care about contents; nuking C:\Users\Asim\Dropbox\Northeastern_University\Spring2017\WEB_DEVELOPMENT\workspace_neu\webdev\node_modules\.staging\on-headers-d1063187\node_modules
+593 silly gunzTarPerm extractEntry src/node.js
+594 silly gunzTarPerm modified mode [ 'src/node.js', 420, 438 ]
+595 silly gentlyRm C:\Users\Asim\Dropbox\Northeastern_University\Spring2017\WEB_DEVELOPMENT\workspace_neu\webdev\node_modules\.staging\express-session-31287618\node_modules is being purged
+596 verbose gentlyRm don't care about contents; nuking C:\Users\Asim\Dropbox\Northeastern_University\Spring2017\WEB_DEVELOPMENT\workspace_neu\webdev\node_modules\.staging\express-session-31287618\node_modules
+597 silly gentlyRm C:\Users\Asim\Dropbox\Northeastern_University\Spring2017\WEB_DEVELOPMENT\workspace_neu\webdev\node_modules\.staging\crc-6c181afc\node_modules is being purged
+598 verbose gentlyRm don't care about contents; nuking C:\Users\Asim\Dropbox\Northeastern_University\Spring2017\WEB_DEVELOPMENT\workspace_neu\webdev\node_modules\.staging\crc-6c181afc\node_modules
+599 silly gentlyRm C:\Users\Asim\Dropbox\Northeastern_University\Spring2017\WEB_DEVELOPMENT\workspace_neu\webdev\node_modules\.staging\debug-b01a6b84\node_modules is being purged
+600 verbose gentlyRm don't care about contents; nuking C:\Users\Asim\Dropbox\Northeastern_University\Spring2017\WEB_DEVELOPMENT\workspace_neu\webdev\node_modules\.staging\debug-b01a6b84\node_modules
+601 verbose unlock done using C:\Users\Asim\AppData\Roaming\npm-cache\_locks\staging-654419badf60d531.lock for C:\Users\Asim\Dropbox\Northeastern_University\Spring2017\WEB_DEVELOPMENT\workspace_neu\webdev\node_modules\.staging
+602 silly rollbackFailedOptional Starting
+603 silly rollbackFailedOptional Finishing
+604 silly runTopLevelLifecycles Finishing
+605 silly install printInstalled
+606 warn web-dev@1.0.0 No repository field.
+607 verbose If you need help, you may report this error at:
+607 verbose     <https://github.com/npm/npm/issues>
+608 verbose stack Error: EPERM: operation not permitted, rename 'C:\Users\Asim\Dropbox\Northeastern_University\Spring2017\WEB_DEVELOPMENT\workspace_neu\webdev\node_modules\.staging\base64-url-a89d00b2\package.json.39828771' -> 'C:\Users\Asim\Dropbox\Northeastern_University\Spring2017\WEB_DEVELOPMENT\workspace_neu\webdev\node_modules\.staging\base64-url-a89d00b2\package.json'
+609 verbose cwd C:\Users\Asim\Dropbox\Northeastern_University\Spring2017\WEB_DEVELOPMENT\workspace_neu\webdev
+610 error Windows_NT 10.0.14393
+611 error argv "C:\\Program Files\\nodejs\\node.exe" "C:\\Program Files\\nodejs\\node_modules\\npm\\bin\\npm-cli.js" "install" "express-session"
+612 error node v7.4.0
+613 error npm  v4.0.5
+614 error path C:\Users\Asim\Dropbox\Northeastern_University\Spring2017\WEB_DEVELOPMENT\workspace_neu\webdev\node_modules\.staging\base64-url-a89d00b2\package.json.39828771
+615 error code EPERM
+616 error errno -4048
+617 error syscall rename
+618 error Error: EPERM: operation not permitted, rename 'C:\Users\Asim\Dropbox\Northeastern_University\Spring2017\WEB_DEVELOPMENT\workspace_neu\webdev\node_modules\.staging\base64-url-a89d00b2\package.json.39828771' -> 'C:\Users\Asim\Dropbox\Northeastern_University\Spring2017\WEB_DEVELOPMENT\workspace_neu\webdev\node_modules\.staging\base64-url-a89d00b2\package.json'
+618 error  { Error: EPERM: operation not permitted, rename 'C:\Users\Asim\Dropbox\Northeastern_University\Spring2017\WEB_DEVELOPMENT\workspace_neu\webdev\node_modules\.staging\base64-url-a89d00b2\package.json.39828771' -> 'C:\Users\Asim\Dropbox\Northeastern_University\Spring2017\WEB_DEVELOPMENT\workspace_neu\webdev\node_modules\.staging\base64-url-a89d00b2\package.json'
+618 error   errno: -4048,
+618 error   code: 'EPERM',
+618 error   syscall: 'rename',
+618 error   path: 'C:\\Users\\Asim\\Dropbox\\Northeastern_University\\Spring2017\\WEB_DEVELOPMENT\\workspace_neu\\webdev\\node_modules\\.staging\\base64-url-a89d00b2\\package.json.39828771',
+618 error   dest: 'C:\\Users\\Asim\\Dropbox\\Northeastern_University\\Spring2017\\WEB_DEVELOPMENT\\workspace_neu\\webdev\\node_modules\\.staging\\base64-url-a89d00b2\\package.json',
+618 error   parent: 'web-dev' }
+619 error Please try running this command again as root/Administrator.
+620 verbose exit [ -4048, true ]
