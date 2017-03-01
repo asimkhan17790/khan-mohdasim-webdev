@@ -1,3 +1,4 @@
-/**
- * Created by Asim on 27-02-2017.
- */
+/*
+module.exports = function (app) {
+    app.get("/api/user", findUser);
+}*/

@@ -4,7 +4,7 @@
         .module("WebAppMaker")
         .factory("UserService",userService);
 
-    function userService () {
+    function userService ($http) {
 
         //Dummy Data -- To Be Changed i next assignment when data will be fetch from the server.
         var users = [
@@ -54,13 +54,14 @@
         }
         function findUserById(userId) {
 
-            var userFound = users.find(function (element) {
+            /*var userFound = users.find(function (element) {
                 if (element._id === userId) {
                     //return element;
                     return angular.copy(element);
                 }});
 
-            return angular.copy(userFound);
+            return angular.copy(userFound);*/
+            return $http.get("/api/user/" + userId);
         }
         function findUserByUserName(username) {
             var userFound = users.find(function (element) {
@@ -72,19 +73,12 @@
             return angular.copy(userFound);
         }
         function findUserByCredentials(username,password) {
-           var userFound = users.find(function (element) {
-               if (element.username === username &&
-                   element.password === password) {
-                   //return element;
-                   return angular.copy(element);
-               }
-           });
 
-            return angular.copy(userFound);
+           return $http.get("/api/user?username="+username+"&password="+password);
 
         }
         function updateUser(userId, newUser) {
-            for(var u in users) {
+            /*for(var u in users) {
                 var user = users[u];
                 if( user._id === userId ) {
                     users[u].firstName = newUser.firstName;
@@ -93,7 +87,9 @@
                     return angular.copy(user);
                 }
             }
-            return null;
+            return null;*/
+
+           return $http.put("/api/user/"+userId, newUser);
         }
         //todo
         function deleteUser(userId) {

@@ -12,23 +12,31 @@
         vm.userId = $routeParams['uid'];
         function init() {
 
-        vm.user = UserService.findUserById(vm.userId);
+       // vm.user = UserService.findUserById(vm.userId);
+            var promise = UserService.findUserById(vm.userId);
+            promise.success (function (result) {
+                vm.user = result;
+            });
         }
         init();
 
         function update (newUser) {
             var emailField = $('#email');
             if (emailField[0].checkValidity()) {
-                var user = UserService.updateUser(vm.userId, newUser);
-                if (user==null) {
-                    vm.error="Unable to update user";
-                }else {
-                    vm.error=null;
-                    vm.success="User successfully updated";
-                    $timeout(function () {
-                        vm.success = null;
-                    }, 2000);
-                }
+                UserService
+                    .updateUser(vm.userId, newUser)
+                    .success(function (returnedUser) {
+                        if (returnedUser==null) {
+                            vm.error="Unable to update user";
+                        }else {
+                            vm.error=null;
+                            vm.success="User successfully updated";
+                            $timeout(function () {
+                                vm.success = null;
+                            }, 2000);
+                        }
+                });
+
             }
             else {
                 vm.error = "Invalid Email";
@@ -45,7 +53,5 @@
             vm.error="unable to delete Account Account";
         }
         }
-
-
     }
 })();
