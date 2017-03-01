@@ -12,13 +12,16 @@
         vm.websiteId = $routeParams['wid'];
         function init () {
 
-            vm.pages = PageService.findPageByWebsiteId(vm.websiteId)
-            if (vm.pages.length == 0) {
-                vm.noPage = "No Page to show";
-            }
-            else {
-                vm.noPage = null;
-            }
+            var promise = PageService.findPageByWebsiteId(vm.websiteId);
+            promise.success(function(response) {
+                vm.pages = response;
+                if (vm.pages.length == 0) {
+                    vm.noPage = "No Page to show";
+                }
+                else {
+                    vm.noPage = null;
+                }
+            });
         }
         init();
 
@@ -26,20 +29,24 @@
 
             if (newPage && newPage.name) {
                 //call create Service
-                var response = PageService.createPage(vm.websiteId, newPage);
-                if (response) {
-                    if (response.status === "OK") {
-                        vm.success = "Page successfully created";
-                        vm.error= null;
-                        $location.url("/user/" + vm.userId +"/website/"+ vm.websiteId+"/page");
+
+                var promise = PageService.createPage(vm.websiteId, newPage);
+                promise.success(function (response) {
+                    if (response) {
+                        if (response.status === "OK") {
+                            vm.success = "Page successfully created";
+                            vm.error= null;
+                            $location.url("/user/" + vm.userId +"/website/"+ vm.websiteId+"/page");
+                        }
+                        else {
+                            vm.error= response.description;
+                        }
                     }
                     else {
-                        vm.error= response.description;
+                        vm.error= "Some error occurred";
                     }
-                }
-                else {
-                    vm.error= "Some error occurred";
-                }
+                });
+
             }
             else {
                 vm.error = "Please specify a name to the website";

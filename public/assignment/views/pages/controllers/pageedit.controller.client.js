@@ -14,44 +14,57 @@
         vm.pageId = $routeParams['pid'];
         function init () {
 
-            vm.pages = PageService.findPageByWebsiteId(vm.websiteId);
-            vm.pageDisplayed = PageService.findPageById(vm.pageId);
+            var promise = PageService.findPageByWebsiteId(vm.websiteId);
+            promise.success(function (response) {
+                vm.pages = response;
+            });
 
+            var promise2 = PageService.findPageById(vm.pageId);
+            promise2.success(function (response) {
+                vm.pageDisplayed = response;
+            });
         }
         init();
 
         function deletePage () {
-            var response = PageService.deletePage(vm.pageId);
-            if (response && response==="OK") {
-                vm.success = "Page successfully deleted";
-                $location.url("/user/" + vm.userId +"/website/"+ vm.websiteId+"/page");
-            }
-            else {
-                vm.error = "Unable to delete the Page";
-            }
-        }
+            var promise = PageService.deletePage(vm.pageId);
+            promise.success(function(response) {
+                if (response && response === "OK") {
+                    vm.success = "Page successfully deleted";
+                    $location.url("/user/" + vm.userId +"/website/"+ vm.websiteId+"/page");
+                }
+                else {
+                    vm.error = "Unable to delete the Page";
+                }
+            });
+         }
 
 
         function updatePage () {
 
             if ((vm.pageDisplayed && vm.pageDisplayed.name)) {
-                var response = PageService.updatePage(vm.pageId, vm.pageDisplayed);
+                var promise = PageService.updatePage(vm.pageId, vm.pageDisplayed);
+                promise.success(function (response) {
                 if (!response) {
                     vm.error="Unable to update Page";
                 }else {
-                    vm.pages = PageService.findPageByWebsiteId(vm.websiteId);
-                    vm.success="Page successfully updated";
+
+                        PageService.findPageByWebsiteId(vm.websiteId)
+                            .success(function (response) {
+                                 vm.pages = response;
+                            });
+
+                    vm.success="Page Successfully Updated";
                     vm.error=null;
                     $timeout(function () {
                         vm.success = null;
                         $location.url("/user/" + vm.userId +"/website/"+ vm.websiteId+"/page");
                     }, 1000);
-                }
+                }});
             }
             else  {
                 vm.error = "Please specify a name to the Page";
             }
         }
-
     }
 })();

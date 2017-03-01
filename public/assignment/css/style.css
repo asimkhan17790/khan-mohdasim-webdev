@@ -67,7 +67,6 @@ body {
 .navbar-default .navbar-text {
     margin-right:15px;
 }
-
 .jga-toolbar {
     position: absolute;
     right: 15px;
@@ -84,5 +83,9 @@ input:required:invalid, input:focus:invalid {
 
     background-color: lightyellow;
 
+}
+a,
+a label {
+    cursor: pointer;
 }
 
