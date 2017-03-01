@@ -16,10 +16,13 @@
         vm.getWidgetTemplateUrl = getWidgetTemplateUrl;
 
         function init () {
-        vm.widgets = WidgetService.findWidgetsByPageId(vm.pageId);
-        if (vm.widgets.length == 0) {
-            vm.error = "No Widgets to display";
-            }
+        //vm.widgets = WidgetService.findWidgetsByPageId(vm.pageId);
+        var promise = WidgetService.findWidgetsByPageId(vm.pageId);
+        promise.success(function (response) {
+            vm.widgets = response;
+            if (vm.widgets.length == 0) {
+                vm.error = "No Widgets to display";
+            }});
         }
         init();
         function getYouTubeEmbedUrl(widgetUrl) {
@@ -35,9 +38,5 @@
             var url = 'views/widget/templates/widget-'+widgetType+'.view.client.html';
             return url;
         }
-
-
     }
-
-
 })();

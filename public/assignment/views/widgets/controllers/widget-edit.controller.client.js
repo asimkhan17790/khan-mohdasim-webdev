@@ -25,42 +25,53 @@
         }
         init();
         function deleteWidget () {
-            var response = WidgetService.deleteWidget(vm.widgetId);
-            if (response) {
-                $location.url("/user/"
-                    +vm.userId
-                    +"/website/"
-                    +vm.websiteId
-                    +"/page/"
-                    +vm.pageId
-                    +"/widget");
-            }
+            var promise = WidgetService.deleteWidget(vm.widgetId);
+            promise.success(function (response) {
+                if (response) {
+                    vm.error = null;
+                    $location.url("/user/"
+                        +vm.userId
+                        +"/website/"
+                        +vm.websiteId
+                        +"/page/"
+                        +vm.pageId
+                        +"/widget");
+                }
+                else {
+                    vm.error= "Unable to delete Widget";
+                }
+            });
+
         }
 
         function getEditorTemplateUrl(type) {
             return 'views/widgets/templates/editors/widget-'+type+'-editor.view.client.html';
         }
+
         function updateWidget() {
             var form = $('#editorForm');
             if (form[0].checkValidity()) {
-                var response = WidgetService.updateWidget(vm.widgetId, vm.widget);
-                if (response) {
-                    vm.success="Widget successfully updated";
-                    vm.error = null;
-                    $timeout(function () {
-                        vm.success = null;
-                        $location.url("/user/"
-                            +vm.userId
-                            +"/website/"
-                            +vm.websiteId
-                            +"/page/"
-                            +vm.pageId
-                            +"/widget");
-                    }, 1000);
-                }
-                else {
-                    vm.error = "Unable to update selected widget";
-                }
+                var promise = WidgetService.updateWidget(vm.widgetId, vm.widget);
+                promise.success(function (response) {
+                    if (response) {
+                        vm.success="Widget successfully updated";
+                        vm.error = null;
+                        $timeout(function () {
+                            vm.success = null;
+                            $location.url("/user/"
+                                +vm.userId
+                                +"/website/"
+                                +vm.websiteId
+                                +"/page/"
+                                +vm.pageId
+                                +"/widget");
+                        }, 1000);
+                    }
+                    else {
+                        vm.error = "Unable to update selected widget";
+                    }
+                });
+
             }
             else {
                 vm.error = "Please fill highlighted fields correctly";

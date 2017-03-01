@@ -37,24 +37,28 @@
         function createNewWidget() {
             var form = $('#editorForm');
             if (form[0].checkValidity()) {
-                var response = WidgetService.createWidget(vm.pageId, vm.widget);
-                if (response.status==="OK") {
-                    vm.success="Widget successfully created";
-                    vm.error=null;
-                    $timeout(function () {
-                        vm.success = null;
-                        $location.url("/user/"
-                            +vm.userId
-                            +"/website/"
-                            +vm.websiteId
-                            +"/page/"
-                            +vm.pageId
-                            +"/widget");
-                    }, 500);
-                }
-                else {
-                    vm.error = "Unable to create widget";
-                }
+                //var response = WidgetService.createWidget(vm.pageId, vm.widget);
+                var promise = WidgetService.createWidget(vm.pageId, vm.widget);
+                promise.success(function (response) {
+                    if (response.status==="OK") {
+                        vm.success="Widget successfully created";
+                        vm.error=null;
+                        $timeout(function () {
+                            vm.success = null;
+                            $location.url("/user/"
+                                +vm.userId
+                                +"/website/"
+                                +vm.websiteId
+                                +"/page/"
+                                +vm.pageId
+                                +"/widget");
+                        }, 500);
+                    }
+                    else {
+                        vm.error = "Unable to create widget";
+                    }
+                });
+
             }
             else {
                 vm.error = "Please fill highlighted fields correctly";
