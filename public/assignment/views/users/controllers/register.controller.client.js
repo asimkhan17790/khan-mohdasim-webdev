@@ -16,18 +16,21 @@
             if (user && user.username && user.password && user.cnfPassword) {
                 if (user.password === user.cnfPassword) {
                     //call create Service
-                    var response = UserService.createUser(user);
-                    if (response) {
-                        if (response.status === "OK") {
-                            $location.url("/user/" + response.data);
+                    var promise = UserService.createUser(user);
+                    promise.success(function (response) {
+                        if (response) {
+                            if (response.status === "OK") {
+                                $location.url("/user/" + response.data);
+                            }
+                            else {
+                                vm.error= response.description;
+                            }
                         }
                         else {
-                            vm.error= response.description;
+                            vm.error= "Some error occurred";
                         }
-                    }
-                    else {
-                        vm.error= "Some error occured";
-                    }
+                    });
+
                 }
                 else {
                     vm.error= "Passwords do not match";

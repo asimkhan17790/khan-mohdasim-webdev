@@ -16,7 +16,10 @@
             var promise = UserService.findUserById(vm.userId);
             promise.success (function (result) {
                 vm.user = result;
-            });
+            })
+                .error(function () {
+                    vm.error = "Some Error Occurred!! Please try again!";
+                });
         }
         init();
 
@@ -35,7 +38,10 @@
                                 vm.success = null;
                             }, 2000);
                         }
-                });
+                })
+                    .error(function () {
+                        vm.error = "Some Error Occurred!! Please try again!"
+                    });
 
             }
             else {
@@ -45,13 +51,18 @@
         }
 
         function deleteUser () {
-        var response = UserService.deleteUser(vm.userId);
-        if ("OK"===response) {
-            $location.url("/login");
-        }
-        else {
-            vm.error="unable to delete Account Account";
-        }
+        var promise = UserService.deleteUser(vm.userId);
+        promise.success (function (response) {
+            if ("OK"===response) {
+                $location.url("/login");
+            }
+            else {
+                vm.error="unable to delete Account Account";
+            }
+        }).error(function () {
+            vm.error = "Some error occurred while deleting User! Please try again."
+        });
+
         }
     }
 })();

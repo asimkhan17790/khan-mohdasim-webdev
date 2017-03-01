@@ -28,9 +28,12 @@
                       $location.url("/user/" + loginUser._id);
                   }
                   else {
-                      vm.error = "User not found";
+                      vm.error = "Username or password is incorrect";
                   }
-              });
+              })
+                  .error(function () {
+                      vm.error = "Some error Occurred!! Please try again";
+                  });
 
           }
           else {
