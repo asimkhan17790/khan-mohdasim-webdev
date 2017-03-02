@@ -3,7 +3,7 @@
         .module("WebAppMaker")
         .controller("WidgetNewController", WidgetNewController);
 
-    function WidgetNewController($routeParams, WidgetService, $location,$timeout,StaticDataService) {
+    function WidgetNewController($routeParams, WidgetService, $location,$timeout,StaticDataService,Upload) {
         var vm = this;
         vm.userId = $routeParams.uid;
         vm.websiteId = $routeParams.wid;
@@ -15,7 +15,9 @@
 
         vm.getEditorTemplateUrl = getEditorTemplateUrl;
         vm.createNewWidget = createNewWidget;
+        vm.uploadImage = uploadImage;
         vm.availableWidgets = StaticDataService.widgetOptions;
+        vm.urlChange=urlChange;
 
         function init() {
             vm.widget = {};
@@ -36,8 +38,9 @@
         }
         function createNewWidget() {
             var form = $('#editorForm');
-            if (form[0].checkValidity()) {
-                //var response = WidgetService.createWidget(vm.pageId, vm.widget);
+            var urlField=$('#url');
+            var imageField=$('#uploadFile');
+            if (form[0].checkValidity() || urlField[0].checkValidity()) {
                 var promise = WidgetService.createWidget(vm.pageId, vm.widget);
                 promise.success(function (response) {
                     if (response.status==="OK") {
@@ -61,8 +64,50 @@
 
             }
             else {
-                vm.error = "Please fill highlighted fields correctly";
+                vm.error = "Please fill the URL field or upload an image from your system";
             }
         }
+
+        // image upload start
+        function uploadImage(){ //function to call on form submit
+            if (vm.imageForm.file.$valid && vm.file) { //check if from is valid
+                vm.upload(vm.file); //call upload function
+            }
+        }
+
+
+        vm.upload = function (file) {
+            Upload.upload({
+                url: '/api/widget/image/upload', //webAPI exposed to upload the file
+                data:{file:file} //pass file as data, should be user ng-model
+            }).then(function (resp) { //upload function returns a promise
+                if(resp.data.error_code === 0){ //validate success
+                    // vm.success = 'Success ' + resp.config.data.file.name + 'uploaded.';
+                    vm.success = 'Image successfully uploaded.';
+                    vm.widget.url = resp.data.fileUrl;
+                } else {
+                    vm.error = 'An error occurred';
+                }
+            }, function (resp) { //catch error
+                vm.error =  resp.status;
+                vm.error =  'Error status: ' + resp.status;
+            }, function (evt) {
+                console.log(evt);
+                var progressPercentage = parseInt(100.0 * evt.loaded / evt.total);
+                console.log('progress: ' + progressPercentage + '% ' + evt.config.data.file.name);
+                vm.progress = 'progress: ' + progressPercentage + '% '; // capture upload progress
+            });
+        };
+        function urlChange(){
+            var url = $('#url');
+            if (url.val()) {
+                $('#uploadFile').attr("required", false);
+            }
+            else{
+                $('#uploadFile').attr("required",true);
+            }
+        }
+
+// image upload end
     }
 })();

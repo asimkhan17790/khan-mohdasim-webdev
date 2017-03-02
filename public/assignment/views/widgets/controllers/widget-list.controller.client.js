@@ -15,8 +15,8 @@
         vm.getTrustedHtml = getTrustedHtml;
         vm.getWidgetTemplateUrl = getWidgetTemplateUrl;
 
+
         function init () {
-        //vm.widgets = WidgetService.findWidgetsByPageId(vm.pageId);
         var promise = WidgetService.findWidgetsByPageId(vm.pageId);
         promise.success(function (response) {
             vm.widgets = response;
@@ -38,5 +38,9 @@
             var url = 'views/widget/templates/widget-'+widgetType+'.view.client.html';
             return url;
         }
+
+
+
+
     }
 })();

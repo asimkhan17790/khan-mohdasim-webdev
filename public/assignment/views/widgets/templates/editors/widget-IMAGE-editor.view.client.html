@@ -1,44 +1,79 @@
-<form name="imageForm" id="editorForm">
+<form name="model.imageForm" id="editorForm">
+    <div class="form-group">
     <label for="widgetName">Name</label>
     <input id ="widgetName"
            type="text"
            class="form-control"
            placeholder="Name"
             ng-model="model.widget.name"/>
+    </div>
 
+    <div class="form-group">
     <label for="headingText">Text</label>
     <input id ="headingText"
            type="text"
            class="form-control"
            placeholder="Text"
            ng-model="model.widget.text"/>
-
+    </div>
+    <div class="form-group">
     <label for="url">URL</label>
     <input id ="url"
            type="url"
            name="url"
+           ng-change="model.urlChange()"
            class="form-control"
            placeholder="URL"
            ng-model="model.widget.url" required/>
-
+    </div>
+    <div class="form-group">
     <label for="imageWidth">Width</label>
     <select id ="imageWidth"
             class="form-control"
             ng-model="model.widget.width"
             ng-options="x for x in model.imageWidthOptions">
     </select>
+    </div>
+    <div class="form-group">
     <label for="uploadFile">Upload</label>
-    <input type="file" id="uploadFile" class="form-control">
-    <a class="btn btn-primary btn-block">
-        Upload Image</a>
+        <div class="row">
+            <div class="col-xs-12 col-sm-5">
+                <input
+                        id="uploadFile"
+                        type="file"
+                        ngf-select
+                        ng-model="model.file"
+                        name="file"
+                        ngf-pattern="'image/*'"
+                        accept="image/*"
+                        ngf-max-size="1MB"
+                        class="form-control" required/>
+
+                <i style="color: red" ng-show="model.imageForm.file.$error.maxSize">File too large: Max 5 MB Allowed</i>
+            </div>
+            <div class="col-xs-12 col-sm-5 pull-left">
+                <button class="btn btn-primary btn-block" ng-click="model.uploadImage()" ng-disabled="!model.imageForm.file.$valid" >
+                    Upload Image</button>
+            </div>
+            <div class="col-xs-4 col-sm-2 pull-left">
+
+                <img style="width:75px;margin: 2px" ngf-thumbnail="model.file || model.widget.url || '../../../../../resources/thumb.jpg'"/>
+            </div>
+
+        </div>
+    </div>
+
+
+  <!--  {{model.progress}}-->
     <a class="btn btn-danger btn-block"
        ng-click="model.deleteWidget()"
        ng-show="model.widget._id">
         Delete</a>
     <button type="submit" class="btn btn-success btn-block"
-       ng-click="imageForm.url.$valid && model.createNewWidget()"
+       ng-click="(model.imageForm.url.$valid || model.imageForm.file.$valid) && model.createNewWidget()"
        ng-show="!model.widget._id">
         Create Widget</button>
 </form>
+
 
 

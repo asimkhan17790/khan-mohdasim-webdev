@@ -4,22 +4,35 @@
     <meta charset="UTF-8">
     <link rel="shortcut icon" type="image/x-icon" href="favicon-32x32.ico" />
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
-    <title ng-bind="title">Assignment Index Page</title> <!-- Need to check how to dynamically add title-->
-    <link href="../libraries/css/bootstrap.css" rel="stylesheet">
-    <!--<link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet">-->
+    <title page-title></title>
+
+
+   <!-- <script src="../libraries/js/jquery.js"></script>
+    <script src="../libraries/js/jquery-ui.js"></script>-->
+    <script src="http://code.jquery.com/jquery-1.7.2.min.js"></script>
+    <script src="http://code.jquery.com/ui/1.8.21/jquery-ui.min.js"></script>
+    <script src="../libraries/js/jquery.ui.touch-punch.min.js"></script>
+
+
+
+    <!--<link href="../libraries/css/bootstrap.css" rel="stylesheet">-->
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet">
     <link href="css/style.css" rel="stylesheet"/>
 
-    <!--<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.6/angular.min.js"></script>
-    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.6/angular-route.js"></script>-->
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.6/angular.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.6/angular-route.js"></script>
 
-    <script src="../libraries/js/angular.js"></script>
-    <script src="../libraries/js/angular-route.js"></script>
+  <!--  <script src="../libraries/js/angular.js"></script>
+    <script src="../libraries/js/angular-route.js"></script>-->
+    <!--<script src="../libraries/js/ng-page-title.js"></script>-->
+    <script src="https://cdn.rawgit.com/riggerthegeek/ng-page-title/master/dist/ng-page-title.min.js"></script>
+    <script src="../libraries/js/ng-file-upload-shim.js"></script>
+    <script src="../libraries/js/ng-file-upload.js"></script>
 
-
-    <script src="../libraries/js/jquery.js"></script>
-    <script src="../libraries/js/jquery-ui.js"></script>
+    
     <script src="app.js"></script>
     <script src="config.js"></script>
+    <script src="./directives/sortable.directive.client.js"></script>
     <!-- User Controllers-->
     <script src="views/users/controllers/login.controller.client.js"></script>
     <script src="views/users/controllers/register.controller.client.js"></script>

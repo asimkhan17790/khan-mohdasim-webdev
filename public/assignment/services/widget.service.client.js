@@ -3,7 +3,7 @@
         .module("WebAppMaker")
         .service("WidgetService", WidgetService);
 
-    function WidgetService() {
+    function WidgetService($http) {
         this.createWidget = createWidget;
         this.findWidgetsByPageId = findWidgetsByPageId;
         this.findWidgetById = findWidgetById;

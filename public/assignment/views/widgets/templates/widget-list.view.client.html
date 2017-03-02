@@ -30,12 +30,13 @@
     <div ng-show="model.error" class="alert alert-danger webdev-component-shift-down" role="alert">
         {{model.error}}
     </div>
-    <div ng-repeat="widget in model.widgets">
+    <div wbdv-sortable="">
+    <div  ng-repeat="widget in model.widgets">
         <div class="jga-toolbar">
             <a href="#/user/{{model.userId}}/website/{{model.websiteId}}/page/{{model.pageId}}/widget/{{widget._id}}">
                 <span class="glyphicon glyphicon-cog"></span>
             </a>
-            <span class="glyphicon glyphicon-align-justify"></span>
+            <a class="glyphicon glyphicon-align-justify justify"></a>
         </div>
         <div ng-switch="widget.widgetType">
             <div ng-switch-when="HEADER">
@@ -52,7 +53,9 @@
                 <ng-include src="'views/widgets/templates/widget-YOUTUBE.view.client.html'"></ng-include>
             </div>
         </div>
+        </div>
     </div>
+</div>
 <nav class="navbar navbar-default navbar-fixed-bottom">
     <div class="row container-fluid">
         <div class="col-xs-12">
