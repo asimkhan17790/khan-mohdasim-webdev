@@ -1,5 +1,5 @@
 module.exports = function (app) {
-      app.delete("/api/widget/image/delete/:fileName", deleteImage);
+    //git   app.deleteImage("/api/widget/image/delete/:fileName", deleteImage);
     //multer start
 
     app.use(function(req, res, next) { //allow cross origin requests
@@ -40,7 +40,7 @@ module.exports = function (app) {
 
     // delete image
 
-    function deleteWidget(req, res) {
+  /*  function deleteImage(req, res) {
         var fileName = req.params.fileName;
 
         const fs = require('fs');
@@ -57,7 +57,7 @@ module.exports = function (app) {
         });
         res.send(null);
         return;
-    }
+    }*/
 
 
 }
