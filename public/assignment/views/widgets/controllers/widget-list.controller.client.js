@@ -41,13 +41,13 @@
         }
         function reArrangeItems(startIndex, endIndex) {
 
-            if (startIndex!=null && endIndex!=null && startIndex>=0 && endIndex>=0) {
+           /* if (startIndex!=null && endIndex!=null && startIndex>=0 && endIndex>=0) {
                 var promise=WidgetService.rearrangeItems(vm.pageId, startIndex, endIndex);
                 promise.error(function (){
                         vm.error="Some Error occured while rearanging the items! Please try again";
                     }
                 );
-            }
+            }*/
 
         }
 
