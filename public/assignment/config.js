@@ -129,6 +129,15 @@
                     pageTitle: 'Edit Widget',
                 }
             })
+            //practise
+            .when("/practise", {
+            templateUrl:"views/users/templates/practise.view.client.html",
+            controller:"PractiseController",
+            controllerAs:"model",
+            data: {
+                pageTitle: 'Practise',
+            }
+        })
             .otherwise({
                 redirectTo:"/login"
             });

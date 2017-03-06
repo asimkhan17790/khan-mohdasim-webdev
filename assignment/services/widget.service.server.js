@@ -4,10 +4,11 @@ module.exports = function (app) {
     app.get("/api/widget/:widgetId", findWidgetById);
     app.put("/api/widget/:widgetId", updateWidget);
     app.delete("/api/widget/:widgetId", deleteWidget);
+    app.put("/api/page/:pageId/widget", rearrangeItems);
 
 
     var widgets = [
-        { "_id": "123", "widgetType": "HEADER", "pageId": "321", "size": 2, "text": "GIZMODO"},
+        /*{ "_id": "123", "widgetType": "HEADER", "pageId": "321", "size": 2, "text": "GIZMODO"},
         { "_id": "124", "widgetType": "HEADER", "pageId": "321", "size": 4, "text": "Lorem ipsum"},
         { "_id": "125", "widgetType": "IMAGE", "pageId": "321", "width": "100%",
             "url": "https://i.ytimg.com/vi/_JLdUs-WqSw/maxresdefault.jpg"},
@@ -26,9 +27,9 @@ module.exports = function (app) {
         { "_id": "134", "widgetType": "HEADER", "pageId": "547", "size": 4, "text": "Lorem ipsum"},
         { "_id": "135", "widgetType": "YOUTUBE", "pageId": "547", "width": "100%",
             "url": "https://youtu.be/3AtDnEC4zak" },
-        { "_id": "136", "widgetType": "HTML", "pageId": "547", "text": "<p>Lorem ipsum</p>"},
+        { "_id": "136", "widgetType": "HTML", "pageId": "547", "text": "<p>Lorem ipsum</p>"},*/
 
-        { "_id": "137", "widgetType": "HEADER", "pageId": "546", "size": 2, "text": "GIZMODO"},
+        /*{ "_id": "137", "widgetType": "HEADER", "pageId": "546", "size": 2, "text": "GIZMODO"},
         { "_id": "138", "widgetType": "HEADER", "pageId": "546", "size": 4, "text": "Lorem ipsum"},
         { "_id": "139", "widgetType": "IMAGE", "pageId": "546", "width": "100%",
             "url": "https://i.ytimg.com/vi/_JLdUs-WqSw/maxresdefault.jpg"},
@@ -46,7 +47,7 @@ module.exports = function (app) {
         { "_id": "148", "widgetType": "HEADER", "pageId": "545", "size": 4, "text": "Lorem ipsum"},
         { "_id": "149", "widgetType": "YOUTUBE", "pageId": "545", "width": "100%",
             "url": "https://youtu.be/3AtDnEC4zak" },
-        { "_id": "150", "widgetType": "HTML", "pageId": "545", "text": "<p>Lorem ipsum</p>"},
+        { "_id": "150", "widgetType": "HTML", "pageId": "545", "text": "<p>Lorem ipsum</p>"},*/
 
         { "_id": "151", "widgetType": "HEADER", "pageId": "544", "size": 2, "text": "GIZMODO"},
         { "_id": "152", "widgetType": "HEADER", "pageId": "544", "size": 4, "text": "Lorem ipsum"},
@@ -57,7 +58,7 @@ module.exports = function (app) {
         { "_id": "156", "widgetType": "YOUTUBE", "pageId": "544", "width": "100%",
             "url": "https://youtu.be/3AtDnEC4zak" },
         { "_id": "157", "widgetType": "HTML", "pageId": "544", "text": "<p>Lorem ipsum</p>"},
-
+/*
         { "_id": "158", "widgetType": "HEADER", "pageId": "543", "size": 2, "text": "GIZMODO"},
         { "_id": "159", "widgetType": "HEADER", "pageId": "543", "size": 4, "text": "Lorem ipsum"},
         { "_id": "160", "widgetType": "IMAGE", "pageId": "543", "width": "100%",
@@ -75,7 +76,7 @@ module.exports = function (app) {
         { "_id": "169", "widgetType": "HEADER", "pageId": "432", "size": 4, "text": "Lorem ipsum"},
         { "_id": "170", "widgetType": "YOUTUBE", "pageId": "432", "width": "100%",
             "url": "https://youtu.be/3AtDnEC4zak" },
-        { "_id": "171", "widgetType": "HTML", "pageId": "432", "text": "<p>Lorem ipsum</p>"}
+        { "_id": "171", "widgetType": "HTML", "pageId": "432", "text": "<p>Lorem ipsum</p>"}*/
     ];
 
 
@@ -143,5 +144,24 @@ module.exports = function (app) {
         }
         res.send(null);
         return;
+    }
+
+    function rearrangeItems(req,res) {
+        var pageId=req.params.pageId;
+        var initial=req.query.ii;
+        var final=req.query.fi;
+        var widget=null;
+        for (var w in widgets)        {
+            if (widgets[w].pageId == pageId){
+                if ( w == initial){
+                    widget = widgets[w];
+                    widgets.splice(w,1);
+                    widgets.splice(final, 0, widget);
+                    res.sendStatus(200);
+                    return;
+                }
+            }
+        }
+        res.sendStatus(500).status("Some error Occurred!!");
     }
 }

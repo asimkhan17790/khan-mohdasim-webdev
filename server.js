@@ -25,7 +25,7 @@ app.use(express.static(__dirname + '/public'));
 
 
 // require("./assignment-wed/app.js")(app);
-
+require ("./test/app.js")(app);
 require("./assignment/app.js")(app);
 
 

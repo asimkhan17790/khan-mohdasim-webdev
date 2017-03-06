@@ -9,7 +9,11 @@
         this.findWidgetById = findWidgetById;
         this.updateWidget = updateWidget;
         this.deleteWidget = deleteWidget;
+        this.rearrangeItems = rearrangeItems;
 
+        function rearrangeItems (pageId, startIndex, endIndex) {
+            return $http.put("/api/page/"+pageId+"/widget?ii="+ startIndex + "&fi=" + endIndex);
+        }
         function createWidget(pageId,widget) {
             return $http.post("/api/page/"+ pageId +"/widget", widget);
         }

@@ -14,6 +14,7 @@
         vm.getYouTubeEmbedUrl = getYouTubeEmbedUrl;
         vm.getTrustedHtml = getTrustedHtml;
         vm.getWidgetTemplateUrl = getWidgetTemplateUrl;
+        vm.reArrangeItems = reArrangeItems;
 
 
         function init () {
@@ -38,7 +39,17 @@
             var url = 'views/widget/templates/widget-'+widgetType+'.view.client.html';
             return url;
         }
+        function reArrangeItems(startIndex, endIndex) {
 
+            if (startIndex && endIndex && startIndex>0 && endIndex>0) {
+                var promise=WidgetService.rearrangeItems(vm.pageId, startIndex, endIndex);
+                promise.error(function (){
+                        vm.error="Some Error occured while rearanging the items! Please try again";
+                    }
+                );
+            }
+
+        }
 
 
 
