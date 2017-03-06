@@ -3,13 +3,18 @@
         .module("WebAppMaker")
         .service("WidgetService", WidgetService);
 
-    function WidgetService($http) {
+    function WidgetService($http,Upload) {
         this.createWidget = createWidget;
         this.findWidgetsByPageId = findWidgetsByPageId;
         this.findWidgetById = findWidgetById;
         this.updateWidget = updateWidget;
         this.deleteWidget = deleteWidget;
         this.rearrangeItems = rearrangeItems;
+        this.uploadImage = uploadImage;
+
+        function uploadImage(file) {
+
+        }
 
         function rearrangeItems (pageId, startIndex, endIndex) {
             return $http.put("/api/page/"+pageId+"/widget?ii="+ startIndex + "&fi=" + endIndex);
