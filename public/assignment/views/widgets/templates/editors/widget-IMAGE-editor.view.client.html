@@ -56,7 +56,6 @@
                     Upload Image</button>
             </div>
             <div class="col-xs-4 col-sm-2 pull-left">
-
                 <img style="width:75px;margin: 2px" ngf-thumbnail="model.file || model.widget.url || '../../../../../resources/thumb.jpg'"/>
             </div>
 
@@ -69,10 +68,17 @@
        ng-click="model.deleteWidget()"
        ng-show="model.widget._id">
         Delete</a>
+    <!-- Route to Flicker Page Start-->
+    <a class="btn btn-primary btn-block"
+       href="#/user/{{model.userId}}/website/{{model.websiteId}}/page/{{model.pageId}}/widget/flickrSearch/{{model.widget._id? model.widget._id:'NEW'}}">
+        Search Images on Flickr</a>
+    <!-- Route to Flicker Page End-->
     <button type="submit" class="btn btn-success btn-block"
        ng-click="(model.imageForm.url.$valid || model.imageForm.file.$valid) && model.createNewWidget()"
        ng-show="!model.widget._id">
         Create Widget</button>
+
+
 </form>
 
 

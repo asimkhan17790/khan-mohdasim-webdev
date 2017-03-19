@@ -1,0 +1,50 @@
+<div class="row">
+    <div class="col-xs-12">
+        <form name="textForm" id="editorForm">
+            <label for="widgetName">Name</label>
+            <input id ="widgetName"
+                   type="text"
+                   class="form-control"
+                   placeholder="Name"
+            ng-model="model.widget.name"/>
+
+            <label for="textText">Text</label>
+            <input id ="textText"
+                   type="text"
+                   class="form-control"
+                   placeholder="Text"
+                   name="text"
+                   ng-model="model.widget.text"/>
+            <label for="rowsNum">Rows</label>
+            <input id ="rowsNum"  type="number"
+                    class="form-control" placeholder="# of Rows"
+                    ng-model="model.widget.rows">
+
+            </input>
+            <label for="placeHolder">Place Holder</label>
+            <input id ="placeHolder"  type="text"
+                   class="form-control" placeholder="Place Holder"
+                   ng-model="model.widget.placeholder">
+            </input>
+            <label for="formatted">Formatted</label>
+            <select id ="formatted"
+                    class="form-control"
+                    ng-model="model.widget.formatted"
+                    ng-options="x for x in [true,false]">
+            </select>
+
+            <a class="btn btn-danger btn-block"
+               ng-click="model.deleteWidget()"
+               ng-show="model.widget._id">
+                Delete</a>
+
+            <button type="submit" class="btn btn-success btn-block"
+               ng-click="model.createNewWidget()"
+               ng-show="!model.widget._id">
+                Create Widget</button>
+        </form>
+
+    </div>
+</div>
+
+

@@ -38,8 +38,7 @@
                                 vm.success = null;
                             }, 2000);
                         }
-                })
-                    .error(function () {
+                }).error(function () {
                         vm.error = "Some Error Occurred!! Please try again!"
                     });
 

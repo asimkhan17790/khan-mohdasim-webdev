@@ -49,6 +49,8 @@
                 else {
                     vm.error = "Unable to delete the website";
                 }
+            }).error (function () {
+                vm.error = "Something went wrong!";
             });
         }
 
@@ -68,6 +70,8 @@
                             $location.url("/user/" + vm.userId +"/website");
                         }, 1000);
                     }
+                }).error (function () {
+                    vm.error="Unable to update Website";
                 });
             }
             else  {

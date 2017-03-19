@@ -3,7 +3,7 @@
         .module("WebAppMaker")
         .controller("WidgetNewController", WidgetNewController);
 
-    function WidgetNewController($routeParams, WidgetService, $location,$timeout,StaticDataService,Upload) {
+    function WidgetNewController($routeParams, WidgetService, $location,$timeout,StaticDataService,Upload,DataService) {
         var vm = this;
         vm.userId = $routeParams.uid;
         vm.websiteId = $routeParams.wid;
@@ -27,6 +27,21 @@
             }
             else if ("HEADER" === vm.widget.widgetType) {
                 vm.widget.size = 3;
+            }
+            if (!vm.widget.url) {
+                var flickrUrl = DataService.getData();
+                if (flickrUrl) {
+                    vm.widget.url = flickrUrl;
+                    DataService.setData(null);
+                }
+            }
+
+           // var url = $('#url');
+            if (vm.widget.url) {
+                $('#uploadFile').attr("required", false);
+            }
+            else{
+                $('#uploadFile').attr("required",true);
             }
 
             vm.headerLabel = StaticDataService.getWidgetTypeLabelName(vm.widget.widgetType);
@@ -88,12 +103,15 @@
                     // vm.success = 'Success ' + resp.config.data.file.name + 'uploaded.';
                     vm.success = 'Image successfully uploaded.';
                     vm.widget.url = resp.data.fileUrl;
+                    $('#uploadFile').attr("required", false);
                 } else {
                     vm.error = 'An error occurred';
+                    $('#uploadFile').attr("required", true);
                 }
             }, function (resp) { //catch error
                 vm.error =  resp.status;
                 vm.error =  'Error status: ' + resp.status;
+                $('#uploadFile').attr("required", false);
             }, function (evt) {
                 console.log(evt);
                 var progressPercentage = parseInt(100.0 * evt.loaded / evt.total);

@@ -2,28 +2,36 @@
     <div class="col-xs-12">
         <form name="htmlForm" id="editorForm">
             <label for="widgetName">Name</label>
-            <input id ="widgetName"
+            <input id="widgetName"
                    type="text"
                    class="form-control"
                    placeholder="Name"
-            ng-model="model.widget.name"/>
+                   ng-model="model.widget.name"/>
 
             <label for="htmlText">Html Text</label>
-            <textarea id="htmlText"
+            <!--<textarea id="htmlText"
                       name="htmlText"
                       rows="5"
                       class="form-control"
                       placeholder="Html Text"
-                      ng-model="model.widget.text" required></textarea>
+                      ng-model="model.widget.text" required></textarea>-->
+
+            <div ng-model="model.widget.text" id="htmlText" name="htmlText" ng-model="model.widget.text" required
+                 text-angular
+                 ta-toolbar="[['h1','h2','h3'],['bold','italics','underline','strikeThrough'],
+        ['ul','ol'],['justifyLeft','justifyCenter','justifyRight','justifyFull'],
+        ['indent','outdent'],['html']]">
+            </div>
 
             <a class="btn btn-danger btn-block"
                ng-click="model.deleteWidget()"
                ng-show="model.widget._id">
                 Delete</a>
             <button type="submit" class="btn btn-success btn-block"
-               ng-click="htmlForm.htmlText.$valid && model.createNewWidget()"
-               ng-show="!model.widget._id">
-                Create Widget</button>
+                    ng-click="htmlForm.htmlText.$valid && model.createNewWidget()"
+                    ng-show="!model.widget._id">
+                Create Widget
+            </button>
         </form>
     </div>
 </div>

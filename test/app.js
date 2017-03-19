@@ -4,7 +4,7 @@ module.exports = function(app)
     app.post("/api/test", createMessage);
     app.delete("/api/test/:id", deleteMessage);
 
-    var connectionString = 'mongodb://127.0.0.1:27017/test';
+    var connectionString = 'mongodb://127.0.0.1:27017/assignment_db';
 
     if(process.env.MLAB_USERNAME) {
         connectionString = process.env.MLAB_USERNAME + ":" +
@@ -14,8 +14,20 @@ module.exports = function(app)
             process.env.MLAB_APP_NAME;
     }
 
+
     var mongoose = require("mongoose");
-    mongoose.connect(connectionString);
+    mongoose.Promise = global.Promise;
+    var d = require('domain').create();
+
+    d.on('error', function(er) {
+        console.log('Oh no, something wrong with DB');
+    });
+
+    d.run(function() {
+        mongoose.connect(connectionString);
+    });
+
+
 
     var TestSchema = mongoose.Schema({
         message: String

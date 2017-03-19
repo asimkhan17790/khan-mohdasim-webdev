@@ -129,6 +129,15 @@
                     pageTitle: 'Edit Widget',
                 }
             })
+            // Flickr
+            .when("/user/:uid/website/:wid/page/:pid/widget/flickrSearch/:wgid", {
+            templateUrl:"views/widgets/templates/widget-flickr-search.view.client.html",
+            controller:"FlickrImageSearchController",
+            controllerAs:"model",
+            data: {
+                pageTitle: 'Flickr Image Search',
+            }
+        })
             //practise
             .when("/practise", {
             templateUrl:"views/users/templates/practise.view.client.html",

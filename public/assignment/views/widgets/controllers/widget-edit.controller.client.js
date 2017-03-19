@@ -3,7 +3,7 @@
         .module("WebAppMaker")
         .controller("WidgetEditController", WidgetEditController);
 
-    function WidgetEditController($routeParams, WidgetService, $location,$timeout,StaticDataService,Upload) {
+    function WidgetEditController($routeParams, WidgetService, $location,$timeout,StaticDataService,Upload,DataService) {
         var vm = this;
         vm.userId = $routeParams.uid;
         vm.websiteId = $routeParams.wid;
@@ -24,6 +24,12 @@
             var promise = WidgetService.findWidgetById(vm.widgetId);
             promise.success(function (response) {
                 vm.widget = response;
+                var flickrUrl = DataService.getData();
+                    if (flickrUrl) {
+                        vm.widget.url = flickrUrl;
+                        DataService.setData(null);
+                    }
+
                 vm.headerLabel = StaticDataService.getWidgetTypeLabelName(vm.widget.widgetType);
             }).error(function () {
                 vm.error= "Unable To Load Page";

@@ -1,4 +1,4 @@
 (function() {
     angular
-        .module("WebAppMaker",['ngRoute','ngPageTitle','ngFileUpload']);
+        .module("WebAppMaker",['ngRoute','ngPageTitle','ngFileUpload','infinite-scroll','textAngular']);
 })();
