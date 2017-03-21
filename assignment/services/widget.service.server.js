@@ -86,7 +86,12 @@ module.exports = function (app,models) {
         var widget = req.body;
         var response ={};
 
-        widgetModel.createWidget(pageId,widget,pageModel).then(function (widgetId) {
+        widgetModel.createWidget(pageId,widget)
+
+            .then(function (createdWidgetId) {
+                return pageModel.addWidgetToPage(pageId, createdWidgetId);
+            })
+            .then(function (widgetId) {
                  response = {status:"OK",
                     description:"Widget successfully created",
                     data:widgetId};
@@ -137,7 +142,7 @@ module.exports = function (app,models) {
         );
     }
 
-    function deleteWidget(req, res) {
+    function deleteWidget(req, res) {/*
         var widgetId = req.params.widgetId;
         widgetModel.deleteWidget(widgetId)
             .then(function () {
@@ -145,27 +150,48 @@ module.exports = function (app,models) {
                     return;
                 },
                 function(err) {
-                    res.sendStatus(500).send("Some Error Occurred!!");
+                    res.status(500).send("Some Error Occurred!!");
                     return;
-                });
+                });*/
+
+
+
+        /////
+
+        var widgetId= req.params.widgetId;
+        widgetModel.findWidgetById(widgetId)
+            .then(function (widget) {
+                var pageId=widget._page;
+                widgetModel.deleteWidget(widgetId)
+                    .then(function () {
+                        pageModel.deleteWidgetIdFromPage(pageId, widgetId)
+                            .then(function () {
+                                res.status(200).send("OK");
+                            }, function () {
+                                res.status(500).send("Some Error Occurred!!");
+                                return;
+                            })
+                    }, function () {
+                        res.status(500).send("Some Error Occurred!!");
+                        return;
+                    });
+            }, function () {
+                res.status(500).send("Some Error Occurred!!");
+                return;
+            });
     }
 
     function rearrangeItems(req,res) {
         var pageId=req.params.pageId;
-        var initial=req.query.ii;
-        var final=req.query.fi;
-        var widget=null;
-        for (var w in widgets)        {
-            if (widgets[w].pageId == pageId){
-                if ( w == initial){
-                    widget = widgets[w];
-                    widgets.splice(w,1);
-                    widgets.splice(final, 0, widget);
-                    res.sendStatus(200);
-                    return;
-                }
-            }
-        }
-        res.sendStatus(500).status("Some error Occurred!!");
+        var initial=parseInt(req.query.ii);
+        var final=parseInt(req.query.fi);
+        widgetModel.reorderWidget(pageId, initial, final)
+            .then(function () {
+                res.sendStatus(200);
+            }, function () {
+                res.status(500).send("Some error Occurred!!");
+            })
+
+
     }
 }

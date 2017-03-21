@@ -23,22 +23,25 @@ module.exports = function () {
         UserModel.findOne({_id:userId}, function(err, foundUser) {
             if (err){
                 console.log("user not found: " + userId);
-                deferred.reject(err);
+                    deferred.reject({status:"KO",
+                        description:"Some Error Occurred!!"});
 
             }
             else if (foundUser){
                 foundUser.websites.push(websiteId);
                 foundUser.save(function (err, updatedUser) {
                     if (err) {
-                        deferred.reject(err);
+                        deferred.reject({status:"KO",
+                            description:"Some Error Occurred!!"});
                     }
                     else {
-                        deferred.resolve(updatedUser);
+                        deferred.resolve(websiteId);
                     }
                 });
             }
             else {
-                deferred.resolve(null);
+                deferred.reject({status:"KO",
+                    description:"Some Error Occurred!!"});
             }
         });
         return deferred.promise;

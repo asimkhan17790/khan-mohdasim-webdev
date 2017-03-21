@@ -6,7 +6,8 @@ module.exports = function () {
         findPageById : findPageById,
         updatePage : updatePage,
         deletePage : deletePage,
-        addWidgetToPage : addWidgetToPage
+        addWidgetToPage : addWidgetToPage,
+        deleteWidgetIdFromPage: deleteWidgetIdFromPage
     };
 
     var mongoose = require('mongoose');
@@ -18,38 +19,58 @@ module.exports = function () {
 
     return api;
 
+    function deleteWidgetIdFromPage(pageId, widgetId) {
+        var deferred=q.defer();
+        PageModel.update({_id: pageId},
+            {$pull: {widgets: widgetId}},
+            function (err, result) {
+                if (err){
+                    deferred.reject();
+                }
+                else {
+                    deferred.resolve(result);
+                }
+            });
+
+        return deferred.promise;
+    }
+
+
     function addWidgetToPage (pageId , widgetId) {
 
         var deferred =  q.defer();
         PageModel.findOne({_id : pageId}, function(err, foundPage) {
             if (err){
-                console.log("user not found: " + pageId);
-                deferred.reject(err);
+                console.log("Page not found: " + pageId);
+                deferred.reject({status:"KO",
+                    description:"Some Error Occurred!!"});
 
             }
             else if (foundPage){
                 foundPage.widgets.push(widgetId);
                 foundPage.save(function (err, updatedPage) {
                     if (err) {
-                        deferred.reject(err);
+                        deferred.reject({status:"KO",
+                            description:"Some Error Occurred!!"});
                     }
                     else {
-                        deferred.resolve(updatedPage);
+                        deferred.resolve(widgetId);
                     }
                 });
             }
             else {
-                deferred.resolve(null);
+                deferred.reject({status:"KO",
+                    description:"Some Error Occurred!!"});
             }
         });
         return deferred.promise;
     }
 
-    function createPage (websiteId, page, WebsiteModel) {
+    function createPage (websiteId, page) {
 
         var deferred = q.defer();
         page._website = websiteId;
-        PageModel.findOne({name:page.name}, function (err, foundPage) {
+        PageModel.findOne({name:page.name,_website:websiteId}, function (err, foundPage) {
 
             if (err) {
                 deferred.reject(err);
@@ -66,16 +87,8 @@ module.exports = function () {
                             description:"Some Error Occurred!!"});
                     }
                     else {
-                        WebsiteModel.addPageToWebsite(websiteId, createdPage._id)
-                            .then(function (updatedWebsite) {
-                                    deferred.resolve(createdPage._id);
-                                },
-                                function (err) {
-                                    deferred.reject(
-                                        {status:"KO",
-                                            description:"Some Error Occurred!!"});
-                                });
-                    }
+                            deferred.resolve(createdPage._id);
+                        }
                 });
             }
         });

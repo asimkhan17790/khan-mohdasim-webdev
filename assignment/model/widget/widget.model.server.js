@@ -18,35 +18,46 @@ module.exports = function () {
 
     return api;
 
-    function createWidget (pageId, widget,PageModel) {
+    function createWidget (pageId, widget) {
 
         var deferred = q.defer();
         widget._page = pageId;
 
-        WidgetModel.create(widget, function (err, createdWidget) {
-            if (err) {
-                deferred.reject({status:"KO",
-                    description:"Some Error Occurred!!"});
-            }
-            else {
-                PageModel.addWidgetToPage(pageId, createdWidget._id)
-                    .then(function (updatedPage) {
+        WidgetModel.findOne({_page: pageId})
+            .sort('-orderIndex')
+            .exec(function (err, member) {
+                if (err){
+                    deferred.reject({status:"KO",
+                        description:"Some Error Occurred!!"});
+                }
+                else{
+                    if (member){
+                        widget.orderIndex = member.orderIndex+1;
+                    }
+                    else{
+                        widget.orderIndex = parseInt(0);
+                    }
+                    WidgetModel.create(widget, function (err, createdWidget) {
+                        if (err) {
+                            deferred.reject({status:"KO",
+                                description:"Some Error Occurred!!"});
+                        }
+                        else {
                             deferred.resolve(createdWidget._id);
-                        },
-                        function (err) {
-                            deferred.reject(
-                                {status:"KO",
-                                    description:"Some Error Occurred!!"});
-                        });
-            }
-        });
+                        }
+                    });
+                }
 
+
+            });
         return deferred.promise;
     }
     function findAllWidgetsForPage (pageId) {
 
         var deferred = q.defer();
-        WidgetModel.find({_page: pageId}, function (err, widgets) {
+        WidgetModel.find({_page: pageId})
+            .sort('orderIndex')
+            .exec( function (err, widgets) {
             if (err) {
                 deferred.reject(err);
             } else {
@@ -108,7 +119,7 @@ module.exports = function () {
 
         return deferred.promise;
     }
-    function deleteWidget (widgetId) {
+   /* function deleteWidget (widgetId) {
 
         var deferred =  q.defer();
         WidgetModel.remove({_id:widgetId}, function(err, foundWidget) {
@@ -121,10 +132,143 @@ module.exports = function () {
         });
 
         return deferred.promise;
+    }*/
+
+
+
+    function deleteWidget (widgetId) {
+        var deferred = q.defer();
+        WidgetModel.findOne({_id: widgetId},function (err, widget) {
+            if (err){
+                deferred.reject();
+            }
+            else{
+                var currentWidget= widget.orderIndex;
+                var currentPageId = widget._page;
+                WidgetModel.remove({_id: widgetId},
+                    function (err, resp) {
+                        if (err){
+                            deferred.reject();
+                        }
+                        else {
+                            WidgetModel.find({_page: currentPageId,
+                                    orderIndex: {$gte: currentWidget}},
+                                function (err, widgets) {
+                                    if(err){
+                                        deferred.reject();
+                                    }
+                                    else if (widgets.length == 0) {
+                                        deferred.resolve();
+                                    }
+                                    else
+                                    {
+                                        widgets.forEach(function (w) {
+                                            var updatedOrder=w.orderIndex -1;
+                                            WidgetModel.update({_id: w._id},
+                                                {$set: {orderIndex: updatedOrder}},
+                                                function (err, resp) {
+                                                    if (err){
+                                                        deferred.reject();
+                                                    }
+                                                    else{
+                                                        deferred.resolve();
+                                                    }
+                                                });
+                                        })
+                                    }
+                                });
+                        }
+                    });
+            }
+        });
+        return deferred.promise;
     }
+
 
     function reorderWidget (pageId, start, end) {
 
+        var deferred = q.defer();
+        WidgetModel.findOne({_page: pageId, orderIndex: start}, function (err, widget){
+            if (err){
+                deferred.reject();
+            }
+
+            else{
+                if(start < end){
+                    WidgetModel.find({_page: pageId,
+                            $and: [{orderIndex: {$gt: start}}, {orderIndex: {$lte: end}}]},
+                        function (err, widgets) {
+                            if(err){
+                                deferred.reject();
+                            }
+                            else{
+                                widgets.forEach(function (w) {
+
+                                    var updatedOrder=w.orderIndex -1;
+
+                                    WidgetModel.update({_id: w._id},{$set: {orderIndex: updatedOrder}},
+                                        function (err, resp) {
+                                            if (err){
+                                                deferred.reject();
+                                            }
+                                            else{
+
+                                                deferred.resolve();
+                                            }
+                                        });
+                                })
+
+                                WidgetModel.update({_page: pageId, _id: widget._id},
+                                    {$set: {orderIndex: end}},
+                                    function (err) {
+                                        if (err){
+                                            deferred.reject();
+                                        }
+                                        else{
+                                            deferred.resolve();
+                                        }
+                                    });
+                            }
+                        });
+                }
+                else{
+                    WidgetModel.find({_page: pageId,
+                            $and: [{orderIndex: {$gte: end}}, {orderIndex: {$lt: start}}]},
+                        function (err, widgets) {
+                            if(err){
+                                deferred.reject();
+                            }
+                            else{
+                                widgets.forEach(function (w) {
+                                    var updatedOrder=w.orderIndex +1;
+                                    WidgetModel.update({_id: w._id},
+                                        {$set: {orderIndex: updatedOrder}},
+                                        function (err, resp) {
+                                            if (err){
+                                                deferred.reject();
+                                            }
+                                            else{
+                                                deferred.resolve();
+                                            }
+                                        });
+                                });
+                                WidgetModel.update({_page: pageId, _id: widget._id},
+                                    {$set: {orderIndex: end}},
+                                    function (err) {
+                                        if (err){
+                                            deferred.reject();
+                                        }
+                                        else{
+                                            deferred.resolve();
+                                        }
+                                    });
+                            }
+                        });
+                }
+            }
+        })
+        return deferred.promise;
     }
+
 
 };

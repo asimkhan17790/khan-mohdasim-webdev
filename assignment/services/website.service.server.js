@@ -14,17 +14,24 @@ module.exports = function (app,models) {
         var userId = req.params.userId;
         var website = req.body;
         var response ={};
-        websiteModel.createWebsiteForUser(userId,website,userModel).then(function (websiteId) {
-            response = {status:"OK",
-                        description:"Website successfully created",
-                        data:websiteId};
-            res.json(response);
-            return;
-        },
-        function(err) {
-            res.json(err);
-            return;
-        });
+        websiteModel.createWebsiteForUser(userId,website)
+
+            .then(function (createdWebsiteId) {
+                return userModel.addWebsiteToUser(userId, createdWebsiteId);
+            })
+            .then(function (websiteId) {
+                response = {status:"OK",
+                    description:"Website successfully created",
+                    data:websiteId};
+                res.json(response);
+                return;
+            },
+            function(err) {
+                res.json(err);
+                return;
+            });
+
+
     }
     function findAllWebsitesForUser(req, res) {
         var userId = req.params.userId;
@@ -73,7 +80,7 @@ module.exports = function (app,models) {
                     return;
                 },
                 function(err) {
-                    res.sendStatus(500).send("Some Error Occurred!!");
+                    res.status(500).send("Some Error Occurred!!");
                     return;
                 });
     }

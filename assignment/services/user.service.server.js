@@ -69,7 +69,7 @@ module.exports = function (app,models) {
                     return;
                 },
                 function(err) {
-                    res.sendStatus(500).send("Some Error Occurred!!");
+                    res.status(500).send("Some Error Occurred!!");
                     return;
                 });
 
@@ -97,7 +97,7 @@ module.exports = function (app,models) {
 
             },
             function(err) {
-                res.sendStatus(500).send("Some Error Occurred!!");
+                res.status(500).send("Some Error Occurred!!");
                 return;
             });
     }
@@ -113,7 +113,7 @@ module.exports = function (app,models) {
                     return;
                 },
                 function(err) {
-                    res.sendStatus(500).send("Some Error Occurred!!");
+                    res.status(500).send("Some Error Occurred!!");
                     return;
                 });
 
@@ -130,7 +130,7 @@ module.exports = function (app,models) {
                     return;
                 },
                 function(err) {
-                    res.sendStatus(500).send("Some Error Occurred!!");
+                    res.status(500).send("Some Error Occurred!!");
                     return;
                 });
     }

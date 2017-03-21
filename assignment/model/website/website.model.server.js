@@ -22,34 +22,37 @@ module.exports = function () {
         var deferred =  q.defer();
         WebsiteModel.findOne({_id:wesbiteId}, function(err, foundWebsite) {
             if (err){
-                console.log("user not found: " + wesbiteId);
-                deferred.reject(err);
+                console.log("website not found: " + wesbiteId);
+                deferred.reject({status:"KO",
+                    description:"Some Error Occurred!!"});
 
             }
             else if (foundWebsite){
                 foundWebsite.pages.push(pageId);
                 foundWebsite.save(function (err, updatedWebsite) {
                     if (err) {
-                        deferred.reject(err);
+                        deferred.reject({status:"KO",
+                            description:"Some Error Occurred!!"});
                     }
                     else {
-                        deferred.resolve(updatedWebsite);
+                        deferred.resolve(pageId);
                     }
                 });
             }
             else {
-                deferred.resolve(null);
+                deferred.reject({status:"KO",
+                    description:"Some Error Occurred!!"});
             }
         });
         return deferred.promise;
     }
 
 
-   function createWebsiteForUser (userId, website,UserModel) {
+   function createWebsiteForUser (userId, website) {
 
        var deferred = q.defer();
        website._user = userId;
-       WebsiteModel.findOne({name:website.name}, function (err, foundWebsite) {
+       WebsiteModel.findOne({name:website.name,_user:userId}, function (err, foundWebsite) {
 
            if (err) {
                deferred.reject(err);
@@ -66,8 +69,8 @@ module.exports = function () {
                                description:"Some Error Occurred!!"});
                        }
                        else {
-
-                           UserModel.addWebsiteToUser(userId, createdWebsite._id)
+                           deferred.resolve(createdWebsite._id);
+                           /*UserModel.addWebsiteToUser(userId, createdWebsite._id)
                                .then(function (updatedUser) {
                                        deferred.resolve(createdWebsite._id);
                                },
@@ -75,7 +78,7 @@ module.exports = function () {
                                    deferred.reject(
                                        {status:"KO",
                                        description:"Some Error Occurred!!"});
-                               });
+                               });*/
                        }
                    });
                }
@@ -137,11 +140,13 @@ module.exports = function () {
     function deleteWebsite (websiteId) {
 
         var deferred =  q.defer();
-        WebsiteModel.remove({_id:websiteId}, function(err, foundWebsite) {
+        WebsiteModel.findOneAndRemove({_id:websiteId}, function(err, foundWebsite) {
             if (err){
                 deferred.reject(err);
             }
             else {
+                console.log(foundWebsite._id);
+                console.log(foundWebsite.pages);
                 deferred.resolve();
             }
         });

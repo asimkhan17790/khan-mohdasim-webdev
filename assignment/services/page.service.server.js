@@ -16,7 +16,12 @@ module.exports = function (app,models) {
 
         // checking for existing page name
         var response ={};
-        pageModel.createPage(websiteId,page,websiteModel).then(function (pageId) {
+        pageModel.createPage(websiteId,page)
+
+            .then(function (createdPageId) {
+                return websiteModel.addPageToWebsite(websiteId, createdPageId);
+            })
+            .then(function (pageId) {
                 response = {status:"OK",
                     description:"Page successfully created",
                     data:pageId};
@@ -76,7 +81,7 @@ module.exports = function (app,models) {
                     return;
                 },
                 function(err) {
-                    res.sendStatus(500).send("Some Error Occurred!!");
+                    res.status(500).send("Some Error Occurred!!");
                     return;
                 });
     }

@@ -131,6 +131,8 @@
                     else {
                         vm.error = "Unable to update selected widget";
                     }
+                }).error(function () {
+                    vm.error = "Some Error Occurred! Please try again.";
                 });
 
             }
