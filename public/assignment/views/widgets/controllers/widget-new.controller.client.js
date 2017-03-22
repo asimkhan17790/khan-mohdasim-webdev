@@ -32,6 +32,7 @@
                 var flickrUrl = DataService.getData();
                 if (flickrUrl) {
                     vm.widget.url = flickrUrl;
+                    $('#uploadFile').attr("required", false);
                     DataService.setData(null);
                 }
             }
@@ -58,7 +59,11 @@
             var form = $('#editorForm');
             var urlField=$('#url');
             var imageField=$('#uploadFile');
-            if (form[0].checkValidity() || (urlField[0] && urlField[0].checkValidity())) {
+            if (form[0].checkValidity() ||(urlField[0] && urlField[0].checkValidity())) {
+                if (vm.widget.widgetType === 'HTML' && (!vm.widget.text || vm.widget.text.trim()==='')) {
+                    vm.error = "Please fill the HTML text field";
+                    return;
+                }
                 var promise = WidgetService.createWidget(vm.pageId, vm.widget);
                 promise.success(function (response) {
                     if (response.status==="OK") {
@@ -85,7 +90,7 @@
                 if (urlField[0] && !urlField[0].checkValidity()){
                     vm.error = "Please fill the URL field or upload an image from your system";
                 }
-                else if (!form[0].checkValidity()) {
+                else if (!form[0].checkValidity() || (vm.widget.widgetType==='HTML' && !model.widget.text)) {
                     vm.error = "Please fill the highlighted fields correctly";
 
                 }

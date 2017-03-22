@@ -26,12 +26,19 @@
                    class="form-control" placeholder="Place Holder"
                    ng-model="model.widget.placeholder">
             </input>
-            <label for="formatted">Formatted</label>
-            <select id ="formatted"
+          <!--  <label for="formatted">Formatted</label>-->
+            <!--<select id ="formatted"
                     class="form-control"
                     ng-model="model.widget.formatted"
                     ng-options="x for x in [true,false]">
-            </select>
+            </select>-->
+            <div class="ak-checkBox-form-item form-control">
+                <label for="formatted">Formatted</label>
+
+                <input id ="formatted"  class="checkbox pull-right" ng-model="model.widget.formatted" type="checkbox"/>
+
+            </div>
+
 
             <a class="btn btn-danger btn-block"
                ng-click="model.deleteWidget()"

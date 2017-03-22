@@ -7,6 +7,7 @@ module.exports = function (app) {
     require("./services/page.service.server")(app,models);
     require("./services/widget.service.server")(app,models);
     require("./services/imageupload.service.server")(app);
+    require("./services/flickr.service.server")(app);
 
     console.log("app js started");
 }

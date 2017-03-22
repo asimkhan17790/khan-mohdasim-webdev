@@ -113,6 +113,13 @@
             var urlField=$('#url');
             var imageField=$('#uploadFile');
             if (form[0].checkValidity() || (urlField[0] && urlField[0].checkValidity())) {
+
+                if (vm.widget.widgetType === 'HTML' && (!vm.widget.text || vm.widget.text.trim()==='')) {
+                    vm.error = "Please fill the HTML text field";
+                    return;
+                }
+
+
                 var promise = WidgetService.updateWidget(vm.widgetId, vm.widget);
                 promise.success(function (response) {
                     if (response) {

@@ -14,6 +14,7 @@
 
         vm.redirectBack = redirectBack;
         vm.searchPhotos = searchPhotos;
+        vm.searchPictures = searchPictures;
         vm.onSelectPhoto = onSelectPhoto;
         vm.addMoreItems = addMoreItems;
 
@@ -57,6 +58,24 @@
                     vm.error = "Some error occurred";
                 });
         }
+        function searchPictures(searchTerm) {
+
+            FlickrService
+                .searchPictures(searchTerm)
+                .then(function(response) {
+                    //var data = response.data.replace("jsonFlickrApi(","");
+                   // data = data.substring(0,data.length - 1);
+                   // data = JSON.parse(data);
+                    vm.photos = response.data.photos;
+                    if (vm.photos.photo.length == 0) {
+                        vm.error = "No result found";
+                    }
+                }, function (error) {
+                    vm.error = "Some error occurred";
+                });
+        }
+
+
         function addMoreItems() {
             console.log("hi");
         }
