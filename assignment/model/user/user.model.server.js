@@ -7,7 +7,8 @@ module.exports = function () {
         findUserByCredentials : findUserByCredentials,
         updateUser : updateUser,
         deleteUser : deleteUser,
-        addWebsiteToUser : addWebsiteToUser
+        addWebsiteToUser : addWebsiteToUser,
+        deleteWebsiteFromUser : deleteWebsiteFromUser
     };
 
     var mongoose = require('mongoose');
@@ -17,6 +18,33 @@ module.exports = function () {
     var UserModel = mongoose.model('UserModel', UserSchema);
 
     return api;
+
+    function deleteWebsiteFromUser (userId, websiteId) {
+
+        var deferred =  q.defer();
+        UserModel.findOne({_id:userId}, function(err, foundUser) {
+            if (err){
+                console.log("user not found: " + userId);
+                deferred.reject();
+
+            }
+            else if (foundUser){
+                foundUser.websites.pull(websiteId);
+                foundUser.save(function (err, updatedUser) {
+                    if (err) {
+                        deferred.reject();
+                    }
+                    else {
+                        deferred.resolve();
+                    }
+                });
+            }
+            else {
+                deferred.reject();
+            }
+        });
+        return deferred.promise;
+    }
 
     function addWebsiteToUser(userId, websiteId) {
          var deferred =  q.defer();
@@ -134,12 +162,13 @@ module.exports = function () {
     }
     function deleteUser(userId) {
         var deferred =  q.defer();
-        UserModel.remove({_id:userId}, function(err, foundUser) {
+        UserModel.findOneAndRemove({_id:userId}, function(err, foundUser) {
             if (err){
                 deferred.reject(err);
             }
             else {
-                deferred.resolve();
+
+                deferred.resolve(foundUser);
             }
 
         });

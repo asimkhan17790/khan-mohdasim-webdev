@@ -6,7 +6,9 @@ module.exports = function () {
         findWebsiteById : findWebsiteById,
         updateWebsite : updateWebsite,
         deleteWebsite : deleteWebsite,
-        addPageToWebsite : addPageToWebsite
+        addPageToWebsite : addPageToWebsite,
+        deleteBulkWebsites : deleteBulkWebsites,
+        deletePageFromWebsite : deletePageFromWebsite
     };
 
     var mongoose = require('mongoose');
@@ -17,6 +19,64 @@ module.exports = function () {
 
 
     return api;
+
+
+    function deletePageFromWebsite (websiteId, pageId) {
+
+        var deferred =  q.defer();
+        WebsiteModel.findOne({_id:websiteId}, function(err, foundWebsite) {
+            if (err){
+                console.log("website not found: " + websiteId);
+                deferred.reject();
+
+            }
+            else if (foundWebsite){
+                foundWebsite.pages.pull(pageId);
+                foundWebsite.save(function (err, updatedWebsite) {
+                    if (err) {
+                        deferred.reject();
+                    }
+                    else {
+                        deferred.resolve();
+                    }
+                });
+            }
+            else {
+                deferred.reject();
+            }
+        });
+        return deferred.promise;
+    }
+
+
+    function deleteBulkWebsites (websites) {
+
+       var deferred =  q.defer();
+        WebsiteModel.find({'_id': {'$in': websites}}, function (err, foundWebsites) {
+                if (err) {
+                    console.log("Error Occurred");
+                    deferred.reject();
+                }
+                else if (foundWebsites && foundWebsites.length > 0)  {
+                    var pages = [];
+                    foundWebsites.forEach(
+                        function (website) {
+                            pages = pages.concat(website.pages);
+                            website.remove();
+                        }
+                    );
+                   // WebsiteModel.remove({'_id': {'$in': websites}}).exec();
+                    //foundWebsites.remove();
+                    deferred.resolve(pages);
+                }
+                else {
+                    deferred.resolve([]);
+                }
+
+        });
+        //return pages;
+        return deferred.promise;
+    }
 
     function addPageToWebsite(wesbiteId, pageId) {
         var deferred =  q.defer();
@@ -70,15 +130,6 @@ module.exports = function () {
                        }
                        else {
                            deferred.resolve(createdWebsite._id);
-                           /*UserModel.addWebsiteToUser(userId, createdWebsite._id)
-                               .then(function (updatedUser) {
-                                       deferred.resolve(createdWebsite._id);
-                               },
-                               function (err) {
-                                   deferred.reject(
-                                       {status:"KO",
-                                       description:"Some Error Occurred!!"});
-                               });*/
                        }
                    });
                }
@@ -147,7 +198,7 @@ module.exports = function () {
             else {
                 console.log(foundWebsite._id);
                 console.log(foundWebsite.pages);
-                deferred.resolve();
+                deferred.resolve(foundWebsite);
             }
         });
 

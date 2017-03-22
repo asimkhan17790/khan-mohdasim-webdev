@@ -58,7 +58,7 @@
             var form = $('#editorForm');
             var urlField=$('#url');
             var imageField=$('#uploadFile');
-            if (form[0].checkValidity() || urlField[0].checkValidity()) {
+            if (form[0].checkValidity() || (urlField[0] && urlField[0].checkValidity())) {
                 var promise = WidgetService.createWidget(vm.pageId, vm.widget);
                 promise.success(function (response) {
                     if (response.status==="OK") {
@@ -82,7 +82,13 @@
 
             }
             else {
-                vm.error = "Please fill the URL field or upload an image from your system";
+                if (urlField[0] && !urlField[0].checkValidity()){
+                    vm.error = "Please fill the URL field or upload an image from your system";
+                }
+                else if (!form[0].checkValidity()) {
+                    vm.error = "Please fill the highlighted fields correctly";
+
+                }
             }
         }
 
@@ -102,6 +108,7 @@
                 if(resp.data.error_code === 0){ //validate success
                     // vm.success = 'Success ' + resp.config.data.file.name + 'uploaded.';
                     vm.success = 'Image successfully uploaded.';
+                    vm.error = null;
                     vm.widget.url = resp.data.fileUrl;
                     $('#uploadFile').attr("required", false);
                 } else {

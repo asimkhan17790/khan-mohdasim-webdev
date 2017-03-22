@@ -7,6 +7,7 @@ module.exports = function (app,models) {
 
     var websiteModel = models.WebsiteModel;
     var pageModel = models.PageModel;
+    var widgetModel = models.WidgetModel;
 
 
     function createPage(req, res) {
@@ -75,8 +76,23 @@ module.exports = function (app,models) {
     }
     function deletePage(req, res) {
         var pageId = req.params.pageId;
-        pageModel.deleteWebsite(pageId)
-            .then(function () {
+        pageModel.deletePage(pageId)
+            .then(function (foundPage) {
+
+                    var widgets = foundPage.widgets;
+                    var parentWebsite = foundPage._website;
+
+
+                 widgetModel.deleteBulkWidgets(widgets)
+                     .then(function () {
+                        return websiteModel.deletePageFromWebsite(parentWebsite, foundPage._id);
+                    }).then(function () {
+                            console.log("All Data Deleted");
+                        },
+                        function(err) {
+                            console.log("Error Occurred" + err);
+                        });
+
                     res.send("OK");
                     return;
                 },
@@ -84,5 +100,8 @@ module.exports = function (app,models) {
                     res.status(500).send("Some Error Occurred!!");
                     return;
                 });
+
+
+
     }
 }

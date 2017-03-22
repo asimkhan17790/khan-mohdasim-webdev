@@ -7,7 +7,8 @@ module.exports = function () {
         updatePage : updatePage,
         deletePage : deletePage,
         addWidgetToPage : addWidgetToPage,
-        deleteWidgetIdFromPage: deleteWidgetIdFromPage
+        deleteWidgetIdFromPage: deleteWidgetIdFromPage,
+        deleteBulkPages : deleteBulkPages
     };
 
     var mongoose = require('mongoose');
@@ -18,6 +19,34 @@ module.exports = function () {
 
 
     return api;
+
+    function deleteBulkPages (pages) {
+        var deferred = q.defer();
+      //  var widgets =[];
+        PageModel.find({'_id': {'$in': pages}}, function (err, foundPages) {
+            if (err) {
+                console.log("Error Occurred");
+                deferred.reject();
+            }
+            else if (foundPages && foundPages.length > 0) {
+                var widgets =[];
+                foundPages.forEach(
+                    function (page) {
+                        widgets = widgets.concat(page.widgets);
+                        page.remove();
+                    }
+                );
+                deferred.resolve(widgets);
+            }
+            else {
+                deferred.resolve([]);
+            }
+        });
+        //return widgets;
+        return deferred.promise;
+    }
+
+
 
     function deleteWidgetIdFromPage(pageId, widgetId) {
         var deferred=q.defer();
@@ -154,12 +183,12 @@ module.exports = function () {
     function deletePage (pageId) {
 
         var deferred =  q.defer();
-        PageModel.remove({_id:pageId}, function(err, foundPage) {
+        PageModel.findOneAndRemove({_id:pageId}, function(err, foundPage) {
             if (err){
                 deferred.reject(err);
             }
             else {
-                deferred.resolve();
+                deferred.resolve(foundPage);
             }
         });
 

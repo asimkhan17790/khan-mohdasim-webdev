@@ -6,7 +6,8 @@ module.exports = function () {
         findWidgetById : findWidgetById,
         updateWidget : updateWidget,
         deleteWidget : deleteWidget,
-        reorderWidget : reorderWidget
+        reorderWidget : reorderWidget,
+        deleteBulkWidgets : deleteBulkWidgets
     };
 
     var mongoose = require('mongoose');
@@ -17,6 +18,23 @@ module.exports = function () {
    // var PageModel = require("../page/page.model.server")();
 
     return api;
+
+
+    function deleteBulkWidgets (widgets) {
+        var deferred = q.defer();
+        WidgetModel.remove({'_id': {'$in': widgets}}, function (err, result) {
+            if (err) {
+                console.log("Bulk widget delete failed");
+                deferred.reject();
+            }
+            else {
+                console.log("All widgets deleted");
+                deferred.resolve();
+            }
+        });
+
+        return deferred.promise;
+    }
 
     function createWidget (pageId, widget) {
 

@@ -8,7 +8,7 @@ module.exports = function (app,models) {
     var websiteModel = models.WebsiteModel;
     var pageModel = models.PageModel;
     var userModel = models.UserModel;
-
+    var widgetModel = models.WidgetModel;
     function createWebsite(req, res) {
 
         var userId = req.params.userId;
@@ -75,7 +75,23 @@ module.exports = function (app,models) {
     function deleteWebsite(req, res) {
         var websiteId = req.params.websiteId;
         websiteModel.deleteWebsite(websiteId)
-            .then(function () {
+            .then(function (foundWebsite) {
+
+                    var pages = foundWebsite.pages;
+                    var parentUser = foundWebsite._user;
+
+                    pageModel.deleteBulkPages(pages)
+                        .then(function (widgets) {
+                             return widgetModel.deleteBulkWidgets(widgets);
+                        }).then(function () {
+                             return userModel.deleteWebsiteFromUser(parentUser, foundWebsite._id);
+                         }).then(function () {
+                            console.log("All Data Deleted");
+                        },
+                        function(err) {
+                            console.log("Error Occurred" + err);
+                        });
+
                     res.send("OK");
                     return;
                 },

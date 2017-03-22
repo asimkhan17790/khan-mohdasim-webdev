@@ -20,7 +20,7 @@ module.exports = function(app)
     var d = require('domain').create();
 
     d.on('error', function(er) {
-        console.log('Oh no, something wrong with DB');
+        console.log('Oh no, something wrong with DB' + er);
     });
 
     d.run(function() {

@@ -7,11 +7,32 @@ module.exports = function (app,models) {
 
 
     var userModel = models.UserModel;
+    var websiteModel = models.WebsiteModel;
+    var pageModel = models.PageModel;
+    var widgetModel = models.WidgetModel;
     function deleteUser (req,res) {
         var userId = req.params.userId;
 
         userModel.deleteUser(userId)
-            .then(function () {
+            .then(function (foundUser) {
+                    var websites = foundUser.websites;
+
+                    websiteModel.deleteBulkWebsites(websites)
+                        .then(function (pages) {
+                             return pageModel.deleteBulkPages(pages);
+                        }).then(function (widgets) {
+                            return widgetModel.deleteBulkWidgets(widgets);
+                    }).then(function () {
+                        console.log("All Data Deleted");
+                    },
+                    function(err) {
+                        console.log("Error Occurred" + err);
+                    });
+                 /*  var pages =  websiteModel.deleteBulkWebsites(websites);
+                   var widgets = pageModel.deleteBulkPages(pages);
+                    widgetModel.deleteBulkWidgets(widgets);*/
+
+                   // var widgets = pageModel.deleteBulkPages(pages);
                     res.send("OK");
                     return;
                 },
