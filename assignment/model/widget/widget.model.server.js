@@ -104,8 +104,6 @@ module.exports = function () {
             }
             else if (foundWidget){
 
-
-
                 foundWidget.widgetType = widget.widgetType || foundWidget.widgetType;
                 foundWidget.name = widget.name || foundWidget.name;
                 foundWidget.text = widget.text || foundWidget.text;
@@ -137,22 +135,6 @@ module.exports = function () {
 
         return deferred.promise;
     }
-   /* function deleteWidget (widgetId) {
-
-        var deferred =  q.defer();
-        WidgetModel.remove({_id:widgetId}, function(err, foundWidget) {
-            if (err){
-                deferred.reject(err);
-            }
-            else {
-                deferred.resolve();
-            }
-        });
-
-        return deferred.promise;
-    }*/
-
-
 
     function deleteWidget (widgetId) {
         var deferred = q.defer();
@@ -201,8 +183,6 @@ module.exports = function () {
         });
         return deferred.promise;
     }
-
-
     function reorderWidget (pageId, start, end) {
 
         var deferred = q.defer();
@@ -235,7 +215,6 @@ module.exports = function () {
                                             }
                                         });
                                 })
-
                                 WidgetModel.update({_page: pageId, _id: widget._id},
                                     {$set: {orderIndex: end}},
                                     function (err) {
@@ -287,6 +266,4 @@ module.exports = function () {
         })
         return deferred.promise;
     }
-
-
 };

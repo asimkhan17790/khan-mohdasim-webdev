@@ -23,7 +23,9 @@
         }
 
         function getData() {
-            return data;
+            var returnData = data;
+            data = null;
+            return returnData;
         }
     }
 })();

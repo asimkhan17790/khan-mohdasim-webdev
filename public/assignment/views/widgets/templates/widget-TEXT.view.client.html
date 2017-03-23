@@ -1,4 +1,4 @@
-<div ng-if="widget.formatted" text-angular ta-toolbar="[['h1','h2','h3'],['bold','italics','underline','strikeThrough'],
+<div ng-if="widget.formatted" text-angular placeholder="{{widget.placeholder}}" ta-toolbar="[['h1','h2','h3'],['bold','italics','underline','strikeThrough'],
         ['ul','ol'],['justifyLeft','justifyCenter','justifyRight','justifyFull'],
         ['indent','outdent'],['html']]" ng-model="widget.text"></div>
 <input ng-if="!widget.formatted && (!widget.rows || widget.rows===1)"
