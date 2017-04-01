@@ -18,7 +18,7 @@ module.exports = function () {
         deletable: Boolean,
         formatted : Boolean,
         orderIndex : Number,
-        dateCreated: {type: Date, default: Date.now}
+        dateCreated: {type: Date, default: Date.now()}
     }, {collection: 'model.widget'});
 
     return WidgetSchema;

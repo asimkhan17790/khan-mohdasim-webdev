@@ -23,7 +23,7 @@ module.exports = function (app) {
 
     function httpsResponse(req, res, path) {
        // var query = querystring.stringify(req.query.searchTerm);
-        var query = 'text=' + req.query.searchTerm.replace(/\s+/,'+');
+        var query = 'text=' + encodeURI(req.query.searchTerm);
         path += '&'+query;
         https.get({
             host: host,

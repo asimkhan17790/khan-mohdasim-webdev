@@ -6,7 +6,7 @@ module.exports = function () {
         description : String,
         pages : [{ type: mongoose.Schema.Types.ObjectId, ref: 'PageModel' }],
         _user : { type: mongoose.Schema.Types.ObjectId, ref: 'UserModel' },
-        dateCreated: {type: Date, default: Date.now}
+        dateCreated: {type: Date, default: Date.now()}
     }, {collection: 'model.website'});
 
     return WebsiteSchema;

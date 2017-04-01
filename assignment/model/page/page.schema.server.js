@@ -7,7 +7,7 @@ module.exports = function () {
         description : String,
         _website: { type: mongoose.Schema.Types.ObjectId, ref: 'WebsiteModel' },
         widgets : [{ type: mongoose.Schema.Types.ObjectId, ref: 'WidgetModel' }],
-        dateCreated: {type: Date, default: Date.now}
+        dateCreated: {type: Date, default: Date.now()}
     }, {collection: 'model.page'});
 
     return PageSchema;
