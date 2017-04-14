@@ -60,7 +60,6 @@ module.exports = function () {
                     deferred.resolve(result);
                 }
             });
-
         return deferred.promise;
     }
 
