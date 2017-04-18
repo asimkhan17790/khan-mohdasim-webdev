@@ -1,8 +1,9 @@
-/*!
- * Start Bootstrap - Grayscale v3.3.7+1 (http://startbootstrap.com/template-overviews/grayscale)
- * Copyright 2013-2016 Start Bootstrap
- * Licensed under MIT (https://github.com/BlackrockDigital/startbootstrap/blob/gh-pages/LICENSE)
- */
+.glorify {
+  text-shadow: 0px 0px 10px #0f0f0f;
+}
+.glorify-white {
+  text-shadow: 0px 0px 10px #fff;
+}
 body {
   width: 100%;
   height: 100%;
@@ -21,10 +22,11 @@ h4,
 h5,
 h6 {
   margin: 0 0 35px;
-  text-transform: uppercase;
-  font-family: "Montserrat", "Helvetica Neue", Helvetica, Arial, sans-serif;
+ /* text-transform: uppercase;*/
+  font-family: "911 Porscha Bold", "Helvetica Neue", Helvetica, Arial, sans-serif;
   font-weight: 700;
   letter-spacing: 1px;
+  text-shadow: 0px 0px 10px #fff;
 }
 p {
   margin: 0 0 25px;
@@ -39,7 +41,8 @@ p {
   }
 }
 a {
-  color: #42DCA3;
+  color:white;
+
   -webkit-transition: all 0.2s ease-in-out;
   -moz-transition: all 0.2s ease-in-out;
   transition: all 0.2s ease-in-out;
@@ -47,7 +50,7 @@ a {
 a:hover,
 a:focus {
   text-decoration: none;
-  color: #1d9b6c;
+  color: cornflowerblue;
 }
 .light {
   font-weight: 400;
@@ -130,7 +133,6 @@ a:focus {
   -moz-background-size: cover;
   background-size: cover;
   -o-background-size: cover;
-
 }
 .intro .intro-body {
   display: table-cell;
@@ -147,8 +149,8 @@ a:focus {
     height: 100%;
     padding: 0;
   }
-  .intro .intro-body .brand-heading {
-    font-size: 100px;
+ .intro .intro-body .brand-heading {
+    font-size: 70px;
   }
   .intro .intro-body .intro-text {
     font-size: 26px;
@@ -263,6 +265,9 @@ a:focus {
   color: #42DCA3;
   background-color: transparent;
 }
+
+
+
 .btn-default:hover,
 .btn-default:focus {
   border: 1px solid #42DCA3;
@@ -270,6 +275,86 @@ a:focus {
   color: black;
   background-color: #42DCA3;
 }
+
+#linkedin {
+  border: 1px solid #0077B5;
+  color: #0077B5;
+  background-color: transparent;
+}
+
+
+
+#linkedin:hover,
+.linkedin:focus {
+  border: 1px solid #0077B5;
+  outline: none;
+  color: white;
+  background-color: #0077B5;
+}
+
+#twitter {
+  border: 1px solid #1da1f2;
+  color: #1da1f2;
+  background-color: transparent;
+}
+
+
+
+#twitter:hover,
+.twitter:focus {
+  border: 1px solid #1da1f2;
+  outline: none;
+  color: white;
+  background-color: #1da1f2;
+}
+
+
+#facebook {
+  border: 1px solid #4267b2;
+  color: #4267b2;
+  background-color: transparent;
+}
+
+
+
+#facebook:hover,
+.facebook:focus {
+  border: 1px solid #4267b2;
+  outline: none;
+  color: white;
+  background-color: #4267b2;
+}
+
+
+
+#github {
+  border: 1px solid white;
+  color: white;
+  background-color: transparent;
+}
+
+#github:hover,
+.github:focus {
+  border: 1px solid white;
+  outline: none;
+  color: black;
+  background-color: white;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 ul.banner-social-buttons {
   margin-top: 0;
 }

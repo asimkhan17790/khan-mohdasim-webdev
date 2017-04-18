@@ -1,66 +1,157 @@
+
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" ng-app="WebAppHomePage2">
+
 <head>
-    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet"/>
-    <link href="style.css" rel="stylesheet"/>
+
+    <meta charset="utf-8">
+   <!-- <meta http-equiv="X-UA-Compatible" content="IE=edge">-->
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta charset="UTF-8">
+    <meta name="author" content="">
+    <link rel="shortcut icon" type="image/x-icon" href="favicon-32x32.ico" />
+    <title>Asim Khan</title>
+    <link href="https://fonts.googleapis.com/css?family=Dosis" rel="stylesheet">
+    <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
-    <title>Web Dev Course Home Page</title>
+    <!-- Custom Fonts -->
+    <link href="vendor/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+    <link href="https://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic" rel="stylesheet" type="text/css">    <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet" type="text/css">
+
+    <link href="css/homepage.css" rel="stylesheet">
+    <link href="css/font-awesome-animation.min.css" rel="stylesheet">
 </head>
-<body>
 
-<nav class="navbar navbar-default navbar-fixed-top">
-    <div class="container-fluid row">
-            <div class="navbar-header col-xs-12" >
+<body id="page-top" data-spy="scroll" data-target=".navbar-fixed-top">
 
-                <div class="">
-                    <a class="navbar-brand" href="#">CS5610 |
-                    </a>
-                </div>
-                <div class="">
-                    <a class="navbar-brand" href="#">Web Development |
-                    </a>
-                </div>
-                <div class="">
-                    <a class="navbar-brand" href="#">Mohd Asim Khan
+<nav class="navbar navbar-custom navbar-fixed-top" role="navigation">
+    <div class="container">
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-main-collapse">
+                Menu <i class="fa fa-bars"></i>
+            </button>
+            <a class="navbar-brand page-scroll" href="#page-top">
+
+                <span class="light glorify" style="font-style: italic;font-size: medium;">"Aim High, Fly Higher"</span>
+            </a>
+        </div>
+        <div class="collapse navbar-collapse navbar-right navbar-main-collapse">
+            <ul class="nav navbar-nav">
+                <li class="hidden">
+                    <a href="#page-top"></a>
+                </li>
+                <li>
+                    <a class="page-scroll glorify" href="#about">Projects</a>
+                </li>
+                <li>
+                    <a class="page-scroll glorify" href="#download">Resume</a>
+                </li>
+                <li>
+                    <a class="page-scroll glorify" href="#contact">Contact</a>
+                </li>
+            </ul>
+        </div>
+    </div>
+</nav>
+<header class="intro">
+    <div class="intro-body">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-8 col-md-offset-2">
+                    <img style="box-shadow: 10px 10px 10px 5px rgba(0, 0, 0, 0.4);"
+                            height="200px" width="200px" class="img-rounded img-circle" src="./img/asim_img.jpg"/>
+                    <h1 class="brand-heading glorify">Asim Khan</h1>
+                    <p style="font-size: larger" class="intro-text glorify">Technology Enthusiast | Java Developer | Sports Fanatic</p>
+                    <a href="#about" class="btn btn-circle page-scroll">
+                        <i class="fa fa-angle-double-down animated"></i>
                     </a>
                 </div>
             </div>
         </div>
     </div>
-</nav>
-<div class="container-fluid">
-   <h2 class="page-header">Required links</h2>
-    <ul class="list-group">
-        <li class="list-group-item">
-             <a href="https://mymusicapp-webdev.herokuapp.com/#/">Project</a>
-        </li>
-        <li class="list-group-item">
-            <a href="assignment/index.html">Assignment</a>
-        </li>
-        <li class="list-group-item">
-            <a href="test/index.html">Test MongoDB</a>
-        </li>
-        <li class="list-group-item">
-            <a href="https://github.com/asimkhan17790/khan-mohdasim-webdev">Github Link</a>
-        </li>
-    </ul>
+</header>
+<section id="about" class="container content-section text-center">
+    <div class="row">
+        <div class="col-lg-8 col-lg-offset-2">
+            <h2>CS 5610 - Final Project - <span style="font-family: 'Dosis', serif;"><span style="color: red;">My</span>Music</span></h2>
 
-</div>
+            <a target="_blank" style="font-size: 100px" href="https://github.com/asimkhan17790/webdev-project-musicApp.git">
+              <i class="fa fa-github" aria-hidden="true"></i>
+            </a>
 
+            <a target="_blank" style="font-size: 100px" href="https://mymusicapp-webdev.herokuapp.com/#/landingPage">
+                <i class="fa fa-play-circle" aria-hidden="true"></i>
+            </a>
+        </div>
+        <div class="col-lg-8 col-lg-offset-2">
+            <h2>CS 5610 - Assignment - <span style="font-family: 'Dosis', serif;">Web App Maker</span></h2>
 
-<nav class="navbar navbar-default navbar-fixed-bottom">
-    <div class="row container-fluid">
-        <div class="col-xs-12">
-            <!--<div class="navbar-text pull-right">
-                <a href="../users/profile.view.client.html" class="navbar-link">
-                  <span class="glyphicon glyphicon-user">
-                  </span>
-                </a>
-            </div>-->
+            <a target="_blank" style="font-size: 100px" href="https://github.com/asimkhan17790/khan-mohdasim-webdev.git">
+                <i class="fa fa-github" aria-hidden="true"></i>
+            </a>
+            <a target="_blank" style="font-size: 100px" href="https://mohdasim-khan-webdev.herokuapp.com/assignment/index.html#/login">
+                <i class="fa fa-play-circle" aria-hidden="true"></i>
+            </a>
         </div>
     </div>
-</nav>
+</section>
+<section id="download" class="content-section text-center">
+    <div class="download-section">
+        <div class="container">
+            <div class="col-lg-8 col-lg-offset-2 glorify">
+                <h2 class="glorify">Resume</h2>
+                <a style="font-size: 100px" href="./resources/Asim-CV_COOP_Updated4.pdf" target="_blank" class="faa-parent animated-hover">
+                    <i class="fa fa-file-text-o faa-wrench" aria-hidden="true"></i></a>
+            </div>
+        </div>
+    </div>
+</section>
+<section id="contact" class="container content-section text-center">
+    <div class="row">
+        <div class="col-lg-8 col-lg-offset-2">
+            <h2>Contact Details</h2>
+            <p>Feel free to contact me any time you like on the details mentioned below.</p>
+
+            <div class="row">
+                <p class="col-xs-12" style="">
+
+                    <a class="faa-parent animated-hover"  href="mailto:asim.khan17@hotmail.com">
+                        <i class="fa fa-envelope faa-horizontal" aria-hidden="true"></i>
+                        asim.khan17@hotmail.com</a></p>
+                <p class="col-xs-12">
+
+                    <a class="faa-parent animated-hover" href="mailto:khan.mohd@husky.neu.edu">
+                        <i class="fa fa-envelope faa-horizontal" aria-hidden="true"></i>
+                        khan.mohd@husky.neu.edu</a>
+            </p>
+
+
+            <ul class="list-inline banner-social-buttons">
+                <li >
+                    <a id="linkedin" href="https://www.linkedin.com/in/asimkhan17/" target="_blank" class=" faa-parent animated-hover btn btn-default btn-lg"><i class="fa fa-linkedin-square fa-fw faa-shake"></i> <span class="network-name">Linkedin</span></a>
+                </li>
+                <li >
+                    <a  id="github" href="https://github.com/asimkhan17790" target="_blank" class="faa-parent animated-hover btn btn-default btn-lg"><i class=" faa-parent animated-hover fa fa-github fa-fw faa-shake"></i> <span class="network-name">Github</span></a>
+                </li >
+                <li >
+                    <a id="twitter"  href="https://twitter.com/asimk_17" target="_blank" class=" faa-parent animated-hover btn btn-default btn-lg"><i class="fa fa-twitter fa-fw faa-shake"></i> <span class="network-name">Twitter</span></a>
+                </li>
+
+                <li >
+                    <a id="facebook" href="https://www.facebook.com/asim.khan17" target="_blank" class=" faa-parent animated-hover btn btn-default btn-lg"><i class="fa fa-facebook-official fa-fw faa-shake"></i> <span class="network-name">Facebook</span></a>
+                </li>
+            </ul>
+        </div>
+    </div>
+    </div>
+</section>
+<footer>
+    <div class="container text-center">
+        “Dream is not that which you see while sleeping it is something that does not let you sleep.” - <span style="font-style: italic">Kalam</span>
+    </div>
+</footer>
+<script src="vendor/jquery/jquery.js"></script>
+<script src="vendor/bootstrap/js/bootstrap.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.3/jquery.easing.min.js"></script>
+<script src="js/grayscale.js"></script>
 </body>
 </html>
